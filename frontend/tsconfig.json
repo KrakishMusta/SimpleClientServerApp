@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // ... другие настройки
+    "types": ["vite/client", "node"],  // Важно для Vite
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "target": "ES2020",
+    "module": "ESNext",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"  // Важно: включить .vue файлы
+  ]
+}
