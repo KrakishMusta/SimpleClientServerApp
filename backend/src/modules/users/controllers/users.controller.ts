@@ -13,14 +13,15 @@ import {
     HttpCode,
     HttpStatus,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+
 import { ApiTags, ApiOperation, ApiResponse, ApiQuery, ApiBearerAuth } from '@nestjs/swagger';
-import { JwtAuthGuard } from '../../common/guards/jwt-auth.guard';
-import { RolesGuard } from '../../common/guards/roles.guard';
-import { Roles } from '../../common/decorators/roles.decorator';
-import { User } from './entities/user.entity';
+import { UsersService } from '../services/users.service';
+import { RolesGuard } from '../../../common/guards/roles.guard';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { User } from '../entities/user.entity';
+import { Roles } from '../../../common/decorators/roles.decorator';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 
 @ApiTags('users')
 @Controller('users')

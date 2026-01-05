@@ -1,6 +1,22 @@
-import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import {
+    Table,
+    Column,
+    Model,
+    DataType,
+    ForeignKey,
+    BelongsTo,
+    DefaultScope,
+} from 'sequelize-typescript';
 import { User } from '../../users/entities/user.entity';
 
+@DefaultScope(() => ({
+    include: [
+        {
+            model: User,
+            attributes: ['id', 'username', 'email'],
+        },
+    ],
+}))
 @Table({
     tableName: 'posts',
     timestamps: true,
@@ -12,40 +28,49 @@ export class Post extends Model {
         primaryKey: true,
         autoIncrement: true,
     })
-    id: number;
+    declare id: number;
 
     @Column({
         type: DataType.STRING(200),
         allowNull: false,
+        validate: {
+            notEmpty: true,
+            len: [3, 200],
+        },
     })
-    title: string;
+    declare title: string;
 
     @Column({
         type: DataType.TEXT,
         allowNull: true,
     })
-    content: string;
+    declare content: string;
 
     @ForeignKey(() => User)
     @Column({
         type: DataType.INTEGER,
         allowNull: false,
     })
-    userId: number;
+    declare userId: number;
 
     @BelongsTo(() => User)
-    user: User;
+    declare user: User;
 
     @Column({
         type: DataType.BOOLEAN,
         defaultValue: false,
-        field: 'is_published',
     })
-    isPublished: boolean;
+    declare isPublished: boolean;
 
     @Column({
         type: DataType.INTEGER,
         defaultValue: 0,
     })
-    views: number;
+    declare views: number;
+
+    @Column({
+        type: DataType.JSON,
+        allowNull: true,
+    })
+    declare tags: string[];
 }
