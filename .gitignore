@@ -15,6 +15,9 @@ backend/coverage/
 backend/*.sqlite
 backend/*.log
 backend/.env
+backend/src/**/*.js
+backend/src/**/*.js.map
+backend/src/**/*.d.ts
 
 # Фронтенд специфичные
 frontend/dist/

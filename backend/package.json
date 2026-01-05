@@ -40,19 +40,22 @@
         "eslint-plugin-prettier": "^5.5.4",
         "jest": "^30.2.0",
         "prettier": "^3.7.4",
+        "rimraf": "^5.0.10",
         "supertest": "^7.1.4",
         "ts-jest": "^29.4.6",
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3"
     },
     "scripts": {
+        "build": "nest build",
         "start": "nest start",
         "start:dev": "nest start --watch",
-        "build": "nest build",
+        "start:debug": "nest start --debug --watch",
+        "start:prod": "node dist/main",
         "lint": "eslint \"{src,test}/**/*.ts\" --fix",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-        "lint:check": "eslint \"{src,test}/**/*.ts\"",
-        "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
-        "precommit": "npm run lint && npm run format:check"
+        "clean": "rimraf dist && rimraf src/**/*.js && rimraf src/**/*.js.map && rimraf src/**/*.d.ts",
+        "prebuild": "npm run clean",
+        "prestart": "npm run clean"
     }
 }
