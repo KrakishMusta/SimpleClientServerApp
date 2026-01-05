@@ -4,8 +4,8 @@ export interface IUser {
     username: string;
     role: string;
     isEmailVerified: boolean;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 export interface IUserWithPassword extends IUser {
