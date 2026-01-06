@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import databaseConfig from './config/database.config';
 import appConfig from './config/app.config';
+import * as pg from 'pg';
 import { AuthModule } from './modules/auth/auth.module';
 import { UsersModule } from './modules/users/users.module';
 import { PostsModule } from './modules/posts/posts.module';
@@ -20,7 +21,11 @@ import { PostsModule } from './modules/posts/posts.module';
             imports: [ConfigModule],
             useFactory: (configService: ConfigService) => ({
                 ...configService.get('database'),
-                models: [], // Автозагрузка через autoLoadModels
+                dialectModule: pg,
+                autoLoadModels: true,
+                // synchronize: process.env.NODE_ENV === 'development',
+                synchronize: true,
+                logging: console.log,
             }),
             inject: [ConfigService],
         }),

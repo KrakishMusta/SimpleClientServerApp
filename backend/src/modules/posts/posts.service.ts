@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Op } from 'sequelize';
+import { Op, WhereOptions } from 'sequelize';
 import { Post } from './entities/post.entity';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
@@ -21,25 +21,27 @@ export class PostsService {
 
     async findAll(page = 1, limit = 10, search?: string, userId?: number, publishedOnly = true) {
         const offset = (page - 1) * limit;
-        const where: any = {};
+        const whereConditions: WhereOptions<Post> = {};
 
         if (search) {
-            where[Op.or] = [
-                { title: { [Op.like]: `%${search}%` } },
-                { content: { [Op.like]: `%${search}%` } },
-            ];
+            Object.assign(whereConditions, {
+                [Op.or]: [
+                    { title: { [Op.like]: `%${search}%` } },
+                    { content: { [Op.like]: `%${search}%` } },
+                ],
+            });
         }
 
         if (userId) {
-            where.userId = userId;
+            Object.assign(whereConditions, { userId });
         }
 
         if (publishedOnly) {
-            where.isPublished = true;
+            Object.assign(whereConditions, { isPublished: true });
         }
 
         const { rows, count } = await this.postModel.findAndCountAll({
-            where,
+            where: whereConditions,
             limit,
             offset,
             order: [['createdAt', 'DESC']],

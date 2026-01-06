@@ -5,7 +5,7 @@ import {
     BadRequestException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Op } from 'sequelize';
+import { Op, WhereOptions } from 'sequelize';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { IUserPaginatedResponse } from '../interfaces/user.interface';
@@ -42,17 +42,19 @@ export class UsersService {
 
     async findAll(page = 1, limit = 10, search?: string): Promise<IUserPaginatedResponse> {
         const offset = (page - 1) * limit;
-        const where: any = {};
+        const whereConditions: WhereOptions<User> = {};
 
         if (search) {
-            where[Op.or] = [
-                { email: { [Op.like]: `%${search}%` } },
-                { username: { [Op.like]: `%${search}%` } },
-            ];
+            Object.assign(whereConditions, {
+                [Op.or]: [
+                    { email: { [Op.like]: `%${search}%` } },
+                    { username: { [Op.like]: `%${search}%` } },
+                ],
+            });
         }
 
         const { rows, count } = await this.userModel.findAndCountAll({
-            where,
+            where: whereConditions,
             limit,
             offset,
             order: [['createdAt', 'DESC']],

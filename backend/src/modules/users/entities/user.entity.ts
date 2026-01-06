@@ -6,9 +6,8 @@ import {
     HasMany,
     BeforeCreate,
     BeforeUpdate,
-    BeforeBulkCreate,
 } from 'sequelize-typescript';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { Post } from '../../posts/entities/post.entity';
 
 @Table({
