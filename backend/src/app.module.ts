@@ -4,10 +4,10 @@ import { SequelizeModule } from '@nestjs/sequelize';
 // import databaseConfig from './config/database.config';
 import appConfig from './config/app.config';
 import { AuthModule } from './modules/auth/auth.module';
-import { UsersModule } from './modules/users/users.module';
+import { UsersModule } from './modules/user/users.module';
 import { PostsModule } from './modules/posts/posts.module';
 
-import { User } from './modules/users/entities/user.entity';
+import { User } from './modules/user/entities/user.entity';
 import { Post } from './modules/posts/entities/post.entity';
 import { RefreshToken } from './modules/auth/entities/refresh-token.entity';
 

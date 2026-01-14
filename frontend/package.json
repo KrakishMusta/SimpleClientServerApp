@@ -19,9 +19,12 @@
         "precommit": "npm run lint && npm run format:check"
     },
     "dependencies": {
+        "@tailwindcss/vite": "^4.1.18",
+        "@tanstack/vue-query": "^5.92.5",
         "@vueuse/core": "^14.1.0",
         "axios": "^1.13.2",
         "pinia": "^3.0.4",
+        "tailwindcss": "^4.1.18",
         "vue": "^3.5.25",
         "vue-router": "^4.6.3"
     },

@@ -15,8 +15,21 @@ const router = createRouter({
             // route level code-splitting
             // this generates a separate chunk (About.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import('../views/AboutView.vue'),
-            children: [],
+            component: () => import('../pages/auth/AuthWrapper.vue'),
+            children: [
+                {
+                    path: 'login',
+                    name: 'login',
+                    component: () => import('@/pages/auth/LoginPage.vue'),
+                    meta: { isAuthPage: true, title: 'Вход' },
+                },
+                {
+                    path: 'register',
+                    name: 'register',
+                    component: () => import('@/pages/auth/RegisterPage.vue'),
+                    meta: { isAuthPage: true, title: 'Регистрация' },
+                },
+            ],
         },
     ],
 });
