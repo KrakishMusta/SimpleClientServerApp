@@ -13,7 +13,7 @@ import { IUserPaginatedResponse } from '../interfaces/user.interface';
 import { UpdateUserDto } from '../dto/update-user.dto';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   constructor(
     @InjectModel(User)
     private userModel: typeof User,
@@ -120,9 +120,9 @@ export class UsersService {
     }
 
     // Если меняем username, проверяем что он не занят
-    if (updateUserDto.username && updateUserDto.username !== user.username) {
+    if (updateUserDto.name && updateUserDto.name !== user.name) {
       const existingUsername = await this.userModel.findOne({
-        where: { username: updateUserDto.username },
+        where: { name: updateUserDto.name },
       });
 
       if (existingUsername) {

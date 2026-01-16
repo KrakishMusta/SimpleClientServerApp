@@ -21,7 +21,7 @@ import {
   ApiQuery,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-import { UsersService } from '../services/users.service';
+import { UserService } from '../services/user.service';
 import { RolesGuard } from '../../../common/guards/roles.guard';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { User } from '../entities/user.entity';
@@ -29,12 +29,12 @@ import { Roles } from '../../../common/decorators/roles.decorator';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 
-@ApiTags('users')
-@Controller('users')
+@ApiTags('user')
+@Controller('user')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard, RolesGuard)
-export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+export class UserController {
+  constructor(private readonly userService: UserService) {}
 
   @Post()
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -50,7 +50,7 @@ export class UsersController {
     description: 'User with this email/username already exists',
   })
   async create(@Body() createUserDto: CreateUserDto): Promise<User> {
-    return this.usersService.create(createUserDto);
+    return this.userService.create(createUserDto);
   }
 
   @Get()
@@ -66,7 +66,7 @@ export class UsersController {
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
     @Query('search') search?: string,
   ) {
-    return this.usersService.findAll(page, limit, search);
+    return this.userService.findAll(page, limit, search);
   }
 
   @Get(':id')
@@ -76,7 +76,7 @@ export class UsersController {
   @ApiResponse({ status: 200, description: 'User found', type: User })
   @ApiResponse({ status: 404, description: 'User not found' })
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<User> {
-    return this.usersService.findOne(id);
+    return this.userService.findOne(id);
   }
 
   @Patch(':id')
@@ -93,7 +93,7 @@ export class UsersController {
     @Param('id', ParseIntPipe) id: number,
     @Body() updateUserDto: UpdateUserDto,
   ): Promise<User> {
-    return this.usersService.update(id, updateUserDto);
+    return this.userService.update(id, updateUserDto);
   }
 
   @Delete(':id')
@@ -104,6 +104,6 @@ export class UsersController {
   @ApiResponse({ status: 204, description: 'User deleted successfully' })
   @ApiResponse({ status: 404, description: 'User not found' })
   async remove(@Param('id', ParseIntPipe) id: number): Promise<void> {
-    return this.usersService.remove(id);
+    return this.userService.remove(id);
   }
 }

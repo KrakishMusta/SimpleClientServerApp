@@ -6,22 +6,25 @@ import {
   Matches,
   IsOptional,
   IsEnum,
+  IsDateString,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { UserRole } from 'src/enums/enums'; // используем enum
 
 export class CreateUserDto {
   @ApiProperty({ example: 'user@example.com' })
   @IsEmail()
   email: string;
 
-  @ApiProperty({ example: 'john_doe' })
+  @ApiProperty({ example: 'John Doe', required: false })
   @IsString()
   @MinLength(3)
   @MaxLength(50)
+  @IsOptional()
   @Matches(/^[a-zA-Z0-9_]+$/, {
     message: 'Username can only contain letters, numbers and underscores',
   })
-  username: string;
+  name?: string;
 
   @ApiProperty({ example: 'Password123!' })
   @IsString()
@@ -33,8 +36,42 @@ export class CreateUserDto {
   })
   password: string;
 
-  @ApiProperty({ enum: ['user', 'admin'], required: false })
+  @ApiProperty({
+    enum: UserRole,
+    example: UserRole.PARTICIPANT,
+    required: false,
+  })
   @IsOptional()
-  @IsEnum(['user', 'admin'])
-  role?: 'user' | 'admin';
+  @IsEnum(UserRole)
+  role?: UserRole;
+
+  @ApiProperty({ example: '2000-01-01', required: false })
+  @IsOptional()
+  @IsDateString()
+  birthDate?: Date;
+
+  @ApiProperty({ example: 'Москва', required: false })
+  @IsOptional()
+  @IsString()
+  areaId?: string;
+
+  @ApiProperty({ enum: ['м', 'ж'], required: false })
+  @IsOptional()
+  @IsEnum(['м', 'ж'])
+  sex?: 'м' | 'ж';
+
+  @ApiProperty({ example: 'http://example.com/photo.jpg', required: false })
+  @IsOptional()
+  @IsString()
+  photo?: string;
+
+  @ApiProperty({ example: 'Россия', required: false })
+  @IsOptional()
+  @IsString()
+  countryId?: string;
+
+  @ApiProperty({ example: '+79123456789', required: false })
+  @IsOptional()
+  @IsString()
+  phone?: string;
 }

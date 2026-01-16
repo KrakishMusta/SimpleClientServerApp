@@ -1,0 +1,4470 @@
+[
+  {
+    "name": "Абаза",
+    "emblem": null
+  },
+  {
+    "name": "Абакан",
+    "emblem": null
+  },
+  {
+    "name": "Абдулино",
+    "emblem": null
+  },
+  {
+    "name": "Абинск",
+    "emblem": null
+  },
+  {
+    "name": "Агидель",
+    "emblem": null
+  },
+  {
+    "name": "Агрыз",
+    "emblem": null
+  },
+  {
+    "name": "Адыгейск",
+    "emblem": null
+  },
+  {
+    "name": "Азнакаево",
+    "emblem": null
+  },
+  {
+    "name": "Азов",
+    "emblem": null
+  },
+  {
+    "name": "Ак-Довурак",
+    "emblem": null
+  },
+  {
+    "name": "Аксай",
+    "emblem": null
+  },
+  {
+    "name": "Алагир",
+    "emblem": null
+  },
+  {
+    "name": "Алапаевск",
+    "emblem": null
+  },
+  {
+    "name": "Алатырь",
+    "emblem": null
+  },
+  {
+    "name": "Алдан",
+    "emblem": null
+  },
+  {
+    "name": "Алейск",
+    "emblem": null
+  },
+  {
+    "name": "Александров",
+    "emblem": null
+  },
+  {
+    "name": "Александровск",
+    "emblem": null
+  },
+  {
+    "name": "Александровск-Сахалинский",
+    "emblem": null
+  },
+  {
+    "name": "Алексеевка",
+    "emblem": null
+  },
+  {
+    "name": "Алексин",
+    "emblem": null
+  },
+  {
+    "name": "Алзамай",
+    "emblem": null
+  },
+  {
+    "name": "Алупкане призн.",
+    "emblem": null
+  },
+  {
+    "name": "Алуштане призн.",
+    "emblem": null
+  },
+  {
+    "name": "Альметьевск",
+    "emblem": null
+  },
+  {
+    "name": "Амурск",
+    "emblem": null
+  },
+  {
+    "name": "Анадырь",
+    "emblem": null
+  },
+  {
+    "name": "Анапа",
+    "emblem": null
+  },
+  {
+    "name": "Ангарск",
+    "emblem": null
+  },
+  {
+    "name": "Андреаполь",
+    "emblem": null
+  },
+  {
+    "name": "Анжеро-Судженск",
+    "emblem": null
+  },
+  {
+    "name": "Анива",
+    "emblem": null
+  },
+  {
+    "name": "Апатиты",
+    "emblem": null
+  },
+  {
+    "name": "Апрелевка",
+    "emblem": null
+  },
+  {
+    "name": "Апшеронск",
+    "emblem": null
+  },
+  {
+    "name": "Арамиль",
+    "emblem": null
+  },
+  {
+    "name": "Аргун",
+    "emblem": null
+  },
+  {
+    "name": "Ардатов",
+    "emblem": null
+  },
+  {
+    "name": "Ардон",
+    "emblem": null
+  },
+  {
+    "name": "Арзамас",
+    "emblem": null
+  },
+  {
+    "name": "Аркадак",
+    "emblem": null
+  },
+  {
+    "name": "Армавир",
+    "emblem": null
+  },
+  {
+    "name": "Армянскне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Арсеньев",
+    "emblem": null
+  },
+  {
+    "name": "Арск",
+    "emblem": null
+  },
+  {
+    "name": "Артём",
+    "emblem": null
+  },
+  {
+    "name": "Артёмовск",
+    "emblem": null
+  },
+  {
+    "name": "Артёмовский",
+    "emblem": null
+  },
+  {
+    "name": "Архангельск",
+    "emblem": null
+  },
+  {
+    "name": "Асбест",
+    "emblem": null
+  },
+  {
+    "name": "Асино",
+    "emblem": null
+  },
+  {
+    "name": "Астрахань",
+    "emblem": null
+  },
+  {
+    "name": "Аткарск",
+    "emblem": null
+  },
+  {
+    "name": "Ахтубинск",
+    "emblem": null
+  },
+  {
+    "name": "Ачинск",
+    "emblem": null
+  },
+  {
+    "name": "Аша",
+    "emblem": null
+  },
+  {
+    "name": "Бабаево",
+    "emblem": null
+  },
+  {
+    "name": "Бабушкин",
+    "emblem": null
+  },
+  {
+    "name": "Бавлы",
+    "emblem": null
+  },
+  {
+    "name": "Багратионовск",
+    "emblem": null
+  },
+  {
+    "name": "Байкальск",
+    "emblem": null
+  },
+  {
+    "name": "Баймак",
+    "emblem": null
+  },
+  {
+    "name": "Бакал",
+    "emblem": null
+  },
+  {
+    "name": "Баксан",
+    "emblem": null
+  },
+  {
+    "name": "Балабаново",
+    "emblem": null
+  },
+  {
+    "name": "Балаково",
+    "emblem": null
+  },
+  {
+    "name": "Балахна",
+    "emblem": null
+  },
+  {
+    "name": "Балашиха",
+    "emblem": null
+  },
+  {
+    "name": "Балашов",
+    "emblem": null
+  },
+  {
+    "name": "Балей",
+    "emblem": null
+  },
+  {
+    "name": "Балтийск",
+    "emblem": null
+  },
+  {
+    "name": "Барабинск",
+    "emblem": null
+  },
+  {
+    "name": "Барнаул",
+    "emblem": null
+  },
+  {
+    "name": "Барыш",
+    "emblem": null
+  },
+  {
+    "name": "Батайск",
+    "emblem": null
+  },
+  {
+    "name": "Бахчисарайне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Бежецк",
+    "emblem": null
+  },
+  {
+    "name": "Белая Калитва",
+    "emblem": null
+  },
+  {
+    "name": "Белая Холуница",
+    "emblem": null
+  },
+  {
+    "name": "Белгород",
+    "emblem": null
+  },
+  {
+    "name": "Белебей",
+    "emblem": null
+  },
+  {
+    "name": "Белёв",
+    "emblem": null
+  },
+  {
+    "name": "Белинский",
+    "emblem": null
+  },
+  {
+    "name": "Белово",
+    "emblem": null
+  },
+  {
+    "name": "Белогорск",
+    "emblem": null
+  },
+  {
+    "name": "Белогорскне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Белозерск",
+    "emblem": null
+  },
+  {
+    "name": "Белокуриха",
+    "emblem": null
+  },
+  {
+    "name": "Беломорск",
+    "emblem": null
+  },
+  {
+    "name": "Белоозёрский",
+    "emblem": null
+  },
+  {
+    "name": "Белорецк",
+    "emblem": null
+  },
+  {
+    "name": "Белореченск",
+    "emblem": null
+  },
+  {
+    "name": "Белоусово",
+    "emblem": null
+  },
+  {
+    "name": "Белоярский",
+    "emblem": null
+  },
+  {
+    "name": "Белый",
+    "emblem": null
+  },
+  {
+    "name": "Бердск",
+    "emblem": null
+  },
+  {
+    "name": "Березники",
+    "emblem": null
+  },
+  {
+    "name": "Берёзовский",
+    "emblem": null
+  },
+  {
+    "name": "Берёзовский",
+    "emblem": null
+  },
+  {
+    "name": "Беслан",
+    "emblem": null
+  },
+  {
+    "name": "Бийск",
+    "emblem": null
+  },
+  {
+    "name": "Бикин",
+    "emblem": null
+  },
+  {
+    "name": "Билибино",
+    "emblem": null
+  },
+  {
+    "name": "Биробиджан",
+    "emblem": null
+  },
+  {
+    "name": "Бирск",
+    "emblem": null
+  },
+  {
+    "name": "Бирюсинск",
+    "emblem": null
+  },
+  {
+    "name": "Бирюч",
+    "emblem": null
+  },
+  {
+    "name": "Благовещенск",
+    "emblem": null
+  },
+  {
+    "name": "Благовещенск",
+    "emblem": null
+  },
+  {
+    "name": "Благодарный",
+    "emblem": null
+  },
+  {
+    "name": "Бобров",
+    "emblem": null
+  },
+  {
+    "name": "Богданович",
+    "emblem": null
+  },
+  {
+    "name": "Богородицк",
+    "emblem": null
+  },
+  {
+    "name": "Богородск",
+    "emblem": null
+  },
+  {
+    "name": "Боготол",
+    "emblem": null
+  },
+  {
+    "name": "Богучар",
+    "emblem": null
+  },
+  {
+    "name": "Бодайбо",
+    "emblem": null
+  },
+  {
+    "name": "Бокситогорск",
+    "emblem": null
+  },
+  {
+    "name": "Болгар",
+    "emblem": null
+  },
+  {
+    "name": "Бологое",
+    "emblem": null
+  },
+  {
+    "name": "Болотное",
+    "emblem": null
+  },
+  {
+    "name": "Болохово",
+    "emblem": null
+  },
+  {
+    "name": "Болхов",
+    "emblem": null
+  },
+  {
+    "name": "Большой Камень",
+    "emblem": null
+  },
+  {
+    "name": "Бор",
+    "emblem": null
+  },
+  {
+    "name": "Борзя",
+    "emblem": null
+  },
+  {
+    "name": "Борисоглебск",
+    "emblem": null
+  },
+  {
+    "name": "Боровичи",
+    "emblem": null
+  },
+  {
+    "name": "Боровск",
+    "emblem": null
+  },
+  {
+    "name": "Бородино",
+    "emblem": null
+  },
+  {
+    "name": "Братск",
+    "emblem": null
+  },
+  {
+    "name": "Бронницы",
+    "emblem": null
+  },
+  {
+    "name": "Брянск",
+    "emblem": null
+  },
+  {
+    "name": "Бугульма",
+    "emblem": null
+  },
+  {
+    "name": "Бугуруслан",
+    "emblem": null
+  },
+  {
+    "name": "Будённовск",
+    "emblem": null
+  },
+  {
+    "name": "Бузулук",
+    "emblem": null
+  },
+  {
+    "name": "Буинск",
+    "emblem": null
+  },
+  {
+    "name": "Буй",
+    "emblem": null
+  },
+  {
+    "name": "Буйнакск",
+    "emblem": null
+  },
+  {
+    "name": "Бутурлиновка",
+    "emblem": null
+  },
+  {
+    "name": "Валдай",
+    "emblem": null
+  },
+  {
+    "name": "Валуйки",
+    "emblem": null
+  },
+  {
+    "name": "Велиж",
+    "emblem": null
+  },
+  {
+    "name": "Великие Луки",
+    "emblem": null
+  },
+  {
+    "name": "Великий Новгород",
+    "emblem": null
+  },
+  {
+    "name": "Великий Устюг",
+    "emblem": null
+  },
+  {
+    "name": "Вельск",
+    "emblem": null
+  },
+  {
+    "name": "Венёв",
+    "emblem": null
+  },
+  {
+    "name": "Верещагино",
+    "emblem": null
+  },
+  {
+    "name": "Верея",
+    "emblem": null
+  },
+  {
+    "name": "Верхнеуральск",
+    "emblem": null
+  },
+  {
+    "name": "Верхний Тагил",
+    "emblem": null
+  },
+  {
+    "name": "Верхний Уфалей",
+    "emblem": null
+  },
+  {
+    "name": "Верхняя Пышма",
+    "emblem": null
+  },
+  {
+    "name": "Верхняя Салда",
+    "emblem": null
+  },
+  {
+    "name": "Верхняя Тура",
+    "emblem": null
+  },
+  {
+    "name": "Верхотурье",
+    "emblem": null
+  },
+  {
+    "name": "Верхоянск",
+    "emblem": null
+  },
+  {
+    "name": "Весьегонск",
+    "emblem": null
+  },
+  {
+    "name": "Ветлуга",
+    "emblem": null
+  },
+  {
+    "name": "Видное",
+    "emblem": null
+  },
+  {
+    "name": "Вилюйск",
+    "emblem": null
+  },
+  {
+    "name": "Вилючинск",
+    "emblem": null
+  },
+  {
+    "name": "Вихоревка",
+    "emblem": null
+  },
+  {
+    "name": "Вичуга",
+    "emblem": null
+  },
+  {
+    "name": "Владивосток",
+    "emblem": null
+  },
+  {
+    "name": "Владикавказ",
+    "emblem": null
+  },
+  {
+    "name": "Владимир",
+    "emblem": null
+  },
+  {
+    "name": "Волгоград",
+    "emblem": null
+  },
+  {
+    "name": "Волгодонск",
+    "emblem": null
+  },
+  {
+    "name": "Волгореченск",
+    "emblem": null
+  },
+  {
+    "name": "Волжск",
+    "emblem": null
+  },
+  {
+    "name": "Волжский",
+    "emblem": null
+  },
+  {
+    "name": "Вологда",
+    "emblem": null
+  },
+  {
+    "name": "Володарск",
+    "emblem": null
+  },
+  {
+    "name": "Волоколамск",
+    "emblem": null
+  },
+  {
+    "name": "Волосово",
+    "emblem": null
+  },
+  {
+    "name": "Волхов",
+    "emblem": null
+  },
+  {
+    "name": "Волчанск",
+    "emblem": null
+  },
+  {
+    "name": "Вольск",
+    "emblem": null
+  },
+  {
+    "name": "Воркута",
+    "emblem": null
+  },
+  {
+    "name": "Воронеж",
+    "emblem": null
+  },
+  {
+    "name": "Ворсма",
+    "emblem": null
+  },
+  {
+    "name": "Воскресенск",
+    "emblem": null
+  },
+  {
+    "name": "Воткинск",
+    "emblem": null
+  },
+  {
+    "name": "Всеволожск",
+    "emblem": null
+  },
+  {
+    "name": "Вуктыл",
+    "emblem": null
+  },
+  {
+    "name": "Выборг",
+    "emblem": null
+  },
+  {
+    "name": "Выкса",
+    "emblem": null
+  },
+  {
+    "name": "Высоковск",
+    "emblem": null
+  },
+  {
+    "name": "Высоцк",
+    "emblem": null
+  },
+  {
+    "name": "Вытегра",
+    "emblem": null
+  },
+  {
+    "name": "Вышний Волочёк",
+    "emblem": null
+  },
+  {
+    "name": "Вяземский",
+    "emblem": null
+  },
+  {
+    "name": "Вязники",
+    "emblem": null
+  },
+  {
+    "name": "Вязьма",
+    "emblem": null
+  },
+  {
+    "name": "Вятские Поляны",
+    "emblem": null
+  },
+  {
+    "name": "Гаврилов Посад",
+    "emblem": null
+  },
+  {
+    "name": "Гаврилов-Ям",
+    "emblem": null
+  },
+  {
+    "name": "Гагарин",
+    "emblem": null
+  },
+  {
+    "name": "Гаджиево",
+    "emblem": null
+  },
+  {
+    "name": "Гай",
+    "emblem": null
+  },
+  {
+    "name": "Галич",
+    "emblem": null
+  },
+  {
+    "name": "Гатчина",
+    "emblem": null
+  },
+  {
+    "name": "Гвардейск",
+    "emblem": null
+  },
+  {
+    "name": "Гдов",
+    "emblem": null
+  },
+  {
+    "name": "Геленджик",
+    "emblem": null
+  },
+  {
+    "name": "Георгиевск",
+    "emblem": null
+  },
+  {
+    "name": "Глазов",
+    "emblem": null
+  },
+  {
+    "name": "Голицыно",
+    "emblem": null
+  },
+  {
+    "name": "Горбатов",
+    "emblem": null
+  },
+  {
+    "name": "Горно-Алтайск",
+    "emblem": null
+  },
+  {
+    "name": "Горнозаводск",
+    "emblem": null
+  },
+  {
+    "name": "Горняк",
+    "emblem": null
+  },
+  {
+    "name": "Городец",
+    "emblem": null
+  },
+  {
+    "name": "Городище",
+    "emblem": null
+  },
+  {
+    "name": "Городовиковск",
+    "emblem": null
+  },
+  {
+    "name": "Гороховец",
+    "emblem": null
+  },
+  {
+    "name": "Горячий Ключ",
+    "emblem": null
+  },
+  {
+    "name": "Грайворон",
+    "emblem": null
+  },
+  {
+    "name": "Гремячинск",
+    "emblem": null
+  },
+  {
+    "name": "Грозный",
+    "emblem": null
+  },
+  {
+    "name": "Грязи",
+    "emblem": null
+  },
+  {
+    "name": "Грязовец",
+    "emblem": null
+  },
+  {
+    "name": "Губаха",
+    "emblem": null
+  },
+  {
+    "name": "Губкин",
+    "emblem": null
+  },
+  {
+    "name": "Губкинский",
+    "emblem": null
+  },
+  {
+    "name": "Гудермес",
+    "emblem": null
+  },
+  {
+    "name": "Гуково",
+    "emblem": null
+  },
+  {
+    "name": "Гулькевичи",
+    "emblem": null
+  },
+  {
+    "name": "Гурьевск",
+    "emblem": null
+  },
+  {
+    "name": "Гурьевск",
+    "emblem": null
+  },
+  {
+    "name": "Гусев",
+    "emblem": null
+  },
+  {
+    "name": "Гусиноозёрск",
+    "emblem": null
+  },
+  {
+    "name": "Гусь-Хрустальный",
+    "emblem": null
+  },
+  {
+    "name": "Давлеканово",
+    "emblem": null
+  },
+  {
+    "name": "Дагестанские Огни",
+    "emblem": null
+  },
+  {
+    "name": "Далматово",
+    "emblem": null
+  },
+  {
+    "name": "Дальнегорск",
+    "emblem": null
+  },
+  {
+    "name": "Дальнереченск",
+    "emblem": null
+  },
+  {
+    "name": "Данилов",
+    "emblem": null
+  },
+  {
+    "name": "Данков",
+    "emblem": null
+  },
+  {
+    "name": "Дегтярск",
+    "emblem": null
+  },
+  {
+    "name": "Дедовск",
+    "emblem": null
+  },
+  {
+    "name": "Демидов",
+    "emblem": null
+  },
+  {
+    "name": "Дербент",
+    "emblem": null
+  },
+  {
+    "name": "Десногорск",
+    "emblem": null
+  },
+  {
+    "name": "Джанкойне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Дзержинск",
+    "emblem": null
+  },
+  {
+    "name": "Дзержинский",
+    "emblem": null
+  },
+  {
+    "name": "Дивногорск",
+    "emblem": null
+  },
+  {
+    "name": "Дигора",
+    "emblem": null
+  },
+  {
+    "name": "Димитровград",
+    "emblem": null
+  },
+  {
+    "name": "Дмитриев",
+    "emblem": null
+  },
+  {
+    "name": "Дмитров",
+    "emblem": null
+  },
+  {
+    "name": "Дмитровск",
+    "emblem": null
+  },
+  {
+    "name": "Дно",
+    "emblem": null
+  },
+  {
+    "name": "Добрянка",
+    "emblem": null
+  },
+  {
+    "name": "Долгопрудный",
+    "emblem": null
+  },
+  {
+    "name": "Долинск",
+    "emblem": null
+  },
+  {
+    "name": "Домодедово",
+    "emblem": null
+  },
+  {
+    "name": "Донецк",
+    "emblem": null
+  },
+  {
+    "name": "Донской",
+    "emblem": null
+  },
+  {
+    "name": "Дорогобуж",
+    "emblem": null
+  },
+  {
+    "name": "Дрезна",
+    "emblem": null
+  },
+  {
+    "name": "Дубна",
+    "emblem": null
+  },
+  {
+    "name": "Дубовка",
+    "emblem": null
+  },
+  {
+    "name": "Дудинка",
+    "emblem": null
+  },
+  {
+    "name": "Духовщина",
+    "emblem": null
+  },
+  {
+    "name": "Дюртюли",
+    "emblem": null
+  },
+  {
+    "name": "Дятьково",
+    "emblem": null
+  },
+  {
+    "name": "Евпаторияне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Егорьевск",
+    "emblem": null
+  },
+  {
+    "name": "Ейск",
+    "emblem": null
+  },
+  {
+    "name": "Екатеринбург",
+    "emblem": null
+  },
+  {
+    "name": "Елабуга",
+    "emblem": null
+  },
+  {
+    "name": "Елец",
+    "emblem": null
+  },
+  {
+    "name": "Елизово",
+    "emblem": null
+  },
+  {
+    "name": "Ельня",
+    "emblem": null
+  },
+  {
+    "name": "Еманжелинск",
+    "emblem": null
+  },
+  {
+    "name": "Емва",
+    "emblem": null
+  },
+  {
+    "name": "Енисейск",
+    "emblem": null
+  },
+  {
+    "name": "Ермолино",
+    "emblem": null
+  },
+  {
+    "name": "Ершов",
+    "emblem": null
+  },
+  {
+    "name": "Ессентуки",
+    "emblem": null
+  },
+  {
+    "name": "Ефремов",
+    "emblem": null
+  },
+  {
+    "name": "Железноводск",
+    "emblem": null
+  },
+  {
+    "name": "Железногорск",
+    "emblem": null
+  },
+  {
+    "name": "Железногорск",
+    "emblem": null
+  },
+  {
+    "name": "Железногорск-Илимский",
+    "emblem": null
+  },
+  {
+    "name": "Жердевка",
+    "emblem": null
+  },
+  {
+    "name": "Жигулёвск",
+    "emblem": null
+  },
+  {
+    "name": "Жиздра",
+    "emblem": null
+  },
+  {
+    "name": "Жирновск",
+    "emblem": null
+  },
+  {
+    "name": "Жуков",
+    "emblem": null
+  },
+  {
+    "name": "Жуковка",
+    "emblem": null
+  },
+  {
+    "name": "Жуковский",
+    "emblem": null
+  },
+  {
+    "name": "Завитинск",
+    "emblem": null
+  },
+  {
+    "name": "Заводоуковск",
+    "emblem": null
+  },
+  {
+    "name": "Заволжск",
+    "emblem": null
+  },
+  {
+    "name": "Заволжье",
+    "emblem": null
+  },
+  {
+    "name": "Задонск",
+    "emblem": null
+  },
+  {
+    "name": "Заинск",
+    "emblem": null
+  },
+  {
+    "name": "Закаменск",
+    "emblem": null
+  },
+  {
+    "name": "Заозёрный",
+    "emblem": null
+  },
+  {
+    "name": "Заозёрск",
+    "emblem": null
+  },
+  {
+    "name": "Западная Двина",
+    "emblem": null
+  },
+  {
+    "name": "Заполярный",
+    "emblem": null
+  },
+  {
+    "name": "Зарайск",
+    "emblem": null
+  },
+  {
+    "name": "Заречный",
+    "emblem": null
+  },
+  {
+    "name": "Заречный",
+    "emblem": null
+  },
+  {
+    "name": "Заринск",
+    "emblem": null
+  },
+  {
+    "name": "Звенигово",
+    "emblem": null
+  },
+  {
+    "name": "Звенигород",
+    "emblem": null
+  },
+  {
+    "name": "Зверево",
+    "emblem": null
+  },
+  {
+    "name": "Зеленогорск",
+    "emblem": null
+  },
+  {
+    "name": "Зеленоградск",
+    "emblem": null
+  },
+  {
+    "name": "Зеленодольск",
+    "emblem": null
+  },
+  {
+    "name": "Зеленокумск",
+    "emblem": null
+  },
+  {
+    "name": "Зерноград",
+    "emblem": null
+  },
+  {
+    "name": "Зея",
+    "emblem": null
+  },
+  {
+    "name": "Зима",
+    "emblem": null
+  },
+  {
+    "name": "Златоуст",
+    "emblem": null
+  },
+  {
+    "name": "Злынка",
+    "emblem": null
+  },
+  {
+    "name": "Змеиногорск",
+    "emblem": null
+  },
+  {
+    "name": "Знаменск",
+    "emblem": null
+  },
+  {
+    "name": "Зубцов",
+    "emblem": null
+  },
+  {
+    "name": "Зуевка",
+    "emblem": null
+  },
+  {
+    "name": "Ивангород",
+    "emblem": null
+  },
+  {
+    "name": "Иваново",
+    "emblem": null
+  },
+  {
+    "name": "Ивантеевка",
+    "emblem": null
+  },
+  {
+    "name": "Ивдель",
+    "emblem": null
+  },
+  {
+    "name": "Игарка",
+    "emblem": null
+  },
+  {
+    "name": "Ижевск",
+    "emblem": null
+  },
+  {
+    "name": "Избербаш",
+    "emblem": null
+  },
+  {
+    "name": "Изобильный",
+    "emblem": null
+  },
+  {
+    "name": "Иланский",
+    "emblem": null
+  },
+  {
+    "name": "Инза",
+    "emblem": null
+  },
+  {
+    "name": "Иннополис",
+    "emblem": null
+  },
+  {
+    "name": "Инсар",
+    "emblem": null
+  },
+  {
+    "name": "Инта",
+    "emblem": null
+  },
+  {
+    "name": "Ипатово",
+    "emblem": null
+  },
+  {
+    "name": "Ирбит",
+    "emblem": null
+  },
+  {
+    "name": "Иркутск",
+    "emblem": null
+  },
+  {
+    "name": "Исилькуль",
+    "emblem": null
+  },
+  {
+    "name": "Искитим",
+    "emblem": null
+  },
+  {
+    "name": "Истра",
+    "emblem": null
+  },
+  {
+    "name": "Ишим",
+    "emblem": null
+  },
+  {
+    "name": "Ишимбай",
+    "emblem": null
+  },
+  {
+    "name": "Йошкар-Ола",
+    "emblem": null
+  },
+  {
+    "name": "Кадников",
+    "emblem": null
+  },
+  {
+    "name": "Казань",
+    "emblem": null
+  },
+  {
+    "name": "Калач",
+    "emblem": null
+  },
+  {
+    "name": "Калач-на-Дону",
+    "emblem": null
+  },
+  {
+    "name": "Калачинск",
+    "emblem": null
+  },
+  {
+    "name": "Калининград",
+    "emblem": null
+  },
+  {
+    "name": "Калининск",
+    "emblem": null
+  },
+  {
+    "name": "Калтан",
+    "emblem": null
+  },
+  {
+    "name": "Калуга",
+    "emblem": null
+  },
+  {
+    "name": "Калязин",
+    "emblem": null
+  },
+  {
+    "name": "Камбарка",
+    "emblem": null
+  },
+  {
+    "name": "Каменка",
+    "emblem": null
+  },
+  {
+    "name": "Каменногорск",
+    "emblem": null
+  },
+  {
+    "name": "Каменск-Уральский",
+    "emblem": null
+  },
+  {
+    "name": "Каменск-Шахтинский",
+    "emblem": null
+  },
+  {
+    "name": "Камень-на-Оби",
+    "emblem": null
+  },
+  {
+    "name": "Камешково",
+    "emblem": null
+  },
+  {
+    "name": "Камызяк",
+    "emblem": null
+  },
+  {
+    "name": "Камышин",
+    "emblem": null
+  },
+  {
+    "name": "Камышлов",
+    "emblem": null
+  },
+  {
+    "name": "Канаш",
+    "emblem": null
+  },
+  {
+    "name": "Кандалакша",
+    "emblem": null
+  },
+  {
+    "name": "Канск",
+    "emblem": null
+  },
+  {
+    "name": "Карабаново",
+    "emblem": null
+  },
+  {
+    "name": "Карабаш",
+    "emblem": null
+  },
+  {
+    "name": "Карабулак",
+    "emblem": null
+  },
+  {
+    "name": "Карасук",
+    "emblem": null
+  },
+  {
+    "name": "Карачаевск",
+    "emblem": null
+  },
+  {
+    "name": "Карачев",
+    "emblem": null
+  },
+  {
+    "name": "Каргат",
+    "emblem": null
+  },
+  {
+    "name": "Каргополь",
+    "emblem": null
+  },
+  {
+    "name": "Карпинск",
+    "emblem": null
+  },
+  {
+    "name": "Карталы",
+    "emblem": null
+  },
+  {
+    "name": "Касимов",
+    "emblem": null
+  },
+  {
+    "name": "Касли",
+    "emblem": null
+  },
+  {
+    "name": "Каспийск",
+    "emblem": null
+  },
+  {
+    "name": "Катав-Ивановск",
+    "emblem": null
+  },
+  {
+    "name": "Катайск",
+    "emblem": null
+  },
+  {
+    "name": "Качканар",
+    "emblem": null
+  },
+  {
+    "name": "Кашин",
+    "emblem": null
+  },
+  {
+    "name": "Кашира",
+    "emblem": null
+  },
+  {
+    "name": "Кедровый",
+    "emblem": null
+  },
+  {
+    "name": "Кемерово",
+    "emblem": null
+  },
+  {
+    "name": "Кемь",
+    "emblem": null
+  },
+  {
+    "name": "Керчьне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Кизел",
+    "emblem": null
+  },
+  {
+    "name": "Кизилюрт",
+    "emblem": null
+  },
+  {
+    "name": "Кизляр",
+    "emblem": null
+  },
+  {
+    "name": "Кимовск",
+    "emblem": null
+  },
+  {
+    "name": "Кимры",
+    "emblem": null
+  },
+  {
+    "name": "Кингисепп",
+    "emblem": null
+  },
+  {
+    "name": "Кинель",
+    "emblem": null
+  },
+  {
+    "name": "Кинешма",
+    "emblem": null
+  },
+  {
+    "name": "Киреевск",
+    "emblem": null
+  },
+  {
+    "name": "Киренск",
+    "emblem": null
+  },
+  {
+    "name": "Киржач",
+    "emblem": null
+  },
+  {
+    "name": "Кириллов",
+    "emblem": null
+  },
+  {
+    "name": "Кириши",
+    "emblem": null
+  },
+  {
+    "name": "Киров",
+    "emblem": null
+  },
+  {
+    "name": "Киров",
+    "emblem": null
+  },
+  {
+    "name": "Кировград",
+    "emblem": null
+  },
+  {
+    "name": "Кирово-Чепецк",
+    "emblem": null
+  },
+  {
+    "name": "Кировск",
+    "emblem": null
+  },
+  {
+    "name": "Кировск",
+    "emblem": null
+  },
+  {
+    "name": "Кирс",
+    "emblem": null
+  },
+  {
+    "name": "Кирсанов",
+    "emblem": null
+  },
+  {
+    "name": "Киселёвск",
+    "emblem": null
+  },
+  {
+    "name": "Кисловодск",
+    "emblem": null
+  },
+  {
+    "name": "Клин",
+    "emblem": null
+  },
+  {
+    "name": "Клинцы",
+    "emblem": null
+  },
+  {
+    "name": "Княгинино",
+    "emblem": null
+  },
+  {
+    "name": "Ковдор",
+    "emblem": null
+  },
+  {
+    "name": "Ковров",
+    "emblem": null
+  },
+  {
+    "name": "Ковылкино",
+    "emblem": null
+  },
+  {
+    "name": "Когалым",
+    "emblem": null
+  },
+  {
+    "name": "Кодинск",
+    "emblem": null
+  },
+  {
+    "name": "Козельск",
+    "emblem": null
+  },
+  {
+    "name": "Козловка",
+    "emblem": null
+  },
+  {
+    "name": "Козьмодемьянск",
+    "emblem": null
+  },
+  {
+    "name": "Кола",
+    "emblem": null
+  },
+  {
+    "name": "Кологрив",
+    "emblem": null
+  },
+  {
+    "name": "Коломна",
+    "emblem": null
+  },
+  {
+    "name": "Колпашево",
+    "emblem": null
+  },
+  {
+    "name": "Кольчугино",
+    "emblem": null
+  },
+  {
+    "name": "Коммунар",
+    "emblem": null
+  },
+  {
+    "name": "Комсомольск",
+    "emblem": null
+  },
+  {
+    "name": "Комсомольск-на-Амуре",
+    "emblem": null
+  },
+  {
+    "name": "Конаково",
+    "emblem": null
+  },
+  {
+    "name": "Кондопога",
+    "emblem": null
+  },
+  {
+    "name": "Кондрово",
+    "emblem": null
+  },
+  {
+    "name": "Константиновск",
+    "emblem": null
+  },
+  {
+    "name": "Копейск",
+    "emblem": null
+  },
+  {
+    "name": "Кораблино",
+    "emblem": null
+  },
+  {
+    "name": "Кореновск",
+    "emblem": null
+  },
+  {
+    "name": "Коркино",
+    "emblem": null
+  },
+  {
+    "name": "Королёв",
+    "emblem": null
+  },
+  {
+    "name": "Короча",
+    "emblem": null
+  },
+  {
+    "name": "Корсаков",
+    "emblem": null
+  },
+  {
+    "name": "Коряжма",
+    "emblem": null
+  },
+  {
+    "name": "Костерёво",
+    "emblem": null
+  },
+  {
+    "name": "Костомукша",
+    "emblem": null
+  },
+  {
+    "name": "Кострома",
+    "emblem": null
+  },
+  {
+    "name": "Котельники",
+    "emblem": null
+  },
+  {
+    "name": "Котельниково",
+    "emblem": null
+  },
+  {
+    "name": "Котельнич",
+    "emblem": null
+  },
+  {
+    "name": "Котлас",
+    "emblem": null
+  },
+  {
+    "name": "Котово",
+    "emblem": null
+  },
+  {
+    "name": "Котовск",
+    "emblem": null
+  },
+  {
+    "name": "Кохма",
+    "emblem": null
+  },
+  {
+    "name": "Красавино",
+    "emblem": null
+  },
+  {
+    "name": "Красноармейск",
+    "emblem": null
+  },
+  {
+    "name": "Красноармейск",
+    "emblem": null
+  },
+  {
+    "name": "Красновишерск",
+    "emblem": null
+  },
+  {
+    "name": "Красногорск",
+    "emblem": null
+  },
+  {
+    "name": "Краснодар",
+    "emblem": null
+  },
+  {
+    "name": "Краснозаводск",
+    "emblem": null
+  },
+  {
+    "name": "Краснознаменск",
+    "emblem": null
+  },
+  {
+    "name": "Краснознаменск",
+    "emblem": null
+  },
+  {
+    "name": "Краснокаменск",
+    "emblem": null
+  },
+  {
+    "name": "Краснокамск",
+    "emblem": null
+  },
+  {
+    "name": "Красноперекопскне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Краснослободск",
+    "emblem": null
+  },
+  {
+    "name": "Краснослободск",
+    "emblem": null
+  },
+  {
+    "name": "Краснотурьинск",
+    "emblem": null
+  },
+  {
+    "name": "Красноуральск",
+    "emblem": null
+  },
+  {
+    "name": "Красноуфимск",
+    "emblem": null
+  },
+  {
+    "name": "Красноярск",
+    "emblem": null
+  },
+  {
+    "name": "Красный Кут",
+    "emblem": null
+  },
+  {
+    "name": "Красный Сулин",
+    "emblem": null
+  },
+  {
+    "name": "Красный Холм",
+    "emblem": null
+  },
+  {
+    "name": "Кремёнки",
+    "emblem": null
+  },
+  {
+    "name": "Кропоткин",
+    "emblem": null
+  },
+  {
+    "name": "Крымск",
+    "emblem": null
+  },
+  {
+    "name": "Кстово",
+    "emblem": null
+  },
+  {
+    "name": "Кубинка",
+    "emblem": null
+  },
+  {
+    "name": "Кувандык",
+    "emblem": null
+  },
+  {
+    "name": "Кувшиново",
+    "emblem": null
+  },
+  {
+    "name": "Кудрово",
+    "emblem": null
+  },
+  {
+    "name": "Кудымкар",
+    "emblem": null
+  },
+  {
+    "name": "Кузнецк",
+    "emblem": null
+  },
+  {
+    "name": "Куйбышев",
+    "emblem": null
+  },
+  {
+    "name": "Кукмор",
+    "emblem": null
+  },
+  {
+    "name": "Кулебаки",
+    "emblem": null
+  },
+  {
+    "name": "Кумертау",
+    "emblem": null
+  },
+  {
+    "name": "Кунгур",
+    "emblem": null
+  },
+  {
+    "name": "Купино",
+    "emblem": null
+  },
+  {
+    "name": "Курган",
+    "emblem": null
+  },
+  {
+    "name": "Курганинск",
+    "emblem": null
+  },
+  {
+    "name": "Курильск",
+    "emblem": null
+  },
+  {
+    "name": "Курлово",
+    "emblem": null
+  },
+  {
+    "name": "Куровское",
+    "emblem": null
+  },
+  {
+    "name": "Курск",
+    "emblem": null
+  },
+  {
+    "name": "Куртамыш",
+    "emblem": null
+  },
+  {
+    "name": "Курчалой",
+    "emblem": null
+  },
+  {
+    "name": "Курчатов",
+    "emblem": null
+  },
+  {
+    "name": "Куса",
+    "emblem": null
+  },
+  {
+    "name": "Кушва",
+    "emblem": null
+  },
+  {
+    "name": "Кызыл",
+    "emblem": null
+  },
+  {
+    "name": "Кыштым",
+    "emblem": null
+  },
+  {
+    "name": "Кяхта",
+    "emblem": null
+  },
+  {
+    "name": "Лабинск",
+    "emblem": null
+  },
+  {
+    "name": "Лабытнанги",
+    "emblem": null
+  },
+  {
+    "name": "Лагань",
+    "emblem": null
+  },
+  {
+    "name": "Ладушкин",
+    "emblem": null
+  },
+  {
+    "name": "Лаишево",
+    "emblem": null
+  },
+  {
+    "name": "Лакинск",
+    "emblem": null
+  },
+  {
+    "name": "Лангепас",
+    "emblem": null
+  },
+  {
+    "name": "Лахденпохья",
+    "emblem": null
+  },
+  {
+    "name": "Лебедянь",
+    "emblem": null
+  },
+  {
+    "name": "Лениногорск",
+    "emblem": null
+  },
+  {
+    "name": "Ленинск",
+    "emblem": null
+  },
+  {
+    "name": "Ленинск-Кузнецкий",
+    "emblem": null
+  },
+  {
+    "name": "Ленск",
+    "emblem": null
+  },
+  {
+    "name": "Лермонтов",
+    "emblem": null
+  },
+  {
+    "name": "Лесной",
+    "emblem": null
+  },
+  {
+    "name": "Лесозаводск",
+    "emblem": null
+  },
+  {
+    "name": "Лесосибирск",
+    "emblem": null
+  },
+  {
+    "name": "Ливны",
+    "emblem": null
+  },
+  {
+    "name": "Ликино-Дулёво",
+    "emblem": null
+  },
+  {
+    "name": "Липецк",
+    "emblem": null
+  },
+  {
+    "name": "Липки",
+    "emblem": null
+  },
+  {
+    "name": "Лиски",
+    "emblem": null
+  },
+  {
+    "name": "Лихославль",
+    "emblem": null
+  },
+  {
+    "name": "Лобня",
+    "emblem": null
+  },
+  {
+    "name": "Лодейное Поле",
+    "emblem": null
+  },
+  {
+    "name": "Лосино-Петровский",
+    "emblem": null
+  },
+  {
+    "name": "Луга",
+    "emblem": null
+  },
+  {
+    "name": "Луза",
+    "emblem": null
+  },
+  {
+    "name": "Лукоянов",
+    "emblem": null
+  },
+  {
+    "name": "Луховицы",
+    "emblem": null
+  },
+  {
+    "name": "Лысково",
+    "emblem": null
+  },
+  {
+    "name": "Лысьва",
+    "emblem": null
+  },
+  {
+    "name": "Лыткарино",
+    "emblem": null
+  },
+  {
+    "name": "Льгов",
+    "emblem": null
+  },
+  {
+    "name": "Любань",
+    "emblem": null
+  },
+  {
+    "name": "Люберцы",
+    "emblem": null
+  },
+  {
+    "name": "Любим",
+    "emblem": null
+  },
+  {
+    "name": "Людиново",
+    "emblem": null
+  },
+  {
+    "name": "Лянтор",
+    "emblem": null
+  },
+  {
+    "name": "Магадан",
+    "emblem": null
+  },
+  {
+    "name": "Магас",
+    "emblem": null
+  },
+  {
+    "name": "Магнитогорск",
+    "emblem": null
+  },
+  {
+    "name": "Майкоп",
+    "emblem": null
+  },
+  {
+    "name": "Майский",
+    "emblem": null
+  },
+  {
+    "name": "Макаров",
+    "emblem": null
+  },
+  {
+    "name": "Макарьев",
+    "emblem": null
+  },
+  {
+    "name": "Макушино",
+    "emblem": null
+  },
+  {
+    "name": "Малая Вишера",
+    "emblem": null
+  },
+  {
+    "name": "Малгобек",
+    "emblem": null
+  },
+  {
+    "name": "Малмыж",
+    "emblem": null
+  },
+  {
+    "name": "Малоархангельск",
+    "emblem": null
+  },
+  {
+    "name": "Малоярославец",
+    "emblem": null
+  },
+  {
+    "name": "Мамадыш",
+    "emblem": null
+  },
+  {
+    "name": "Мамоново",
+    "emblem": null
+  },
+  {
+    "name": "Мантурово",
+    "emblem": null
+  },
+  {
+    "name": "Мариинск",
+    "emblem": null
+  },
+  {
+    "name": "Мариинский Посад",
+    "emblem": null
+  },
+  {
+    "name": "Маркс",
+    "emblem": null
+  },
+  {
+    "name": "Махачкала",
+    "emblem": null
+  },
+  {
+    "name": "Мглин",
+    "emblem": null
+  },
+  {
+    "name": "Мегион",
+    "emblem": null
+  },
+  {
+    "name": "Медвежьегорск",
+    "emblem": null
+  },
+  {
+    "name": "Медногорск",
+    "emblem": null
+  },
+  {
+    "name": "Медынь",
+    "emblem": null
+  },
+  {
+    "name": "Межгорье",
+    "emblem": null
+  },
+  {
+    "name": "Междуреченск",
+    "emblem": null
+  },
+  {
+    "name": "Мезень",
+    "emblem": null
+  },
+  {
+    "name": "Меленки",
+    "emblem": null
+  },
+  {
+    "name": "Мелеуз",
+    "emblem": null
+  },
+  {
+    "name": "Менделеевск",
+    "emblem": null
+  },
+  {
+    "name": "Мензелинск",
+    "emblem": null
+  },
+  {
+    "name": "Мещовск",
+    "emblem": null
+  },
+  {
+    "name": "Миасс",
+    "emblem": null
+  },
+  {
+    "name": "Микунь",
+    "emblem": null
+  },
+  {
+    "name": "Миллерово",
+    "emblem": null
+  },
+  {
+    "name": "Минеральные Воды",
+    "emblem": null
+  },
+  {
+    "name": "Минусинск",
+    "emblem": null
+  },
+  {
+    "name": "Миньяр",
+    "emblem": null
+  },
+  {
+    "name": "Мирный",
+    "emblem": null
+  },
+  {
+    "name": "Мирный",
+    "emblem": null
+  },
+  {
+    "name": "Михайлов",
+    "emblem": null
+  },
+  {
+    "name": "Михайловка",
+    "emblem": null
+  },
+  {
+    "name": "Михайловск",
+    "emblem": null
+  },
+  {
+    "name": "Михайловск",
+    "emblem": null
+  },
+  {
+    "name": "Мичуринск",
+    "emblem": null
+  },
+  {
+    "name": "Могоча",
+    "emblem": null
+  },
+  {
+    "name": "Можайск",
+    "emblem": null
+  },
+  {
+    "name": "Можга",
+    "emblem": null
+  },
+  {
+    "name": "Моздок",
+    "emblem": null
+  },
+  {
+    "name": "Мончегорск",
+    "emblem": null
+  },
+  {
+    "name": "Морозовск",
+    "emblem": null
+  },
+  {
+    "name": "Моршанск",
+    "emblem": null
+  },
+  {
+    "name": "Мосальск",
+    "emblem": null
+  },
+  {
+    "name": "Москва",
+    "emblem": null
+  },
+  {
+    "name": "Муравленко",
+    "emblem": null
+  },
+  {
+    "name": "Мураши",
+    "emblem": null
+  },
+  {
+    "name": "Мурино",
+    "emblem": null
+  },
+  {
+    "name": "Мурманск",
+    "emblem": null
+  },
+  {
+    "name": "Муром",
+    "emblem": null
+  },
+  {
+    "name": "Мценск",
+    "emblem": null
+  },
+  {
+    "name": "Мыски",
+    "emblem": null
+  },
+  {
+    "name": "Мытищи",
+    "emblem": null
+  },
+  {
+    "name": "Мышкин",
+    "emblem": null
+  },
+  {
+    "name": "Набережные Челны",
+    "emblem": null
+  },
+  {
+    "name": "Навашино",
+    "emblem": null
+  },
+  {
+    "name": "Наволоки",
+    "emblem": null
+  },
+  {
+    "name": "Надым",
+    "emblem": null
+  },
+  {
+    "name": "Назарово",
+    "emblem": null
+  },
+  {
+    "name": "Назрань",
+    "emblem": null
+  },
+  {
+    "name": "Называевск",
+    "emblem": null
+  },
+  {
+    "name": "Нальчик",
+    "emblem": null
+  },
+  {
+    "name": "Нариманов",
+    "emblem": null
+  },
+  {
+    "name": "Наро-Фоминск",
+    "emblem": null
+  },
+  {
+    "name": "Нарткала",
+    "emblem": null
+  },
+  {
+    "name": "Нарьян-Мар",
+    "emblem": null
+  },
+  {
+    "name": "Находка",
+    "emblem": null
+  },
+  {
+    "name": "Невель",
+    "emblem": null
+  },
+  {
+    "name": "Невельск",
+    "emblem": null
+  },
+  {
+    "name": "Невинномысск",
+    "emblem": null
+  },
+  {
+    "name": "Невьянск",
+    "emblem": null
+  },
+  {
+    "name": "Нелидово",
+    "emblem": null
+  },
+  {
+    "name": "Неман",
+    "emblem": null
+  },
+  {
+    "name": "Нерехта",
+    "emblem": null
+  },
+  {
+    "name": "Нерчинск",
+    "emblem": null
+  },
+  {
+    "name": "Нерюнгри",
+    "emblem": null
+  },
+  {
+    "name": "Нестеров",
+    "emblem": null
+  },
+  {
+    "name": "Нефтегорск",
+    "emblem": null
+  },
+  {
+    "name": "Нефтекамск",
+    "emblem": null
+  },
+  {
+    "name": "Нефтекумск",
+    "emblem": null
+  },
+  {
+    "name": "Нефтеюганск",
+    "emblem": null
+  },
+  {
+    "name": "Нея",
+    "emblem": null
+  },
+  {
+    "name": "Нижневартовск",
+    "emblem": null
+  },
+  {
+    "name": "Нижнекамск",
+    "emblem": null
+  },
+  {
+    "name": "Нижнеудинск",
+    "emblem": null
+  },
+  {
+    "name": "Нижние Серги",
+    "emblem": null
+  },
+  {
+    "name": "Нижний Ломов",
+    "emblem": null
+  },
+  {
+    "name": "Нижний Новгород",
+    "emblem": null
+  },
+  {
+    "name": "Нижний Тагил",
+    "emblem": null
+  },
+  {
+    "name": "Нижняя Салда",
+    "emblem": null
+  },
+  {
+    "name": "Нижняя Тура",
+    "emblem": null
+  },
+  {
+    "name": "Николаевск",
+    "emblem": null
+  },
+  {
+    "name": "Николаевск-на-Амуре",
+    "emblem": null
+  },
+  {
+    "name": "Никольск",
+    "emblem": null
+  },
+  {
+    "name": "Никольск",
+    "emblem": null
+  },
+  {
+    "name": "Никольское",
+    "emblem": null
+  },
+  {
+    "name": "Новая Ладога",
+    "emblem": null
+  },
+  {
+    "name": "Новая Ляля",
+    "emblem": null
+  },
+  {
+    "name": "Новоалександровск",
+    "emblem": null
+  },
+  {
+    "name": "Новоалтайск",
+    "emblem": null
+  },
+  {
+    "name": "Новоаннинский",
+    "emblem": null
+  },
+  {
+    "name": "Нововоронеж",
+    "emblem": null
+  },
+  {
+    "name": "Новодвинск",
+    "emblem": null
+  },
+  {
+    "name": "Новозыбков",
+    "emblem": null
+  },
+  {
+    "name": "Новокубанск",
+    "emblem": null
+  },
+  {
+    "name": "Новокузнецк",
+    "emblem": null
+  },
+  {
+    "name": "Новокуйбышевск",
+    "emblem": null
+  },
+  {
+    "name": "Новомичуринск",
+    "emblem": null
+  },
+  {
+    "name": "Новомосковск",
+    "emblem": null
+  },
+  {
+    "name": "Новопавловск",
+    "emblem": null
+  },
+  {
+    "name": "Новоржев",
+    "emblem": null
+  },
+  {
+    "name": "Новороссийск",
+    "emblem": null
+  },
+  {
+    "name": "Новосибирск",
+    "emblem": null
+  },
+  {
+    "name": "Новосиль",
+    "emblem": null
+  },
+  {
+    "name": "Новосокольники",
+    "emblem": null
+  },
+  {
+    "name": "Новотроицк",
+    "emblem": null
+  },
+  {
+    "name": "Новоузенск",
+    "emblem": null
+  },
+  {
+    "name": "Новоульяновск",
+    "emblem": null
+  },
+  {
+    "name": "Новоуральск",
+    "emblem": null
+  },
+  {
+    "name": "Новохопёрск",
+    "emblem": null
+  },
+  {
+    "name": "Новочебоксарск",
+    "emblem": null
+  },
+  {
+    "name": "Новочеркасск",
+    "emblem": null
+  },
+  {
+    "name": "Новошахтинск",
+    "emblem": null
+  },
+  {
+    "name": "Новый Оскол",
+    "emblem": null
+  },
+  {
+    "name": "Новый Уренгой",
+    "emblem": null
+  },
+  {
+    "name": "Ногинск",
+    "emblem": null
+  },
+  {
+    "name": "Нолинск",
+    "emblem": null
+  },
+  {
+    "name": "Норильск",
+    "emblem": null
+  },
+  {
+    "name": "Ноябрьск",
+    "emblem": null
+  },
+  {
+    "name": "Нурлат",
+    "emblem": null
+  },
+  {
+    "name": "Нытва",
+    "emblem": null
+  },
+  {
+    "name": "Нюрба",
+    "emblem": null
+  },
+  {
+    "name": "Нягань",
+    "emblem": null
+  },
+  {
+    "name": "Нязепетровск",
+    "emblem": null
+  },
+  {
+    "name": "Няндома",
+    "emblem": null
+  },
+  {
+    "name": "Облучье",
+    "emblem": null
+  },
+  {
+    "name": "Обнинск",
+    "emblem": null
+  },
+  {
+    "name": "Обоянь",
+    "emblem": null
+  },
+  {
+    "name": "Обь",
+    "emblem": null
+  },
+  {
+    "name": "Одинцово",
+    "emblem": null
+  },
+  {
+    "name": "Озёрск",
+    "emblem": null
+  },
+  {
+    "name": "Озёрск",
+    "emblem": null
+  },
+  {
+    "name": "Озёры",
+    "emblem": null
+  },
+  {
+    "name": "Октябрьск",
+    "emblem": null
+  },
+  {
+    "name": "Октябрьский",
+    "emblem": null
+  },
+  {
+    "name": "Окуловка",
+    "emblem": null
+  },
+  {
+    "name": "Олёкминск",
+    "emblem": null
+  },
+  {
+    "name": "Оленегорск",
+    "emblem": null
+  },
+  {
+    "name": "Олонец",
+    "emblem": null
+  },
+  {
+    "name": "Омск",
+    "emblem": null
+  },
+  {
+    "name": "Омутнинск",
+    "emblem": null
+  },
+  {
+    "name": "Онега",
+    "emblem": null
+  },
+  {
+    "name": "Опочка",
+    "emblem": null
+  },
+  {
+    "name": "Орёл",
+    "emblem": null
+  },
+  {
+    "name": "Оренбург",
+    "emblem": null
+  },
+  {
+    "name": "Орехово-Зуево",
+    "emblem": null
+  },
+  {
+    "name": "Орлов",
+    "emblem": null
+  },
+  {
+    "name": "Орск",
+    "emblem": null
+  },
+  {
+    "name": "Оса",
+    "emblem": null
+  },
+  {
+    "name": "Осинники",
+    "emblem": null
+  },
+  {
+    "name": "Осташков",
+    "emblem": null
+  },
+  {
+    "name": "Остров",
+    "emblem": null
+  },
+  {
+    "name": "Островной",
+    "emblem": null
+  },
+  {
+    "name": "Острогожск",
+    "emblem": null
+  },
+  {
+    "name": "Отрадное",
+    "emblem": null
+  },
+  {
+    "name": "Отрадный",
+    "emblem": null
+  },
+  {
+    "name": "Оха",
+    "emblem": null
+  },
+  {
+    "name": "Оханск",
+    "emblem": null
+  },
+  {
+    "name": "Очёр",
+    "emblem": null
+  },
+  {
+    "name": "Павлово",
+    "emblem": null
+  },
+  {
+    "name": "Павловск",
+    "emblem": null
+  },
+  {
+    "name": "Павловский Посад",
+    "emblem": null
+  },
+  {
+    "name": "Палласовка",
+    "emblem": null
+  },
+  {
+    "name": "Партизанск",
+    "emblem": null
+  },
+  {
+    "name": "Певек",
+    "emblem": null
+  },
+  {
+    "name": "Пенза",
+    "emblem": null
+  },
+  {
+    "name": "Первомайск",
+    "emblem": null
+  },
+  {
+    "name": "Первоуральск",
+    "emblem": null
+  },
+  {
+    "name": "Перевоз",
+    "emblem": null
+  },
+  {
+    "name": "Пересвет",
+    "emblem": null
+  },
+  {
+    "name": "Переславль-Залесский",
+    "emblem": null
+  },
+  {
+    "name": "Пермь",
+    "emblem": null
+  },
+  {
+    "name": "Пестово",
+    "emblem": null
+  },
+  {
+    "name": "Петров Вал",
+    "emblem": null
+  },
+  {
+    "name": "Петровск",
+    "emblem": null
+  },
+  {
+    "name": "Петровск-Забайкальский",
+    "emblem": null
+  },
+  {
+    "name": "Петрозаводск",
+    "emblem": null
+  },
+  {
+    "name": "Петропавловск-Камчатский",
+    "emblem": null
+  },
+  {
+    "name": "Петухово",
+    "emblem": null
+  },
+  {
+    "name": "Петушки",
+    "emblem": null
+  },
+  {
+    "name": "Печора",
+    "emblem": null
+  },
+  {
+    "name": "Печоры",
+    "emblem": null
+  },
+  {
+    "name": "Пикалёво",
+    "emblem": null
+  },
+  {
+    "name": "Пионерский",
+    "emblem": null
+  },
+  {
+    "name": "Питкяранта",
+    "emblem": null
+  },
+  {
+    "name": "Плавск",
+    "emblem": null
+  },
+  {
+    "name": "Пласт",
+    "emblem": null
+  },
+  {
+    "name": "Плёс",
+    "emblem": null
+  },
+  {
+    "name": "Поворино",
+    "emblem": null
+  },
+  {
+    "name": "Подольск",
+    "emblem": null
+  },
+  {
+    "name": "Подпорожье",
+    "emblem": null
+  },
+  {
+    "name": "Покачи",
+    "emblem": null
+  },
+  {
+    "name": "Покров",
+    "emblem": null
+  },
+  {
+    "name": "Покровск",
+    "emblem": null
+  },
+  {
+    "name": "Полевской",
+    "emblem": null
+  },
+  {
+    "name": "Полесск",
+    "emblem": null
+  },
+  {
+    "name": "Полысаево",
+    "emblem": null
+  },
+  {
+    "name": "Полярные Зори",
+    "emblem": null
+  },
+  {
+    "name": "Полярный",
+    "emblem": null
+  },
+  {
+    "name": "Поронайск",
+    "emblem": null
+  },
+  {
+    "name": "Порхов",
+    "emblem": null
+  },
+  {
+    "name": "Похвистнево",
+    "emblem": null
+  },
+  {
+    "name": "Почеп",
+    "emblem": null
+  },
+  {
+    "name": "Починок",
+    "emblem": null
+  },
+  {
+    "name": "Пошехонье",
+    "emblem": null
+  },
+  {
+    "name": "Правдинск",
+    "emblem": null
+  },
+  {
+    "name": "Приволжск",
+    "emblem": null
+  },
+  {
+    "name": "Приморск",
+    "emblem": null
+  },
+  {
+    "name": "Приморск",
+    "emblem": null
+  },
+  {
+    "name": "Приморско-Ахтарск",
+    "emblem": null
+  },
+  {
+    "name": "Приозерск",
+    "emblem": null
+  },
+  {
+    "name": "Прокопьевск",
+    "emblem": null
+  },
+  {
+    "name": "Пролетарск",
+    "emblem": null
+  },
+  {
+    "name": "Протвино",
+    "emblem": null
+  },
+  {
+    "name": "Прохладный",
+    "emblem": null
+  },
+  {
+    "name": "Псков",
+    "emblem": null
+  },
+  {
+    "name": "Пугачёв",
+    "emblem": null
+  },
+  {
+    "name": "Пудож",
+    "emblem": null
+  },
+  {
+    "name": "Пустошка",
+    "emblem": null
+  },
+  {
+    "name": "Пучеж",
+    "emblem": null
+  },
+  {
+    "name": "Пушкино",
+    "emblem": null
+  },
+  {
+    "name": "Пущино",
+    "emblem": null
+  },
+  {
+    "name": "Пыталово",
+    "emblem": null
+  },
+  {
+    "name": "Пыть-Ях",
+    "emblem": null
+  },
+  {
+    "name": "Пятигорск",
+    "emblem": null
+  },
+  {
+    "name": "Радужный",
+    "emblem": null
+  },
+  {
+    "name": "Радужный",
+    "emblem": null
+  },
+  {
+    "name": "Райчихинск",
+    "emblem": null
+  },
+  {
+    "name": "Раменское",
+    "emblem": null
+  },
+  {
+    "name": "Рассказово",
+    "emblem": null
+  },
+  {
+    "name": "Ревда",
+    "emblem": null
+  },
+  {
+    "name": "Реж",
+    "emblem": null
+  },
+  {
+    "name": "Реутов",
+    "emblem": null
+  },
+  {
+    "name": "Ржев",
+    "emblem": null
+  },
+  {
+    "name": "Родники",
+    "emblem": null
+  },
+  {
+    "name": "Рославль",
+    "emblem": null
+  },
+  {
+    "name": "Россошь",
+    "emblem": null
+  },
+  {
+    "name": "Ростов-на-Дону",
+    "emblem": null
+  },
+  {
+    "name": "Ростов",
+    "emblem": null
+  },
+  {
+    "name": "Рошаль",
+    "emblem": null
+  },
+  {
+    "name": "Ртищево",
+    "emblem": null
+  },
+  {
+    "name": "Рубцовск",
+    "emblem": null
+  },
+  {
+    "name": "Рудня",
+    "emblem": null
+  },
+  {
+    "name": "Руза",
+    "emblem": null
+  },
+  {
+    "name": "Рузаевка",
+    "emblem": null
+  },
+  {
+    "name": "Рыбинск",
+    "emblem": null
+  },
+  {
+    "name": "Рыбное",
+    "emblem": null
+  },
+  {
+    "name": "Рыльск",
+    "emblem": null
+  },
+  {
+    "name": "Ряжск",
+    "emblem": null
+  },
+  {
+    "name": "Рязань",
+    "emblem": null
+  },
+  {
+    "name": "Сакине призн.",
+    "emblem": null
+  },
+  {
+    "name": "Салават",
+    "emblem": null
+  },
+  {
+    "name": "Салаир",
+    "emblem": null
+  },
+  {
+    "name": "Салехард",
+    "emblem": null
+  },
+  {
+    "name": "Сальск",
+    "emblem": null
+  },
+  {
+    "name": "Самара",
+    "emblem": null
+  },
+  {
+    "name": "Санкт-Петербург",
+    "emblem": null
+  },
+  {
+    "name": "Саранск",
+    "emblem": null
+  },
+  {
+    "name": "Сарапул",
+    "emblem": null
+  },
+  {
+    "name": "Саратов",
+    "emblem": null
+  },
+  {
+    "name": "Саров",
+    "emblem": null
+  },
+  {
+    "name": "Сасово",
+    "emblem": null
+  },
+  {
+    "name": "Сатка",
+    "emblem": null
+  },
+  {
+    "name": "Сафоново",
+    "emblem": null
+  },
+  {
+    "name": "Саяногорск",
+    "emblem": null
+  },
+  {
+    "name": "Саянск",
+    "emblem": null
+  },
+  {
+    "name": "Светлогорск",
+    "emblem": null
+  },
+  {
+    "name": "Светлоград",
+    "emblem": null
+  },
+  {
+    "name": "Светлый",
+    "emblem": null
+  },
+  {
+    "name": "Светогорск",
+    "emblem": null
+  },
+  {
+    "name": "Свирск",
+    "emblem": null
+  },
+  {
+    "name": "Свободный",
+    "emblem": null
+  },
+  {
+    "name": "Себеж",
+    "emblem": null
+  },
+  {
+    "name": "Севастопольне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Северо-Курильск",
+    "emblem": null
+  },
+  {
+    "name": "Северобайкальск",
+    "emblem": null
+  },
+  {
+    "name": "Северодвинск",
+    "emblem": null
+  },
+  {
+    "name": "Североморск",
+    "emblem": null
+  },
+  {
+    "name": "Североуральск",
+    "emblem": null
+  },
+  {
+    "name": "Северск",
+    "emblem": null
+  },
+  {
+    "name": "Севск",
+    "emblem": null
+  },
+  {
+    "name": "Сегежа",
+    "emblem": null
+  },
+  {
+    "name": "Сельцо",
+    "emblem": null
+  },
+  {
+    "name": "Семёнов",
+    "emblem": null
+  },
+  {
+    "name": "Семикаракорск",
+    "emblem": null
+  },
+  {
+    "name": "Семилуки",
+    "emblem": null
+  },
+  {
+    "name": "Сенгилей",
+    "emblem": null
+  },
+  {
+    "name": "Серафимович",
+    "emblem": null
+  },
+  {
+    "name": "Сергач",
+    "emblem": null
+  },
+  {
+    "name": "Сергиев Посад",
+    "emblem": null
+  },
+  {
+    "name": "Сердобск",
+    "emblem": null
+  },
+  {
+    "name": "Серов",
+    "emblem": null
+  },
+  {
+    "name": "Серпухов",
+    "emblem": null
+  },
+  {
+    "name": "Сертолово",
+    "emblem": null
+  },
+  {
+    "name": "Сибай",
+    "emblem": null
+  },
+  {
+    "name": "Сим",
+    "emblem": null
+  },
+  {
+    "name": "Симферопольне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Сковородино",
+    "emblem": null
+  },
+  {
+    "name": "Скопин",
+    "emblem": null
+  },
+  {
+    "name": "Славгород",
+    "emblem": null
+  },
+  {
+    "name": "Славск",
+    "emblem": null
+  },
+  {
+    "name": "Славянск-на-Кубани",
+    "emblem": null
+  },
+  {
+    "name": "Сланцы",
+    "emblem": null
+  },
+  {
+    "name": "Слободской",
+    "emblem": null
+  },
+  {
+    "name": "Слюдянка",
+    "emblem": null
+  },
+  {
+    "name": "Смоленск",
+    "emblem": null
+  },
+  {
+    "name": "Снежинск",
+    "emblem": null
+  },
+  {
+    "name": "Снежногорск",
+    "emblem": null
+  },
+  {
+    "name": "Собинка",
+    "emblem": null
+  },
+  {
+    "name": "Советск",
+    "emblem": null
+  },
+  {
+    "name": "Советск",
+    "emblem": null
+  },
+  {
+    "name": "Советск",
+    "emblem": null
+  },
+  {
+    "name": "Советская Гавань",
+    "emblem": null
+  },
+  {
+    "name": "Советский",
+    "emblem": null
+  },
+  {
+    "name": "Сокол",
+    "emblem": null
+  },
+  {
+    "name": "Солигалич",
+    "emblem": null
+  },
+  {
+    "name": "Соликамск",
+    "emblem": null
+  },
+  {
+    "name": "Солнечногорск",
+    "emblem": null
+  },
+  {
+    "name": "Соль-Илецк",
+    "emblem": null
+  },
+  {
+    "name": "Сольвычегодск",
+    "emblem": null
+  },
+  {
+    "name": "Сольцы",
+    "emblem": null
+  },
+  {
+    "name": "Сорочинск",
+    "emblem": null
+  },
+  {
+    "name": "Сорск",
+    "emblem": null
+  },
+  {
+    "name": "Сортавала",
+    "emblem": null
+  },
+  {
+    "name": "Сосенский",
+    "emblem": null
+  },
+  {
+    "name": "Сосновка",
+    "emblem": null
+  },
+  {
+    "name": "Сосновоборск",
+    "emblem": null
+  },
+  {
+    "name": "Сосновый Бор",
+    "emblem": null
+  },
+  {
+    "name": "Сосногорск",
+    "emblem": null
+  },
+  {
+    "name": "Сочи",
+    "emblem": null
+  },
+  {
+    "name": "Спас-Деменск",
+    "emblem": null
+  },
+  {
+    "name": "Спас-Клепики",
+    "emblem": null
+  },
+  {
+    "name": "Спасск",
+    "emblem": null
+  },
+  {
+    "name": "Спасск-Дальний",
+    "emblem": null
+  },
+  {
+    "name": "Спасск-Рязанский",
+    "emblem": null
+  },
+  {
+    "name": "Среднеколымск",
+    "emblem": null
+  },
+  {
+    "name": "Среднеуральск",
+    "emblem": null
+  },
+  {
+    "name": "Сретенск",
+    "emblem": null
+  },
+  {
+    "name": "Ставрополь",
+    "emblem": null
+  },
+  {
+    "name": "Старая Купавна",
+    "emblem": null
+  },
+  {
+    "name": "Старая Русса",
+    "emblem": null
+  },
+  {
+    "name": "Старица",
+    "emblem": null
+  },
+  {
+    "name": "Стародуб",
+    "emblem": null
+  },
+  {
+    "name": "Старый Крымне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Старый Оскол",
+    "emblem": null
+  },
+  {
+    "name": "Стерлитамак",
+    "emblem": null
+  },
+  {
+    "name": "Стрежевой",
+    "emblem": null
+  },
+  {
+    "name": "Строитель",
+    "emblem": null
+  },
+  {
+    "name": "Струнино",
+    "emblem": null
+  },
+  {
+    "name": "Ступино",
+    "emblem": null
+  },
+  {
+    "name": "Суворов",
+    "emblem": null
+  },
+  {
+    "name": "Судакне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Суджа",
+    "emblem": null
+  },
+  {
+    "name": "Судогда",
+    "emblem": null
+  },
+  {
+    "name": "Суздаль",
+    "emblem": null
+  },
+  {
+    "name": "Сунжа",
+    "emblem": null
+  },
+  {
+    "name": "Суоярви",
+    "emblem": null
+  },
+  {
+    "name": "Сураж",
+    "emblem": null
+  },
+  {
+    "name": "Сургут",
+    "emblem": null
+  },
+  {
+    "name": "Суровикино",
+    "emblem": null
+  },
+  {
+    "name": "Сурск",
+    "emblem": null
+  },
+  {
+    "name": "Сусуман",
+    "emblem": null
+  },
+  {
+    "name": "Сухиничи",
+    "emblem": null
+  },
+  {
+    "name": "Сухой Лог",
+    "emblem": null
+  },
+  {
+    "name": "Сызрань",
+    "emblem": null
+  },
+  {
+    "name": "Сыктывкар",
+    "emblem": null
+  },
+  {
+    "name": "Сысерть",
+    "emblem": null
+  },
+  {
+    "name": "Сычёвка",
+    "emblem": null
+  },
+  {
+    "name": "Сясьстрой",
+    "emblem": null
+  },
+  {
+    "name": "Тавда",
+    "emblem": null
+  },
+  {
+    "name": "Таганрог",
+    "emblem": null
+  },
+  {
+    "name": "Тайга",
+    "emblem": null
+  },
+  {
+    "name": "Тайшет",
+    "emblem": null
+  },
+  {
+    "name": "Талдом",
+    "emblem": null
+  },
+  {
+    "name": "Талица",
+    "emblem": null
+  },
+  {
+    "name": "Тамбов",
+    "emblem": null
+  },
+  {
+    "name": "Тара",
+    "emblem": null
+  },
+  {
+    "name": "Тарко-Сале",
+    "emblem": null
+  },
+  {
+    "name": "Таруса",
+    "emblem": null
+  },
+  {
+    "name": "Татарск",
+    "emblem": null
+  },
+  {
+    "name": "Таштагол",
+    "emblem": null
+  },
+  {
+    "name": "Тверь",
+    "emblem": null
+  },
+  {
+    "name": "Теберда",
+    "emblem": null
+  },
+  {
+    "name": "Тейково",
+    "emblem": null
+  },
+  {
+    "name": "Темников",
+    "emblem": null
+  },
+  {
+    "name": "Темрюк",
+    "emblem": null
+  },
+  {
+    "name": "Терек",
+    "emblem": null
+  },
+  {
+    "name": "Тетюши",
+    "emblem": null
+  },
+  {
+    "name": "Тимашёвск",
+    "emblem": null
+  },
+  {
+    "name": "Тихвин",
+    "emblem": null
+  },
+  {
+    "name": "Тихорецк",
+    "emblem": null
+  },
+  {
+    "name": "Тобольск",
+    "emblem": null
+  },
+  {
+    "name": "Тогучин",
+    "emblem": null
+  },
+  {
+    "name": "Тольятти",
+    "emblem": null
+  },
+  {
+    "name": "Томари",
+    "emblem": null
+  },
+  {
+    "name": "Томмот",
+    "emblem": null
+  },
+  {
+    "name": "Томск",
+    "emblem": null
+  },
+  {
+    "name": "Топки",
+    "emblem": null
+  },
+  {
+    "name": "Торжок",
+    "emblem": null
+  },
+  {
+    "name": "Торопец",
+    "emblem": null
+  },
+  {
+    "name": "Тосно",
+    "emblem": null
+  },
+  {
+    "name": "Тотьма",
+    "emblem": null
+  },
+  {
+    "name": "Трёхгорный",
+    "emblem": null
+  },
+  {
+    "name": "Троицк",
+    "emblem": null
+  },
+  {
+    "name": "Трубчевск",
+    "emblem": null
+  },
+  {
+    "name": "Туапсе",
+    "emblem": null
+  },
+  {
+    "name": "Туймазы",
+    "emblem": null
+  },
+  {
+    "name": "Тула",
+    "emblem": null
+  },
+  {
+    "name": "Тулун",
+    "emblem": null
+  },
+  {
+    "name": "Туран",
+    "emblem": null
+  },
+  {
+    "name": "Туринск",
+    "emblem": null
+  },
+  {
+    "name": "Тутаев",
+    "emblem": null
+  },
+  {
+    "name": "Тында",
+    "emblem": null
+  },
+  {
+    "name": "Тырныауз",
+    "emblem": null
+  },
+  {
+    "name": "Тюкалинск",
+    "emblem": null
+  },
+  {
+    "name": "Тюмень",
+    "emblem": null
+  },
+  {
+    "name": "Уварово",
+    "emblem": null
+  },
+  {
+    "name": "Углегорск",
+    "emblem": null
+  },
+  {
+    "name": "Углич",
+    "emblem": null
+  },
+  {
+    "name": "Удачный",
+    "emblem": null
+  },
+  {
+    "name": "Удомля",
+    "emblem": null
+  },
+  {
+    "name": "Ужур",
+    "emblem": null
+  },
+  {
+    "name": "Узловая",
+    "emblem": null
+  },
+  {
+    "name": "Улан-Удэ",
+    "emblem": null
+  },
+  {
+    "name": "Ульяновск",
+    "emblem": null
+  },
+  {
+    "name": "Унеча",
+    "emblem": null
+  },
+  {
+    "name": "Урай",
+    "emblem": null
+  },
+  {
+    "name": "Урень",
+    "emblem": null
+  },
+  {
+    "name": "Уржум",
+    "emblem": null
+  },
+  {
+    "name": "Урус-Мартан",
+    "emblem": null
+  },
+  {
+    "name": "Урюпинск",
+    "emblem": null
+  },
+  {
+    "name": "Усинск",
+    "emblem": null
+  },
+  {
+    "name": "Усмань",
+    "emblem": null
+  },
+  {
+    "name": "Усолье-Сибирское",
+    "emblem": null
+  },
+  {
+    "name": "Усолье",
+    "emblem": null
+  },
+  {
+    "name": "Уссурийск",
+    "emblem": null
+  },
+  {
+    "name": "Усть-Джегута",
+    "emblem": null
+  },
+  {
+    "name": "Усть-Илимск",
+    "emblem": null
+  },
+  {
+    "name": "Усть-Катав",
+    "emblem": null
+  },
+  {
+    "name": "Усть-Кут",
+    "emblem": null
+  },
+  {
+    "name": "Усть-Лабинск",
+    "emblem": null
+  },
+  {
+    "name": "Устюжна",
+    "emblem": null
+  },
+  {
+    "name": "Уфа",
+    "emblem": null
+  },
+  {
+    "name": "Ухта",
+    "emblem": null
+  },
+  {
+    "name": "Учалы",
+    "emblem": null
+  },
+  {
+    "name": "Уяр",
+    "emblem": null
+  },
+  {
+    "name": "Фатеж",
+    "emblem": null
+  },
+  {
+    "name": "Феодосияне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Фокино",
+    "emblem": null
+  },
+  {
+    "name": "Фокино",
+    "emblem": null
+  },
+  {
+    "name": "Фролово",
+    "emblem": null
+  },
+  {
+    "name": "Фрязино",
+    "emblem": null
+  },
+  {
+    "name": "Фурманов",
+    "emblem": null
+  },
+  {
+    "name": "Хабаровск",
+    "emblem": null
+  },
+  {
+    "name": "Хадыженск",
+    "emblem": null
+  },
+  {
+    "name": "Ханты-Мансийск",
+    "emblem": null
+  },
+  {
+    "name": "Харабали",
+    "emblem": null
+  },
+  {
+    "name": "Харовск",
+    "emblem": null
+  },
+  {
+    "name": "Хасавюрт",
+    "emblem": null
+  },
+  {
+    "name": "Хвалынск",
+    "emblem": null
+  },
+  {
+    "name": "Хилок",
+    "emblem": null
+  },
+  {
+    "name": "Химки",
+    "emblem": null
+  },
+  {
+    "name": "Холм",
+    "emblem": null
+  },
+  {
+    "name": "Холмск",
+    "emblem": null
+  },
+  {
+    "name": "Хотьково",
+    "emblem": null
+  },
+  {
+    "name": "Цивильск",
+    "emblem": null
+  },
+  {
+    "name": "Цимлянск",
+    "emblem": null
+  },
+  {
+    "name": "Циолковский",
+    "emblem": null
+  },
+  {
+    "name": "Чадан",
+    "emblem": null
+  },
+  {
+    "name": "Чайковский",
+    "emblem": null
+  },
+  {
+    "name": "Чапаевск",
+    "emblem": null
+  },
+  {
+    "name": "Чаплыгин",
+    "emblem": null
+  },
+  {
+    "name": "Чебаркуль",
+    "emblem": null
+  },
+  {
+    "name": "Чебоксары",
+    "emblem": null
+  },
+  {
+    "name": "Чегем",
+    "emblem": null
+  },
+  {
+    "name": "Чекалин",
+    "emblem": null
+  },
+  {
+    "name": "Челябинск",
+    "emblem": null
+  },
+  {
+    "name": "Чердынь",
+    "emblem": null
+  },
+  {
+    "name": "Черемхово",
+    "emblem": null
+  },
+  {
+    "name": "Черепаново",
+    "emblem": null
+  },
+  {
+    "name": "Череповец",
+    "emblem": null
+  },
+  {
+    "name": "Черкесск",
+    "emblem": null
+  },
+  {
+    "name": "Чёрмоз",
+    "emblem": null
+  },
+  {
+    "name": "Черноголовка",
+    "emblem": null
+  },
+  {
+    "name": "Черногорск",
+    "emblem": null
+  },
+  {
+    "name": "Чернушка",
+    "emblem": null
+  },
+  {
+    "name": "Черняховск",
+    "emblem": null
+  },
+  {
+    "name": "Чехов",
+    "emblem": null
+  },
+  {
+    "name": "Чистополь",
+    "emblem": null
+  },
+  {
+    "name": "Чита",
+    "emblem": null
+  },
+  {
+    "name": "Чкаловск",
+    "emblem": null
+  },
+  {
+    "name": "Чудово",
+    "emblem": null
+  },
+  {
+    "name": "Чулым",
+    "emblem": null
+  },
+  {
+    "name": "Чусовой",
+    "emblem": null
+  },
+  {
+    "name": "Чухлома",
+    "emblem": null
+  },
+  {
+    "name": "Шагонар",
+    "emblem": null
+  },
+  {
+    "name": "Шадринск",
+    "emblem": null
+  },
+  {
+    "name": "Шали",
+    "emblem": null
+  },
+  {
+    "name": "Шарыпово",
+    "emblem": null
+  },
+  {
+    "name": "Шарья",
+    "emblem": null
+  },
+  {
+    "name": "Шатура",
+    "emblem": null
+  },
+  {
+    "name": "Шахты",
+    "emblem": null
+  },
+  {
+    "name": "Шахунья",
+    "emblem": null
+  },
+  {
+    "name": "Шацк",
+    "emblem": null
+  },
+  {
+    "name": "Шебекино",
+    "emblem": null
+  },
+  {
+    "name": "Шелехов",
+    "emblem": null
+  },
+  {
+    "name": "Шенкурск",
+    "emblem": null
+  },
+  {
+    "name": "Шилка",
+    "emblem": null
+  },
+  {
+    "name": "Шимановск",
+    "emblem": null
+  },
+  {
+    "name": "Шиханы",
+    "emblem": null
+  },
+  {
+    "name": "Шлиссельбург",
+    "emblem": null
+  },
+  {
+    "name": "Шумерля",
+    "emblem": null
+  },
+  {
+    "name": "Шумиха",
+    "emblem": null
+  },
+  {
+    "name": "Шуя",
+    "emblem": null
+  },
+  {
+    "name": "Щёкино",
+    "emblem": null
+  },
+  {
+    "name": "Щёлкиноне призн.",
+    "emblem": null
+  },
+  {
+    "name": "Щёлково",
+    "emblem": null
+  },
+  {
+    "name": "Щигры",
+    "emblem": null
+  },
+  {
+    "name": "Щучье",
+    "emblem": null
+  },
+  {
+    "name": "Электрогорск",
+    "emblem": null
+  },
+  {
+    "name": "Электросталь",
+    "emblem": null
+  },
+  {
+    "name": "Электроугли",
+    "emblem": null
+  },
+  {
+    "name": "Элиста",
+    "emblem": null
+  },
+  {
+    "name": "Энгельс",
+    "emblem": null
+  },
+  {
+    "name": "Эртиль",
+    "emblem": null
+  },
+  {
+    "name": "Югорск",
+    "emblem": null
+  },
+  {
+    "name": "Южа",
+    "emblem": null
+  },
+  {
+    "name": "Южно-Сахалинск",
+    "emblem": null
+  },
+  {
+    "name": "Южно-Сухокумск",
+    "emblem": null
+  },
+  {
+    "name": "Южноуральск",
+    "emblem": null
+  },
+  {
+    "name": "Юрга",
+    "emblem": null
+  },
+  {
+    "name": "Юрьев-Польский",
+    "emblem": null
+  },
+  {
+    "name": "Юрьевец",
+    "emblem": null
+  },
+  {
+    "name": "Юрюзань",
+    "emblem": null
+  },
+  {
+    "name": "Юхнов",
+    "emblem": null
+  },
+  {
+    "name": "Ядрин",
+    "emblem": null
+  },
+  {
+    "name": "Якутск",
+    "emblem": null
+  },
+  {
+    "name": "Ялтане призн.",
+    "emblem": null
+  },
+  {
+    "name": "Ялуторовск",
+    "emblem": null
+  },
+  {
+    "name": "Янаул",
+    "emblem": null
+  },
+  {
+    "name": "Яранск",
+    "emblem": null
+  },
+  {
+    "name": "Яровое",
+    "emblem": null
+  },
+  {
+    "name": "Ярославль",
+    "emblem": null
+  },
+  {
+    "name": "Ярцево",
+    "emblem": null
+  },
+  {
+    "name": "Ясногорск",
+    "emblem": null
+  },
+  {
+    "name": "Ясный",
+    "emblem": null
+  },
+  {
+    "name": "Яхрома",
+    "emblem": null
+  }
+]

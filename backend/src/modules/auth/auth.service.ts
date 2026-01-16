@@ -8,7 +8,8 @@ import { RefreshToken } from './entities/refresh-token.entity';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
 import { JwtPayload, Tokens } from './interfaces/jwt-payload.interface';
-import { UsersService } from '../user/services/users.service';
+import { UserService } from '../user/services/user.service';
+import { UserRole } from 'src/enums/enums';
 
 @Injectable()
 export class AuthService {
@@ -18,14 +19,14 @@ export class AuthService {
     @InjectModel(RefreshToken)
     private refreshTokenModel: typeof RefreshToken,
     private jwtService: JwtService,
-    private usersService: UsersService,
+    private usersService: UserService,
   ) {}
 
   async register(registerDto: RegisterDto): Promise<Tokens> {
     // Создаем пользователя
     const user = await this.usersService.create({
       ...registerDto,
-      role: 'user',
+      role: UserRole.PARTICIPANT,
     });
 
     // Генерируем токены
@@ -97,7 +98,7 @@ export class AuthService {
     const payload: JwtPayload = {
       sub: user.id,
       email: user.email,
-      username: user.username,
+      name: user.name,
       role: user.role,
     };
 

@@ -1,0 +1,1508 @@
+[
+  {
+    "name": "Абхазия",
+    "eNname": "Abkhazia",
+    "code": "AB",
+    "countryCode": "895"
+  },
+  {
+    "name": "Австралия",
+    "eNname": "Australia",
+    "code": "AU",
+    "countryCode": "36"
+  },
+  {
+    "name": "Австрия",
+    "eNname": "Austria",
+    "code": "AT",
+    "countryCode": "40"
+  },
+  {
+    "name": "Азербайджан",
+    "eNname": "Azerbaijan",
+    "code": "AZ",
+    "countryCode": "31"
+  },
+  {
+    "name": "Албания",
+    "eNname": "Albania",
+    "code": "AL",
+    "countryCode": "8"
+  },
+  {
+    "name": "Алжир",
+    "eNname": "Algeria",
+    "code": "DZ",
+    "countryCode": "12"
+  },
+  {
+    "name": "Американское Самоа",
+    "eNname": "American Samoa",
+    "code": "AS",
+    "countryCode": "16"
+  },
+  {
+    "name": "Ангилья",
+    "eNname": "Anguilla",
+    "code": "AI",
+    "countryCode": "660"
+  },
+  {
+    "name": "Ангола",
+    "eNname": "Angola",
+    "code": "AO",
+    "countryCode": "24"
+  },
+  {
+    "name": "Андорра",
+    "eNname": "Andorra",
+    "code": "AD",
+    "countryCode": "20"
+  },
+  {
+    "name": "Антарктида",
+    "eNname": "Antarctica",
+    "code": "AQ",
+    "countryCode": "10"
+  },
+  {
+    "name": "Антигуа и Барбуда",
+    "eNname": "Antigua and Barbuda",
+    "code": "AG",
+    "countryCode": "28"
+  },
+  {
+    "name": "Аргентина",
+    "eNname": "Argentina",
+    "code": "AR",
+    "countryCode": "32"
+  },
+  {
+    "name": "Армения",
+    "eNname": "Armenia",
+    "code": "AM",
+    "countryCode": "51"
+  },
+  {
+    "name": "Аруба",
+    "eNname": "Aruba",
+    "code": "AW",
+    "countryCode": "533"
+  },
+  {
+    "name": "Афганистан",
+    "eNname": "Afghanistan",
+    "code": "AF",
+    "countryCode": "4"
+  },
+  {
+    "name": "Багамы",
+    "eNname": "Bahamas",
+    "code": "BS",
+    "countryCode": "44"
+  },
+  {
+    "name": "Бангладеш",
+    "eNname": "Bangladesh",
+    "code": "BD",
+    "countryCode": "50"
+  },
+  {
+    "name": "Барбадос",
+    "eNname": "Barbados",
+    "code": "BB",
+    "countryCode": "52"
+  },
+  {
+    "name": "Бахрейн",
+    "eNname": "Bahrain",
+    "code": "BH",
+    "countryCode": "48"
+  },
+  {
+    "name": "Беларусь",
+    "eNname": "Belarus",
+    "code": "BY",
+    "countryCode": "112"
+  },
+  {
+    "name": "Белиз",
+    "eNname": "Belize",
+    "code": "BZ",
+    "countryCode": "84"
+  },
+  {
+    "name": "Бельгия",
+    "eNname": "Belgium",
+    "code": "BE",
+    "countryCode": "56"
+  },
+  {
+    "name": "Бенин",
+    "eNname": "Benin",
+    "code": "BJ",
+    "countryCode": "204"
+  },
+  {
+    "name": "Бермуды",
+    "eNname": "Bermuda",
+    "code": "BM",
+    "countryCode": "60"
+  },
+  {
+    "name": "Болгария",
+    "eNname": "Bulgaria",
+    "code": "BG",
+    "countryCode": "100"
+  },
+  {
+    "name": "Боливия, Многонациональное Государство",
+    "eNname": "Bolivia, plurinational state of",
+    "code": "BO",
+    "countryCode": "68"
+  },
+  {
+    "name": "Бонайре, Саба и Синт-Эстатиус",
+    "eNname": "Bonaire, Sint Eustatius and Saba",
+    "code": "BQ",
+    "countryCode": "535"
+  },
+  {
+    "name": "Босния и Герцеговина",
+    "eNname": "Bosnia and Herzegovina",
+    "code": "BA",
+    "countryCode": "70"
+  },
+  {
+    "name": "Ботсвана",
+    "eNname": "Botswana",
+    "code": "BW",
+    "countryCode": "72"
+  },
+  {
+    "name": "Бразилия",
+    "eNname": "Brazil",
+    "code": "BR",
+    "countryCode": "76"
+  },
+  {
+    "name": "Британская территория в Индийском океане",
+    "eNname": "British Indian Ocean Territory",
+    "code": "IO",
+    "countryCode": "86"
+  },
+  {
+    "name": "Бруней-Даруссалам",
+    "eNname": "Brunei Darussalam",
+    "code": "BN",
+    "countryCode": "96"
+  },
+  {
+    "name": "Буркина-Фасо",
+    "eNname": "Burkina Faso",
+    "code": "BF",
+    "countryCode": "854"
+  },
+  {
+    "name": "Бурунди",
+    "eNname": "Burundi",
+    "code": "BI",
+    "countryCode": "108"
+  },
+  {
+    "name": "Бутан",
+    "eNname": "Bhutan",
+    "code": "BT",
+    "countryCode": "64"
+  },
+  {
+    "name": "Вануату",
+    "eNname": "Vanuatu",
+    "code": "VU",
+    "countryCode": "548"
+  },
+  {
+    "name": "Венгрия",
+    "eNname": "Hungary",
+    "code": "HU",
+    "countryCode": "348"
+  },
+  {
+    "name": "Венесуэла Боливарианская Республика",
+    "eNname": "Venezuela",
+    "code": "VE",
+    "countryCode": "862"
+  },
+  {
+    "name": "Виргинские острова, Британские",
+    "eNname": "Virgin Islands, British",
+    "code": "VG",
+    "countryCode": "92"
+  },
+  {
+    "name": "Виргинские острова, США",
+    "eNname": "Virgin Islands, U.S.",
+    "code": "VI",
+    "countryCode": "850"
+  },
+  {
+    "name": "Вьетнам",
+    "eNname": "Vietnam",
+    "code": "VN",
+    "countryCode": "704"
+  },
+  {
+    "name": "Габон",
+    "eNname": "Gabon",
+    "code": "GA",
+    "countryCode": "266"
+  },
+  {
+    "name": "Гаити",
+    "eNname": "Haiti",
+    "code": "HT",
+    "countryCode": "332"
+  },
+  {
+    "name": "Гайана",
+    "eNname": "Guyana",
+    "code": "GY",
+    "countryCode": "328"
+  },
+  {
+    "name": "Гамбия",
+    "eNname": "Gambia",
+    "code": "GM",
+    "countryCode": "270"
+  },
+  {
+    "name": "Гана",
+    "eNname": "Ghana",
+    "code": "GH",
+    "countryCode": "288"
+  },
+  {
+    "name": "Гваделупа",
+    "eNname": "Guadeloupe",
+    "code": "GP",
+    "countryCode": "312"
+  },
+  {
+    "name": "Гватемала",
+    "eNname": "Guatemala",
+    "code": "GT",
+    "countryCode": "320"
+  },
+  {
+    "name": "Гвинея",
+    "eNname": "Guinea",
+    "code": "GN",
+    "countryCode": "324"
+  },
+  {
+    "name": "Гвинея-Бисау",
+    "eNname": "Guinea-Bissau",
+    "code": "GW",
+    "countryCode": "624"
+  },
+  {
+    "name": "Германия",
+    "eNname": "Germany",
+    "code": "DE",
+    "countryCode": "276"
+  },
+  {
+    "name": "Гернси",
+    "eNname": "Guernsey",
+    "code": "GG",
+    "countryCode": "831"
+  },
+  {
+    "name": "Гибралтар",
+    "eNname": "Gibraltar",
+    "code": "GI",
+    "countryCode": "292"
+  },
+  {
+    "name": "Гондурас",
+    "eNname": "Honduras",
+    "code": "HN",
+    "countryCode": "340"
+  },
+  {
+    "name": "Гонконг",
+    "eNname": "Hong Kong",
+    "code": "HK",
+    "countryCode": "344"
+  },
+  {
+    "name": "Гренада",
+    "eNname": "Grenada",
+    "code": "GD",
+    "countryCode": "308"
+  },
+  {
+    "name": "Гренландия",
+    "eNname": "Greenland",
+    "code": "GL",
+    "countryCode": "304"
+  },
+  {
+    "name": "Греция",
+    "eNname": "Greece",
+    "code": "GR",
+    "countryCode": "300"
+  },
+  {
+    "name": "Грузия",
+    "eNname": "Georgia",
+    "code": "GE",
+    "countryCode": "268"
+  },
+  {
+    "name": "Гуам",
+    "eNname": "Guam",
+    "code": "GU",
+    "countryCode": "316"
+  },
+  {
+    "name": "Дания",
+    "eNname": "Denmark",
+    "code": "DK",
+    "countryCode": "208"
+  },
+  {
+    "name": "Джерси",
+    "eNname": "Jersey",
+    "code": "JE",
+    "countryCode": "832"
+  },
+  {
+    "name": "Джибути",
+    "eNname": "Djibouti",
+    "code": "DJ",
+    "countryCode": "262"
+  },
+  {
+    "name": "Доминика",
+    "eNname": "Dominica",
+    "code": "DM",
+    "countryCode": "212"
+  },
+  {
+    "name": "Доминиканская Республика",
+    "eNname": "Dominican Republic",
+    "code": "DO",
+    "countryCode": "214"
+  },
+  {
+    "name": "Египет",
+    "eNname": "Egypt",
+    "code": "EG",
+    "countryCode": "818"
+  },
+  {
+    "name": "Замбия",
+    "eNname": "Zambia",
+    "code": "ZM",
+    "countryCode": "894"
+  },
+  {
+    "name": "Западная Сахара",
+    "eNname": "Western Sahara",
+    "code": "EH",
+    "countryCode": "732"
+  },
+  {
+    "name": "Зимбабве",
+    "eNname": "Zimbabwe",
+    "code": "ZW",
+    "countryCode": "716"
+  },
+  {
+    "name": "Израиль",
+    "eNname": "Israel",
+    "code": "IL",
+    "countryCode": "376"
+  },
+  {
+    "name": "Индия",
+    "eNname": "India",
+    "code": "IN",
+    "countryCode": "356"
+  },
+  {
+    "name": "Индонезия",
+    "eNname": "Indonesia",
+    "code": "ID",
+    "countryCode": "360"
+  },
+  {
+    "name": "Иордания",
+    "eNname": "Jordan",
+    "code": "JO",
+    "countryCode": "400"
+  },
+  {
+    "name": "Ирак",
+    "eNname": "Iraq",
+    "code": "IQ",
+    "countryCode": "368"
+  },
+  {
+    "name": "Иран, Исламская Республика",
+    "eNname": "Iran, Islamic Republic of",
+    "code": "IR",
+    "countryCode": "364"
+  },
+  {
+    "name": "Ирландия",
+    "eNname": "Ireland",
+    "code": "IE",
+    "countryCode": "372"
+  },
+  {
+    "name": "Исландия",
+    "eNname": "Iceland",
+    "code": "IS",
+    "countryCode": "352"
+  },
+  {
+    "name": "Испания",
+    "eNname": "Spain",
+    "code": "ES",
+    "countryCode": "724"
+  },
+  {
+    "name": "Италия",
+    "eNname": "Italy",
+    "code": "IT",
+    "countryCode": "380"
+  },
+  {
+    "name": "Йемен",
+    "eNname": "Yemen",
+    "code": "YE",
+    "countryCode": "887"
+  },
+  {
+    "name": "Кабо-Верде",
+    "eNname": "Cape Verde",
+    "code": "CV",
+    "countryCode": "132"
+  },
+  {
+    "name": "Казахстан",
+    "eNname": "Kazakhstan",
+    "code": "KZ",
+    "countryCode": "398"
+  },
+  {
+    "name": "Камбоджа",
+    "eNname": "Cambodia",
+    "code": "KH",
+    "countryCode": "116"
+  },
+  {
+    "name": "Камерун",
+    "eNname": "Cameroon",
+    "code": "CM",
+    "countryCode": "120"
+  },
+  {
+    "name": "Канада",
+    "eNname": "Canada",
+    "code": "CA",
+    "countryCode": "124"
+  },
+  {
+    "name": "Катар",
+    "eNname": "Qatar",
+    "code": "QA",
+    "countryCode": "634"
+  },
+  {
+    "name": "Кения",
+    "eNname": "Kenya",
+    "code": "KE",
+    "countryCode": "404"
+  },
+  {
+    "name": "Кипр",
+    "eNname": "Cyprus",
+    "code": "CY",
+    "countryCode": "196"
+  },
+  {
+    "name": "Киргизия",
+    "eNname": "Kyrgyzstan",
+    "code": "KG",
+    "countryCode": "417"
+  },
+  {
+    "name": "Кирибати",
+    "eNname": "Kiribati",
+    "code": "KI",
+    "countryCode": "296"
+  },
+  {
+    "name": "Китай",
+    "eNname": "China",
+    "code": "CN",
+    "countryCode": "156"
+  },
+  {
+    "name": "Кокосовые (Килинг) острова",
+    "eNname": "Cocos (Keeling) Islands",
+    "code": "CC",
+    "countryCode": "166"
+  },
+  {
+    "name": "Колумбия",
+    "eNname": "Colombia",
+    "code": "CO",
+    "countryCode": "170"
+  },
+  {
+    "name": "Коморы",
+    "eNname": "Comoros",
+    "code": "KM",
+    "countryCode": "174"
+  },
+  {
+    "name": "Конго",
+    "eNname": "Congo",
+    "code": "CG",
+    "countryCode": "178"
+  },
+  {
+    "name": "Конго, Демократическая Республика",
+    "eNname": "Congo, Democratic Republic of the",
+    "code": "CD",
+    "countryCode": "180"
+  },
+  {
+    "name": "Корея, Народно-Демократическая Республика",
+    "eNname": "Korea, Democratic People's republic of",
+    "code": "KP",
+    "countryCode": "408"
+  },
+  {
+    "name": "Корея, Республика",
+    "eNname": "Korea, Republic of",
+    "code": "KR",
+    "countryCode": "410"
+  },
+  {
+    "name": "Коста-Рика",
+    "eNname": "Costa Rica",
+    "code": "CR",
+    "countryCode": "188"
+  },
+  {
+    "name": "Кот д'Ивуар",
+    "eNname": "Cote d'Ivoire",
+    "code": "CI",
+    "countryCode": "384"
+  },
+  {
+    "name": "Куба",
+    "eNname": "Cuba",
+    "code": "CU",
+    "countryCode": "192"
+  },
+  {
+    "name": "Кувейт",
+    "eNname": "Kuwait",
+    "code": "KW",
+    "countryCode": "414"
+  },
+  {
+    "name": "Кюрасао",
+    "eNname": "Curaçao",
+    "code": "CW",
+    "countryCode": "531"
+  },
+  {
+    "name": "Лаос",
+    "eNname": "Lao People's Democratic Republic",
+    "code": "LA",
+    "countryCode": "418"
+  },
+  {
+    "name": "Латвия",
+    "eNname": "Latvia",
+    "code": "LV",
+    "countryCode": "428"
+  },
+  {
+    "name": "Лесото",
+    "eNname": "Lesotho",
+    "code": "LS",
+    "countryCode": "426"
+  },
+  {
+    "name": "Ливан",
+    "eNname": "Lebanon",
+    "code": "LB",
+    "countryCode": "422"
+  },
+  {
+    "name": "Ливийская Арабская Джамахирия",
+    "eNname": "Libyan Arab Jamahiriya",
+    "code": "LY",
+    "countryCode": "434"
+  },
+  {
+    "name": "Либерия",
+    "eNname": "Liberia",
+    "code": "LR",
+    "countryCode": "430"
+  },
+  {
+    "name": "Лихтенштейн",
+    "eNname": "Liechtenstein",
+    "code": "LI",
+    "countryCode": "438"
+  },
+  {
+    "name": "Литва",
+    "eNname": "Lithuania",
+    "code": "LT",
+    "countryCode": "440"
+  },
+  {
+    "name": "Люксембург",
+    "eNname": "Luxembourg",
+    "code": "LU",
+    "countryCode": "442"
+  },
+  {
+    "name": "Маврикий",
+    "eNname": "Mauritius",
+    "code": "MU",
+    "countryCode": "480"
+  },
+  {
+    "name": "Мавритания",
+    "eNname": "Mauritania",
+    "code": "MR",
+    "countryCode": "478"
+  },
+  {
+    "name": "Мадагаскар",
+    "eNname": "Madagascar",
+    "code": "MG",
+    "countryCode": "450"
+  },
+  {
+    "name": "Майотта",
+    "eNname": "Mayotte",
+    "code": "YT",
+    "countryCode": "175"
+  },
+  {
+    "name": "Макао",
+    "eNname": "Macao",
+    "code": "MO",
+    "countryCode": "446"
+  },
+  {
+    "name": "Малави",
+    "eNname": "Malawi",
+    "code": "MW",
+    "countryCode": "454"
+  },
+  {
+    "name": "Малайзия",
+    "eNname": "Malaysia",
+    "code": "MY",
+    "countryCode": "458"
+  },
+  {
+    "name": "Мали",
+    "eNname": "Mali",
+    "code": "ML",
+    "countryCode": "466"
+  },
+  {
+    "name": "Малые Тихоокеанские отдаленные острова Соединенных Штатов",
+    "eNname": "United States Minor Outlying Islands",
+    "code": "UM",
+    "countryCode": "581"
+  },
+  {
+    "name": "Мальдивы",
+    "eNname": "Maldives",
+    "code": "MV",
+    "countryCode": "462"
+  },
+  {
+    "name": "Мальта",
+    "eNname": "Malta",
+    "code": "MT",
+    "countryCode": "470"
+  },
+  {
+    "name": "Марокко",
+    "eNname": "Morocco",
+    "code": "MA",
+    "countryCode": "504"
+  },
+  {
+    "name": "Мартиника",
+    "eNname": "Martinique",
+    "code": "MQ",
+    "countryCode": "474"
+  },
+  {
+    "name": "Маршалловы острова",
+    "eNname": "Marshall Islands",
+    "code": "MH",
+    "countryCode": "584"
+  },
+  {
+    "name": "Мексика",
+    "eNname": "Mexico",
+    "code": "MX",
+    "countryCode": "484"
+  },
+  {
+    "name": "Микронезия, Федеративные Штаты",
+    "eNname": "Micronesia, Federated States of",
+    "code": "FM",
+    "countryCode": "583"
+  },
+  {
+    "name": "Мозамбик",
+    "eNname": "Mozambique",
+    "code": "MZ",
+    "countryCode": "508"
+  },
+  {
+    "name": "Молдова, Республика",
+    "eNname": "Moldova",
+    "code": "MD",
+    "countryCode": "498"
+  },
+  {
+    "name": "Монако",
+    "eNname": "Monaco",
+    "code": "MC",
+    "countryCode": "492"
+  },
+  {
+    "name": "Монголия",
+    "eNname": "Mongolia",
+    "code": "MN",
+    "countryCode": "496"
+  },
+  {
+    "name": "Монтсеррат",
+    "eNname": "Montserrat",
+    "code": "MS",
+    "countryCode": "500"
+  },
+  {
+    "name": "Мьянма",
+    "eNname": "Myanmar",
+    "code": "MM",
+    "countryCode": "104"
+  },
+  {
+    "name": "Намибия",
+    "eNname": "Namibia",
+    "code": "NA",
+    "countryCode": "516"
+  },
+  {
+    "name": "Науру",
+    "eNname": "Nauru",
+    "code": "NR",
+    "countryCode": "520"
+  },
+  {
+    "name": "Непал",
+    "eNname": "Nepal",
+    "code": "NP",
+    "countryCode": "524"
+  },
+  {
+    "name": "Нигер",
+    "eNname": "Niger",
+    "code": "NE",
+    "countryCode": "562"
+  },
+  {
+    "name": "Нигерия",
+    "eNname": "Nigeria",
+    "code": "NG",
+    "countryCode": "566"
+  },
+  {
+    "name": "Нидерланды",
+    "eNname": "Netherlands",
+    "code": "NL",
+    "countryCode": "528"
+  },
+  {
+    "name": "Никарагуа",
+    "eNname": "Nicaragua",
+    "code": "NI",
+    "countryCode": "558"
+  },
+  {
+    "name": "Ниуэ",
+    "eNname": "Niue",
+    "code": "NU",
+    "countryCode": "570"
+  },
+  {
+    "name": "Новая Зеландия",
+    "eNname": "New Zealand",
+    "code": "NZ",
+    "countryCode": "554"
+  },
+  {
+    "name": "Новая Каледония",
+    "eNname": "New Caledonia",
+    "code": "NC",
+    "countryCode": "540"
+  },
+  {
+    "name": "Норвегия",
+    "eNname": "Norway",
+    "code": "NO",
+    "countryCode": "578"
+  },
+  {
+    "name": "Объединенные Арабские Эмираты",
+    "eNname": "United Arab Emirates",
+    "code": "AE",
+    "countryCode": "784"
+  },
+  {
+    "name": "Оман",
+    "eNname": "Oman",
+    "code": "OM",
+    "countryCode": "512"
+  },
+  {
+    "name": "Остров Буве",
+    "eNname": "Bouvet Island",
+    "code": "BV",
+    "countryCode": "74"
+  },
+  {
+    "name": "Остров Мэн",
+    "eNname": "Isle of Man",
+    "code": "IM",
+    "countryCode": "833"
+  },
+  {
+    "name": "Остров Норфолк",
+    "eNname": "Norfolk Island",
+    "code": "NF",
+    "countryCode": "574"
+  },
+  {
+    "name": "Остров Рождества",
+    "eNname": "Christmas Island",
+    "code": "CX",
+    "countryCode": "162"
+  },
+  {
+    "name": "Остров Херд и острова Макдональд",
+    "eNname": "Heard Island and McDonald Islands",
+    "code": "HM",
+    "countryCode": "334"
+  },
+  {
+    "name": "Острова Кайман",
+    "eNname": "Cayman Islands",
+    "code": "KY",
+    "countryCode": "136"
+  },
+  {
+    "name": "Острова Кука",
+    "eNname": "Cook Islands",
+    "code": "CK",
+    "countryCode": "184"
+  },
+  {
+    "name": "Острова Теркс и Кайкос",
+    "eNname": "Turks and Caicos Islands",
+    "code": "TC",
+    "countryCode": "796"
+  },
+  {
+    "name": "Пакистан",
+    "eNname": "Pakistan",
+    "code": "PK",
+    "countryCode": "586"
+  },
+  {
+    "name": "Палау",
+    "eNname": "Palau",
+    "code": "PW",
+    "countryCode": "585"
+  },
+  {
+    "name": "Палестинская территория, оккупированная",
+    "eNname": "Palestinian Territory, Occupied",
+    "code": "PS",
+    "countryCode": "275"
+  },
+  {
+    "name": "Панама",
+    "eNname": "Panama",
+    "code": "PA",
+    "countryCode": "591"
+  },
+  {
+    "name": "Папский Престол (Государство — город Ватикан)",
+    "eNname": "Holy See (Vatican City State)",
+    "code": "VA",
+    "countryCode": "336"
+  },
+  {
+    "name": "Папуа-Новая Гвинея",
+    "eNname": "Papua New Guinea",
+    "code": "PG",
+    "countryCode": "598"
+  },
+  {
+    "name": "Парагвай",
+    "eNname": "Paraguay",
+    "code": "PY",
+    "countryCode": "600"
+  },
+  {
+    "name": "Перу",
+    "eNname": "Peru",
+    "code": "PE",
+    "countryCode": "604"
+  },
+  {
+    "name": "Питкерн",
+    "eNname": "Pitcairn",
+    "code": "PN",
+    "countryCode": "612"
+  },
+  {
+    "name": "Польша",
+    "eNname": "Poland",
+    "code": "PL",
+    "countryCode": "616"
+  },
+  {
+    "name": "Португалия",
+    "eNname": "Portugal",
+    "code": "PT",
+    "countryCode": "620"
+  },
+  {
+    "name": "Пуэрто-Рико",
+    "eNname": "Puerto Rico",
+    "code": "PR",
+    "countryCode": "630"
+  },
+  {
+    "name": "Республика Македония",
+    "eNname": "Macedonia, The Former Yugoslav Republic Of",
+    "code": "MK",
+    "countryCode": "807"
+  },
+  {
+    "name": "Реюньон",
+    "eNname": "Reunion",
+    "code": "RE",
+    "countryCode": "638"
+  },
+  {
+    "name": "Россия",
+    "eNname": "Russian Federation",
+    "code": "RU",
+    "countryCode": "643"
+  },
+  {
+    "name": "Руанда",
+    "eNname": "Rwanda",
+    "code": "RW",
+    "countryCode": "646"
+  },
+  {
+    "name": "Румыния",
+    "eNname": "Romania",
+    "code": "RO",
+    "countryCode": "642"
+  },
+  {
+    "name": "Самоа",
+    "eNname": "Samoa",
+    "code": "WS",
+    "countryCode": "882"
+  },
+  {
+    "name": "Сан-Марино",
+    "eNname": "San Marino",
+    "code": "SM",
+    "countryCode": "674"
+  },
+  {
+    "name": "Сан-Томе и Принсипи",
+    "eNname": "Sao Tome and Principe",
+    "code": "ST",
+    "countryCode": "678"
+  },
+  {
+    "name": "Саудовская Аравия",
+    "eNname": "Saudi Arabia",
+    "code": "SA",
+    "countryCode": "682"
+  },
+  {
+    "name": "Свазиленд",
+    "eNname": "Swaziland",
+    "code": "SZ",
+    "countryCode": "748"
+  },
+  {
+    "name": "Святая Елена, Остров вознесения, Тристан-да-Кунья",
+    "eNname": "Saint Helena, Ascension And Tristan Da Cunha",
+    "code": "SH",
+    "countryCode": "654"
+  },
+  {
+    "name": "Северные Марианские острова",
+    "eNname": "Northern Mariana Islands",
+    "code": "MP",
+    "countryCode": "580"
+  },
+  {
+    "name": "Сен-Бартельми",
+    "eNname": "Saint Barthélemy",
+    "code": "BL",
+    "countryCode": "652"
+  },
+  {
+    "name": "Сен-Мартен",
+    "eNname": "Saint Martin (French Part)",
+    "code": "MF",
+    "countryCode": "663"
+  },
+  {
+    "name": "Сенегал",
+    "eNname": "Senegal",
+    "code": "SN",
+    "countryCode": "686"
+  },
+  {
+    "name": "Сент-Винсент и Гренадины",
+    "eNname": "Saint Vincent and the Grenadines",
+    "code": "VC",
+    "countryCode": "670"
+  },
+  {
+    "name": "Сент-Люсия",
+    "eNname": "Saint Lucia",
+    "code": "LC",
+    "countryCode": "662"
+  },
+  {
+    "name": "Сент-Китс и Невис",
+    "eNname": "Saint Kitts and Nevis",
+    "code": "KN",
+    "countryCode": "659"
+  },
+  {
+    "name": "Сент-Пьер и Микелон",
+    "eNname": "Saint Pierre and Miquelon",
+    "code": "PM",
+    "countryCode": "666"
+  },
+  {
+    "name": "Сербия",
+    "eNname": "Serbia",
+    "code": "RS",
+    "countryCode": "688"
+  },
+  {
+    "name": "Сейшелы",
+    "eNname": "Seychelles",
+    "code": "SC",
+    "countryCode": "690"
+  },
+  {
+    "name": "Сингапур",
+    "eNname": "Singapore",
+    "code": "SG",
+    "countryCode": "702"
+  },
+  {
+    "name": "Синт-Мартен",
+    "eNname": "Sint Maarten",
+    "code": "SX",
+    "countryCode": "534"
+  },
+  {
+    "name": "Сирийская Арабская Республика",
+    "eNname": "Syrian Arab Republic",
+    "code": "SY",
+    "countryCode": "760"
+  },
+  {
+    "name": "Словакия",
+    "eNname": "Slovakia",
+    "code": "SK",
+    "countryCode": "703"
+  },
+  {
+    "name": "Словения",
+    "eNname": "Slovenia",
+    "code": "SI",
+    "countryCode": "705"
+  },
+  {
+    "name": "Соединенное Королевство",
+    "eNname": "United Kingdom",
+    "code": "GB",
+    "countryCode": "826"
+  },
+  {
+    "name": "Соединенные Штаты",
+    "eNname": "United States",
+    "code": "US",
+    "countryCode": "840"
+  },
+  {
+    "name": "Соломоновы острова",
+    "eNname": "Solomon Islands",
+    "code": "SB",
+    "countryCode": "90"
+  },
+  {
+    "name": "Сомали",
+    "eNname": "Somalia",
+    "code": "SO",
+    "countryCode": "706"
+  },
+  {
+    "name": "Судан",
+    "eNname": "Sudan",
+    "code": "SD",
+    "countryCode": "729"
+  },
+  {
+    "name": "Суринам",
+    "eNname": "Suriname",
+    "code": "SR",
+    "countryCode": "740"
+  },
+  {
+    "name": "Сьерра-Леоне",
+    "eNname": "Sierra Leone",
+    "code": "SL",
+    "countryCode": "694"
+  },
+  {
+    "name": "Таджикистан",
+    "eNname": "Tajikistan",
+    "code": "TJ",
+    "countryCode": "762"
+  },
+  {
+    "name": "Таиланд",
+    "eNname": "Thailand",
+    "code": "TH",
+    "countryCode": "764"
+  },
+  {
+    "name": "Тайвань (Китай)",
+    "eNname": "Taiwan, Province of China",
+    "code": "TW",
+    "countryCode": "158"
+  },
+  {
+    "name": "Танзания, Объединенная Республика",
+    "eNname": "Tanzania, United Republic Of",
+    "code": "TZ",
+    "countryCode": "834"
+  },
+  {
+    "name": "Тимор-Лесте",
+    "eNname": "Timor-Leste",
+    "code": "TL",
+    "countryCode": "626"
+  },
+  {
+    "name": "Того",
+    "eNname": "Togo",
+    "code": "TG",
+    "countryCode": "768"
+  },
+  {
+    "name": "Токелау",
+    "eNname": "Tokelau",
+    "code": "TK",
+    "countryCode": "772"
+  },
+  {
+    "name": "Тонга",
+    "eNname": "Tonga",
+    "code": "TO",
+    "countryCode": "776"
+  },
+  {
+    "name": "Тринидад и Тобаго",
+    "eNname": "Trinidad and Tobago",
+    "code": "TT",
+    "countryCode": "780"
+  },
+  {
+    "name": "Тувалу",
+    "eNname": "Tuvalu",
+    "code": "TV",
+    "countryCode": "798"
+  },
+  {
+    "name": "Тунис",
+    "eNname": "Tunisia",
+    "code": "TN",
+    "countryCode": "788"
+  },
+  {
+    "name": "Туркмения",
+    "eNname": "Turkmenistan",
+    "code": "TM",
+    "countryCode": "795"
+  },
+  {
+    "name": "Турция",
+    "eNname": "Turkey",
+    "code": "TR",
+    "countryCode": "792"
+  },
+  {
+    "name": "Уганда",
+    "eNname": "Uganda",
+    "code": "UG",
+    "countryCode": "800"
+  },
+  {
+    "name": "Узбекистан",
+    "eNname": "Uzbekistan",
+    "code": "UZ",
+    "countryCode": "860"
+  },
+  {
+    "name": "Украина",
+    "eNname": "Ukraine",
+    "code": "UA",
+    "countryCode": "804"
+  },
+  {
+    "name": "Уоллис и Футуна",
+    "eNname": "Wallis and Futuna",
+    "code": "WF",
+    "countryCode": "876"
+  },
+  {
+    "name": "Уругвай",
+    "eNname": "Uruguay",
+    "code": "UY",
+    "countryCode": "858"
+  },
+  {
+    "name": "Фарерские острова",
+    "eNname": "Faroe Islands",
+    "code": "FO",
+    "countryCode": "234"
+  },
+  {
+    "name": "Фиджи",
+    "eNname": "Fiji",
+    "code": "FJ",
+    "countryCode": "242"
+  },
+  {
+    "name": "Филиппины",
+    "eNname": "Philippines",
+    "code": "PH",
+    "countryCode": "608"
+  },
+  {
+    "name": "Финляндия",
+    "eNname": "Finland",
+    "code": "FI",
+    "countryCode": "246"
+  },
+  {
+    "name": "Фолклендские острова (Мальвинские)",
+    "eNname": "Falkland Islands (Malvinas)",
+    "code": "FK",
+    "countryCode": "238"
+  },
+  {
+    "name": "Франция",
+    "eNname": "France",
+    "code": "FR",
+    "countryCode": "250"
+  },
+  {
+    "name": "Французская Гвиана",
+    "eNname": "French Guiana",
+    "code": "GF",
+    "countryCode": "254"
+  },
+  {
+    "name": "Французская Полинезия",
+    "eNname": "French Polynesia",
+    "code": "PF",
+    "countryCode": "258"
+  },
+  {
+    "name": "Французские Южные территории",
+    "eNname": "French Southern Territories",
+    "code": "TF",
+    "countryCode": "260"
+  },
+  {
+    "name": "Хорватия",
+    "eNname": "Croatia",
+    "code": "HR",
+    "countryCode": "191"
+  },
+  {
+    "name": "Центрально-Африканская Республика",
+    "eNname": "Central African Republic",
+    "code": "CF",
+    "countryCode": "140"
+  },
+  {
+    "name": "Чад",
+    "eNname": "Chad",
+    "code": "TD",
+    "countryCode": "148"
+  },
+  {
+    "name": "Черногория",
+    "eNname": "Montenegro",
+    "code": "ME",
+    "countryCode": "499"
+  },
+  {
+    "name": "Чешская Республика",
+    "eNname": "Czech Republic",
+    "code": "CZ",
+    "countryCode": "203"
+  },
+  {
+    "name": "Чили",
+    "eNname": "Chile",
+    "code": "CL",
+    "countryCode": "152"
+  },
+  {
+    "name": "Швейцария",
+    "eNname": "Switzerland",
+    "code": "CH",
+    "countryCode": "756"
+  },
+  {
+    "name": "Швеция",
+    "eNname": "Sweden",
+    "code": "SE",
+    "countryCode": "752"
+  },
+  {
+    "name": "Шпицберген и Ян Майен",
+    "eNname": "Svalbard and Jan Mayen",
+    "code": "SJ",
+    "countryCode": "744"
+  },
+  {
+    "name": "Шри-Ланка",
+    "eNname": "Sri Lanka",
+    "code": "LK",
+    "countryCode": "144"
+  },
+  {
+    "name": "Эквадор",
+    "eNname": "Ecuador",
+    "code": "EC",
+    "countryCode": "218"
+  },
+  {
+    "name": "Экваториальная Гвинея",
+    "eNname": "Equatorial Guinea",
+    "code": "GQ",
+    "countryCode": "226"
+  },
+  {
+    "name": "Эландские острова",
+    "eNname": "Åland Islands",
+    "code": "AX",
+    "countryCode": "248"
+  },
+  {
+    "name": "Эль-Сальвадор",
+    "eNname": "El Salvador",
+    "code": "SV",
+    "countryCode": "222"
+  },
+  {
+    "name": "Эритрея",
+    "eNname": "Eritrea",
+    "code": "ER",
+    "countryCode": "232"
+  },
+  {
+    "name": "Эстония",
+    "eNname": "Estonia",
+    "code": "EE",
+    "countryCode": "233"
+  },
+  {
+    "name": "Эфиопия",
+    "eNname": "Ethiopia",
+    "code": "ET",
+    "countryCode": "231"
+  },
+  {
+    "name": "Южная Африка",
+    "eNname": "South Africa",
+    "code": "ZA",
+    "countryCode": "710"
+  },
+  {
+    "name": "Южная Джорджия и Южные Сандвичевы острова",
+    "eNname": "South Georgia and the South Sandwich Islands",
+    "code": "GS",
+    "countryCode": "239"
+  },
+  {
+    "name": "Южная Осетия",
+    "eNname": "South Ossetia",
+    "code": "OS",
+    "countryCode": "896"
+  },
+  {
+    "name": "Южный Судан",
+    "eNname": "South Sudan",
+    "code": "SS",
+    "countryCode": "728"
+  },
+  {
+    "name": "Ямайка",
+    "eNname": "Jamaica",
+    "code": "JM",
+    "countryCode": "388"
+  },
+  {
+    "name": "Япония",
+    "eNname": "Japan",
+    "code": "JP",
+    "countryCode": "392"
+  }
+]
