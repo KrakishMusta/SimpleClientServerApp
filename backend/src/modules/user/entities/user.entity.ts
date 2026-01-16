@@ -1,4 +1,4 @@
-import { UserRole } from 'src/enums/enums';
+// import { UserRole } from 'src/enums/enums';
 import {
   Table,
   Column,
@@ -42,11 +42,11 @@ export class User extends Model<
   @Column({ type: DataType.STRING, allowNull: false })
   declare password: string;
 
-  @Column({
-    type: DataType.ENUM(...Object.values(UserRole)),
-    defaultValue: UserRole.PARTICIPANT,
-  })
-  declare role: CreationOptional<UserRole>;
+  // @Column({
+  //   type: DataType.ENUM(...Object.values(UserRole)),
+  //   defaultValue: UserRole.PARTICIPANT,
+  // })
+  // declare role: CreationOptional<UserRole>;
 
   @Column({
     type: DataType.BOOLEAN,

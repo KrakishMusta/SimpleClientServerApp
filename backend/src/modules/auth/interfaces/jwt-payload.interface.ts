@@ -2,7 +2,7 @@ export interface JwtPayload {
   sub: string; // user id
   email: string;
   name?: string | null;
-  role: string;
+  // role: string;
 }
 
 export interface Tokens {

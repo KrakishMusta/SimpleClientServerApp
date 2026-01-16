@@ -21,13 +21,13 @@ import {
   ApiQuery,
   ApiBearerAuth,
 } from '@nestjs/swagger';
-import { UserService } from '../services/user.service';
-import { RolesGuard } from '../../../common/guards/roles.guard';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { User } from '../entities/user.entity';
-import { Roles } from '../../../common/decorators/roles.decorator';
-import { UpdateUserDto } from '../dto/update-user.dto';
-import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
+import { UserService } from './user.service';
+import { RolesGuard } from '../../common/guards/roles.guard';
+import { CreateUserDto } from './dto/create-user.dto';
+import { User } from './entities/user.entity';
+import { Roles } from '../../common/decorators/roles.decorator';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @ApiTags('user')
 @Controller('user')
@@ -37,7 +37,6 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Roles('admin')
   @ApiOperation({ summary: 'Create a new user' })
   @ApiResponse({
@@ -54,7 +53,6 @@ export class UserController {
   }
 
   @Get()
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Roles('admin')
   @ApiOperation({ summary: 'Get all users with pagination' })
   @ApiQuery({ name: 'page', required: false, type: Number })
@@ -70,7 +68,6 @@ export class UserController {
   }
 
   @Get(':id')
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Roles('admin', 'user')
   @ApiOperation({ summary: 'Get a user by ID' })
   @ApiResponse({ status: 200, description: 'User found', type: User })
@@ -80,7 +77,6 @@ export class UserController {
   }
 
   @Patch(':id')
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Roles('admin', 'user')
   @ApiOperation({ summary: 'Update a user' })
   @ApiResponse({
@@ -97,7 +93,6 @@ export class UserController {
   }
 
   @Delete(':id')
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @Roles('admin')
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({ summary: 'Delete a user' })

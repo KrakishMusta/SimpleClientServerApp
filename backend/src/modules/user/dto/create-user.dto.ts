@@ -9,7 +9,7 @@ import {
   IsDateString,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { UserRole } from 'src/enums/enums'; // используем enum
+// import { UserRole } from 'src/enums/enums'; // используем enum
 
 export class CreateUserDto {
   @ApiProperty({ example: 'user@example.com' })
@@ -36,14 +36,14 @@ export class CreateUserDto {
   })
   password: string;
 
-  @ApiProperty({
-    enum: UserRole,
-    example: UserRole.PARTICIPANT,
-    required: false,
-  })
-  @IsOptional()
-  @IsEnum(UserRole)
-  role?: UserRole;
+  // @ApiProperty({
+  //   enum: UserRole,
+  //   example: UserRole.PARTICIPANT,
+  //   required: false,
+  // })
+  // @IsOptional()
+  // @IsEnum(UserRole)
+  // role?: UserRole;
 
   @ApiProperty({ example: '2000-01-01', required: false })
   @IsOptional()

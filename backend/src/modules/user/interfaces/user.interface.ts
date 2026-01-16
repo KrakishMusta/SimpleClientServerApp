@@ -1,8 +1,5 @@
-import { UserRole } from 'src/enums/enums';
-
 export interface IUser {
   id: string;
-  role: UserRole | null;
   email: string;
   password: string;
   name?: string | null;
@@ -12,8 +9,6 @@ export interface IUser {
   photo?: string | null;
   countryId?: string | null;
   phone?: string | null;
-  //   createdAt?: Date;
-  //   updatedAt?: Date;
 }
 
 // export interface IUserWithPassword extends IUser {

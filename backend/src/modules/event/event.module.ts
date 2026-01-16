@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { EventModel } from './entities/event.entity';
-import { EventService } from './services/event.service';
+import { EventService } from './event.service';
 
 @Module({
   imports: [SequelizeModule.forFeature([EventModel])],
