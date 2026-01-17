@@ -1,5 +1,5 @@
 import { IsOptional, IsString, IsDateString, IsArray } from 'class-validator';
-import { IActivityRecord } from '../interfaces/event.interface';
+import { CreateActivityDto } from '../../activity/dto/create-activity.dto';
 
 export class UpdateEventDto {
   @IsOptional()
@@ -16,7 +16,7 @@ export class UpdateEventDto {
 
   @IsOptional()
   @IsArray()
-  activities?: IActivityRecord[];
+  activities?: CreateActivityDto[] | null;
 
   @IsOptional()
   @IsString()

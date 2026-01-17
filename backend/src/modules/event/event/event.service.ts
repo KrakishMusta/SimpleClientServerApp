@@ -1,14 +1,17 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { CreateEventDto } from '../dto/create-event.dto';
-import { EventModel } from '../entities/event.entity';
-import { UpdateEventDto } from '../dto/update-event.dto';
+import { EventModel } from './entities/event.entity';
+import { CreateEventDto } from './dto/create-event.dto';
+import { UpdateEventDto } from './dto/update-event.dto';
+import { ActivityService } from '../activity/activity.service';
 
 @Injectable()
 export class EventService {
   constructor(
     @InjectModel(EventModel)
     private eventModel: typeof EventModel,
+
+    private activityService: ActivityService,
   ) {}
 
   async create(dto: CreateEventDto): Promise<EventModel> {
@@ -28,34 +31,34 @@ export class EventService {
       throw new NotFoundException('Event not found');
     }
 
-    const updatePayload: Partial<EventModel> = {
+    // обновляем поля события
+    await event.update({
       title: dto.title,
       cityId: dto.city,
       winner: dto.winner,
-    };
+      startDate: dto.startDate ? new Date(dto.startDate) : undefined,
+    });
 
-    if (dto.startDate) {
-      updatePayload.startDate = new Date(dto.startDate);
+    // activities — отдельно
+    if (dto.activities !== undefined) {
+      if (dto.activities === null) {
+        await this.activityService.removeByEvent(event.id);
+      } else {
+        await this.activityService.replaceByEvent(event.id, dto.activities);
+      }
     }
 
-    if (dto.activities) {
-      updatePayload.activities = dto.activities;
-      // 🔥 jury будет ПОЛНОСТЬЮ перезаписан
-    }
-
-    await event.update(updatePayload);
-
-    return event;
+    return this.findOne(id);
   }
 
-  // 🔹 GET /event
+  // GET /event
   async findAll(): Promise<EventModel[]> {
     return this.eventModel.findAll({
       order: [['startDate', 'ASC']],
     });
   }
 
-  // 🔹 GET /event/:id
+  // GET /event/:id
   async findOne(id: string): Promise<EventModel> {
     const event = await this.eventModel.findByPk(id);
 

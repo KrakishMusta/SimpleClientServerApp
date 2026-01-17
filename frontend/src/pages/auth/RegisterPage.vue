@@ -10,7 +10,7 @@
     const submitRegisterFormHandler = () => {
         const payload = {
             email: emailRef.value,
-            username: usernameRef.value,
+            name: usernameRef.value,
             password: passwordRef.value,
         };
         register({ values: payload });

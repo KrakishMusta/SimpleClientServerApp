@@ -13,7 +13,7 @@ import { User } from '../../user/entities/user.entity';
   include: [
     {
       model: User,
-      attributes: ['id', 'username', 'email'],
+      attributes: ['id', 'name', 'email'],
     },
   ],
 }))

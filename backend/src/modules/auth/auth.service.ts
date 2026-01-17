@@ -30,6 +30,7 @@ export class AuthService {
       // role: UserRole.PARTICIPANT,
     });
 
+    console.log(`reg`, registerDto, user);
     // Генерируем токены
     return this.generateTokens(user);
   }

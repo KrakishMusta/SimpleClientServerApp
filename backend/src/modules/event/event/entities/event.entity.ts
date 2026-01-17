@@ -51,10 +51,10 @@ export class EventModel extends Model<
 
   @Column({
     type: DataType.JSONB,
-    allowNull: false,
+    allowNull: true,
     defaultValue: [],
   })
-  declare activities: IActivityRecord[];
+  declare activities: IActivityRecord[] | null;
 
   @Column({
     type: DataType.STRING,

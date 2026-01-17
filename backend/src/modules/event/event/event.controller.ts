@@ -19,21 +19,21 @@ import { EventModel } from './entities/event.entity';
 export class EventController {
   constructor(private readonly eventService: EventService) {}
 
-  // 🔹 CREATE
+  // CREATE
   @Post()
   @ApiOperation({ summary: 'Create event' })
   create(@Body() dto: CreateEventDto): Promise<EventModel> {
     return this.eventService.create(dto);
   }
 
-  // 🔹 READ ALL
+  // READ ALL
   @Get()
   @ApiOperation({ summary: 'Get all events' })
   findAll(): Promise<EventModel[]> {
     return this.eventService.findAll();
   }
 
-  // 🔹 READ ONE
+  // READ ONE
   @Get(':id')
   @ApiOperation({ summary: 'Get event by id' })
   @ApiParam({ name: 'id', type: String })
@@ -41,7 +41,7 @@ export class EventController {
     return this.eventService.findOne(id);
   }
 
-  // 🔹 UPDATE
+  // UPDATE
   @Patch(':id')
   @ApiOperation({ summary: 'Update event' })
   @ApiParam({ name: 'id', type: String })
@@ -52,7 +52,7 @@ export class EventController {
     return this.eventService.update(id, dto);
   }
 
-  // 🔹 DELETE
+  // DELETE
   @Delete(':id')
   @ApiOperation({ summary: 'Delete event' })
   @ApiParam({ name: 'id', type: String })

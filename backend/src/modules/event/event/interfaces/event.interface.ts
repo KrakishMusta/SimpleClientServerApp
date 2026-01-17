@@ -5,12 +5,12 @@ export interface IEvent {
   startDate: Date;
   duration: number;
   cityId: string;
-  activities: IActivityRecord[];
+  activities?: IActivityRecord[] | null;
   winner?: string | null;
 }
 
 export interface IActivityRecord {
   title: string;
   start: string;
-  jury: string[];
+  jury: string[] | null;
 }

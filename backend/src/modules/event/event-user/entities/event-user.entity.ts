@@ -12,7 +12,7 @@ import type {
 } from 'sequelize';
 
 import { User } from 'src/modules/user/entities/user.entity';
-import { EventModel } from 'src/modules/event/entities/event.entity';
+import { EventModel } from 'src/modules/event/event/entities/event.entity';
 import { UserRole } from 'src/enums/enums';
 
 @Table({

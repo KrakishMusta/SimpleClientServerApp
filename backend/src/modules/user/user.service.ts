@@ -29,13 +29,13 @@ export class UserService {
       throw new ConflictException('User with this email already exists');
     }
 
-    // Проверяем, существует ли пользователь с таким username
+    // Проверяем, существует ли пользователь с таким name
     // const existingUsername = await this.userModel.findOne({
-    //   where: { username: createUserDto.username },
+    //   where: { name: createUserDto.name },
     // });
 
     // if (existingUsername) {
-    //   throw new ConflictException('User with this username already exists');
+    //   throw new ConflictException('User with this name already exists');
     // }
 
     return this.userModel.create(createUserDto);
@@ -53,7 +53,7 @@ export class UserService {
       Object.assign(whereConditions, {
         [Op.or]: [
           { email: { [Op.like]: `%${search}%` } },
-          { username: { [Op.like]: `%${search}%` } },
+          { name: { [Op.like]: `%${search}%` } },
         ],
       });
     }
@@ -119,14 +119,14 @@ export class UserService {
       }
     }
 
-    // Если меняем username, проверяем что он не занят
+    // Если меняем name, проверяем что он не занят
     if (updateUserDto.name && updateUserDto.name !== user.name) {
       const existingUsername = await this.userModel.findOne({
         where: { name: updateUserDto.name },
       });
 
       if (existingUsername) {
-        throw new ConflictException('User with this username already exists');
+        throw new ConflictException('User with this name already exists');
       }
     }
 

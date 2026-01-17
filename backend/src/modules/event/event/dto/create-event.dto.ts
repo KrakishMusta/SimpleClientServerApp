@@ -6,23 +6,10 @@ import {
   IsArray,
   ValidateNested,
   IsOptional,
+  ValidateIf,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-
-class ActivityRecordDto {
-  @ApiProperty()
-  @IsString()
-  title: string;
-
-  @ApiProperty({ example: '10:30' })
-  @IsString()
-  start: string;
-
-  @ApiProperty({ type: [String] })
-  @IsArray()
-  @IsString({ each: true })
-  jury: string[];
-}
+import { CreateActivityDto } from '../../activity/dto/create-activity.dto';
 
 export class CreateEventDto {
   @ApiProperty()
@@ -45,11 +32,11 @@ export class CreateEventDto {
   @IsString()
   cityId: string;
 
-  @ApiProperty({ type: [ActivityRecordDto] })
+  @ValidateIf((_, value) => value !== null)
   @IsArray()
   @ValidateNested({ each: true })
-  @Type(() => ActivityRecordDto)
-  activities: ActivityRecordDto[];
+  @Type(() => CreateActivityDto)
+  activities?: CreateActivityDto[] | null;
 
   @ApiProperty({ required: false, nullable: true })
   @IsOptional()

@@ -22,9 +22,23 @@ import { User } from './modules/user/entities/user.entity';
 import { RefreshToken } from './modules/auth/entities/refresh-token.entity';
 import { Area } from './modules/area/entities/area.entity';
 import { City } from './modules/city/entities/city.entity';
-import { EventModel } from './modules/event/entities/event.entity';
+import { EventModel } from './modules/event/event/entities/event.entity';
+import { Activity } from './modules/event/activity/entities/activity.entity';
+import { ActivityJury } from './modules/event/activity/entities/activity-jury.entity';
+import { EventUser } from './modules/event/event-user/entities/event-user.entity';
+import { Invite } from './modules/event/invite/entities/invite.entity';
 
-const models = [User, RefreshToken, Area, City, EventModel];
+const models = [
+  User,
+  RefreshToken,
+  Area,
+  City,
+  EventModel,
+  Activity,
+  ActivityJury,
+  EventUser,
+  Invite,
+];
 
 @Module({
   imports: [
@@ -63,6 +77,7 @@ const models = [User, RefreshToken, Area, City, EventModel];
     AuthModule,
     UserModule,
     EventModule,
+
     // PostsModule,
   ],
 })
