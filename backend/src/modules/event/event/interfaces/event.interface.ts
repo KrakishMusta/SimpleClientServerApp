@@ -3,7 +3,9 @@ export interface IEvent {
   title: string;
   areaId: string;
   startDate: Date;
-  duration: number;
+  endDate: Date;
+  durationDays: number;
+  durationMins: number;
   cityId: string;
   activities?: IActivityRecord[] | null;
   winner?: string | null;

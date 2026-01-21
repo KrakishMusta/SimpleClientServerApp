@@ -11,6 +11,10 @@ export class UpdateEventDto {
   startDate?: string;
 
   @IsOptional()
+  @IsDateString()
+  endDate?: string;
+
+  @IsOptional()
   @IsString()
   city?: string;
 

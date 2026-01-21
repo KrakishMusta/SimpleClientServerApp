@@ -18,6 +18,7 @@ export class EventService {
     const event = await this.eventModel.create({
       ...dto,
       startDate: new Date(dto.startDate), // важно
+      endDate: new Date(dto.endDate), // важно
       winner: null,
     });
 

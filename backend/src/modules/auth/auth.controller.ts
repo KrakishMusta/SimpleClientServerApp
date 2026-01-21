@@ -22,8 +22,8 @@ import { TokensDto } from './dto/tokens.dto';
 import { User } from '../user/entities/user.entity';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 
-@ApiTags('auth')
-@Controller('auth')
+@ApiTags('auths')
+@Controller('auths')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 

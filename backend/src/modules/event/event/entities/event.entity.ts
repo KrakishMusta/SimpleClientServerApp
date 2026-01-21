@@ -33,7 +33,7 @@ export class EventModel extends Model<
   @Column({ type: DataType.STRING, allowNull: false })
   declare title: string;
 
-  // 🔗 AREA FK
+  // AREA FK
   @ForeignKey(() => Area)
   @Column({ type: DataType.UUID, allowNull: false })
   declare areaId: string;
@@ -41,10 +41,16 @@ export class EventModel extends Model<
   @Column({ type: DataType.DATE, allowNull: false })
   declare startDate: Date;
 
-  @Column({ type: DataType.INTEGER, allowNull: false })
-  declare duration: number;
+  @Column({ type: DataType.DATE, allowNull: false })
+  declare endDate: Date;
 
-  // 🔗 CITY FK
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  declare durationDays: number;
+
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  declare durationMins: number;
+
+  // CITY FK
   @ForeignKey(() => City)
   @Column({ type: DataType.UUID, allowNull: false })
   declare cityId: string;

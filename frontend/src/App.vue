@@ -13,6 +13,7 @@
 <style scoped>
     .wrapper {
         display: flex;
+        min-width: 0;
         place-items: flex-start;
         flex-wrap: wrap;
         height: 100vh;

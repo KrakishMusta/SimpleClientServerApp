@@ -25,6 +25,12 @@ export class CityService {
       });
     }
 
-    this.logger.log(`Country dictionary seeded (${cities.length})`);
+    this.logger.log(`City dictionary seeded (${cities.length})`);
+  }
+
+  async findAll(): Promise<City[]> {
+    return this.cityModel.findAll({
+      order: [['name', 'ASC']],
+    });
   }
 }

@@ -1,4 +1,7 @@
-import Domain from '@/components/Domain.vue';
+import Domain from '@/pages/domain/Domain.vue';
+import CreateEventPage from '@/pages/event/CreateEventPage.vue';
+import EventPage from '@/pages/event/EventPage.vue';
+import EventsPage from '@/pages/event/EventsPage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -8,6 +11,25 @@ const router = createRouter({
             path: '/',
             name: 'domain',
             component: Domain,
+        },
+        {
+            path: '/events',
+            name: 'events',
+            component: EventsPage,
+            children: [
+                {
+                    path: ':eventId',
+                    name: 'event',
+                    component: EventPage,
+                    meta: {},
+                },
+                {
+                    path: 'create-event',
+                    name: 'create-event',
+                    component: CreateEventPage,
+                    meta: { hideParent: true },
+                },
+            ],
         },
         {
             path: '/auth',

@@ -24,9 +24,17 @@ export class CreateEventDto {
   @IsDateString()
   startDate: string;
 
+  @ApiProperty({ format: 'date-time' })
+  @IsDateString()
+  endDate: string;
+
   @ApiProperty()
   @IsNumber()
-  duration: number;
+  durationDays: number;
+
+  @ApiProperty()
+  @IsNumber()
+  durationMins: number;
 
   @ApiProperty()
   @IsString()

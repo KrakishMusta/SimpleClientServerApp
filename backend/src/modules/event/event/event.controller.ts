@@ -14,8 +14,8 @@ import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { EventModel } from './entities/event.entity';
 
-@ApiTags('event')
-@Controller('event')
+@ApiTags('events')
+@Controller('events')
 export class EventController {
   constructor(private readonly eventService: EventService) {}
 
