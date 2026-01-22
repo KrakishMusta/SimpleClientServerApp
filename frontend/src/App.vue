@@ -3,17 +3,16 @@
 </script>
 
 <template>
-    <div class="wrapper">
+    <div class="wrapper min-w-0 min-h-0 w-full h-full max-w-full">
         <!-- <p>{{ $route.fullPath }}</p> -->
         <router-view></router-view>
         <router-link v-if="$route.fullPath === `/`" to="/auth/register">Регистрация</router-link>
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="css">
     .wrapper {
         display: flex;
-        min-width: 0;
         place-items: flex-start;
         flex-wrap: wrap;
         height: 100vh;

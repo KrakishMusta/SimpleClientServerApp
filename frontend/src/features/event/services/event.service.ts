@@ -8,8 +8,8 @@ class EventService {
         });
         return response;
     }
-    async createEvent(): Promise<IEvent> {
-        const response = await api.post<IEvent>('events/', {
+    async createEvent(event: IEvent): Promise<IEvent> {
+        const response = await api.post<IEvent>('events/', event, {
             withCredentials: true,
         });
         return response;

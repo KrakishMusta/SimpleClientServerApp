@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div class="p-10 flex min-w-0 w-full h-full box-border">
+    <div class="p-10 flex w-full box-border overflow-y-auto h-full">
         <div v-if="!hideParent">
             <router-link to="/events/create-event">
                 <button type="button" class="p-2 text-xl rounded-sm bg-slate-400">
@@ -24,7 +24,7 @@
             <div v-if="!events.length">Доступных мероприятий нет.</div>
             <!-- <div></div> -->
         </div>
-        <router-view class="w-full min-w-0" v-slot="{ Component }">
+        <router-view class="w-full min-w-0 min-h-0 h-full" v-slot="{ Component }">
             <component :is="Component" />
         </router-view>
     </div>

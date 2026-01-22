@@ -1,13 +1,10 @@
-import { useQuery } from '@tanstack/vue-query';
+import { useMutation } from '@tanstack/vue-query';
 import { eventService } from '../services/event.service';
 import { IEvent } from '../types/event.types';
 
-export function useGetEvents() {
-    return useQuery<IEvent[]>({
-        queryKey: ['create event'],
-
-        queryFn: async () => {
-            return await eventService.createEvent();
-        },
+export function useCreateEvent() {
+    return useMutation<IEvent, Error, IEvent>({
+        mutationKey: ['create event'],
+        mutationFn: (dto) => eventService.createEvent(dto),
     });
 }

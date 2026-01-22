@@ -6,7 +6,7 @@ import { Area } from 'src/modules/area/entities/area.entity';
 export class AreaService {
   constructor(
     @InjectModel(Area)
-    private readonly directionModel: typeof Area,
+    private readonly areaModel: typeof Area,
   ) {}
 
   async seed() {
@@ -19,9 +19,15 @@ export class AreaService {
     ];
 
     for (const name of areas) {
-      await this.directionModel.findOrCreate({
+      await this.areaModel.findOrCreate({
         where: { name },
       });
     }
+  }
+
+  async findAll(): Promise<Area[]> {
+    return this.areaModel.findAll({
+      order: [['name', 'ASC']],
+    });
   }
 }

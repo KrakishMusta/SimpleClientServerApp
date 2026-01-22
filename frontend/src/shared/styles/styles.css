@@ -1,0 +1,13 @@
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background-color: #9ca3af; /* вместо bg-gray-400 */
+    border-radius: 9999px; /* вместо rounded */
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+    background-color: #f3f4f6; /* вместо bg-gray-100 */
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}

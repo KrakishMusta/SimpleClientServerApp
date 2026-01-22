@@ -10,7 +10,7 @@ import { UserModule } from './modules/user/user.module';
 // import { Post } from './modules/posts/entities/post.entity';
 
 import { AreaModule } from './modules/area/area.module';
-import { AreaService } from './modules/area/services/area.service';
+import { AreaService } from './modules/area/area.service';
 
 import { CityModule } from './modules/city/city.module';
 import { CityService } from './modules/city/services/city.service';
