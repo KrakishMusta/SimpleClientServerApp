@@ -1,16 +1,13 @@
 <script setup lang="ts">
 	import { IArea } from '@/features/dictionary/types/area.interface';
 	import { ICity } from '@/features/dictionary/types/city.interface';
-	import { computed, ref } from 'vue';
+	import { ref } from 'vue';
 	import { IActivityRecord, IEvent } from '../types/event.types';
 	import { useCreateEvent } from '../hooks/useCreateEvent';
 	import { watch } from 'vue';
 	import { addMinutes } from '@/shared/utils/addMinutes';
 	import { formatDateForInput, parseDateFromInput } from '@/shared/utils/formatDate';
 
-	const DAY_START = '09:00';
-	const DAY_END = '22:30';
-	const ACTIVITY_DURATION = 105;
 	const { mutate, isPending, error } = useCreateEvent();
 	interface CreateEventFormProps {
 		cities: ICity[];
@@ -26,68 +23,18 @@
 
 	const activities = ref<IActivityRecord[] | null>([]);
 
-	const activitiesCount = ref<number>(3);
+	const activitiesCount = ref<number>(1);
 
 	// Инициализация массива пустыми объектами
 	for (let i = 0; i < activitiesCount.value; i++) {
 		activities.value.push({ title: '', start: '', jury: null });
 	}
 
-	const activitiesWithDays = computed(() => {
-		if (!startDateRef.value) return [];
-
-		let currentDay = 0;
-		let currentTime = DAY_START;
-
-		return activities.value.map((activity, index) => {
-			if (index === 0) {
-				currentTime = activity.start || DAY_START;
-			} else {
-				const nextTime = addMinutes(currentTime, ACTIVITY_DURATION);
-
-				if (nextTime > DAY_END) {
-					currentDay++;
-					currentTime = DAY_START;
-				} else {
-					currentTime = nextTime;
-				}
-			}
-
-			const date = new Date(startDateRef.value);
-			date.setDate(date.getDate() + currentDay);
-
-			return {
-				...activity,
-				computedData: {
-					dayIndex: currentDay,
-					date,
-					computedStart: currentTime,
-				},
-			};
-		});
-	});
-
-	const activitiesByDay = computed(() => {
-		const map = new Map<number, typeof activitiesWithDays.value>();
-
-		for (const activity of activitiesWithDays.value) {
-			if (!map.has(activity.computedData.dayIndex)) {
-				map.set(activity.computedData.dayIndex, []);
-			}
-			map.get(activity.computedData.dayIndex)!.push(activity);
-		}
-
-		console.log(activitiesWithDays.value);
-		console.log([...map.entries()]);
-
-		return [...map.entries()];
-	});
-
 	function normalizeTime(e: Event, index: number) {
 		let value = (e.target as HTMLInputElement).value;
 
 		value = value < '09:00' ? '09:00' : value;
-		value = value > '22:30' ? '22:30' : value;
+		value = value >= '22:30' ? '22:30' : value;
 
 		activities.value[index].start = value;
 
@@ -124,13 +71,13 @@
 		const startDate = parseDateFromInput(startDateRef.value);
 		const endDate = endDateRef.value ? parseDateFromInput(endDateRef.value) : startDate;
 
-		console.log(activitiesByDay.value.length);
+		// console.log(activitiesByDay.value.length);
 
 		let payload: IEvent = {
 			title: titleRef.value,
 			startDate: startDate,
 			endDate: endDate,
-			durationDays: activitiesByDay.value.length,
+			// durationDays: activitiesByDay.value.length,
 			durationMins: 0,
 			cityId: cityRef.value,
 			areaId: areaRef.value,
@@ -160,13 +107,6 @@
 		{ immediate: true },
 	);
 
-	watch(activitiesWithDays, (list) => {
-		if (!list.length || !startDateRef.value) return;
-
-		const last = list[list.length - 1].computedData.date;
-		endDateRef.value = formatDateForInput(last);
-	});
-
 	watch(activitiesCount, updateActivitiesStart);
 </script>
 
@@ -187,7 +127,6 @@
 			<div class="flex gap-2 justify-between w-full">
 				<label for="endDate" class="p-1 pl-0">Окончание</label>
 				<input
-					v-model="endDateRef"
 					readonly
 					id="endDate"
 					name="endDate"
@@ -236,89 +175,69 @@
 		<span class="w-full bg-slate-400 h-px"></span>
 		<div class="flex flex-col gap-3 min-h-0 max-h-full">
 			<h2 class="font-semibold text-xl">Активности {{ activitiesCount }}</h2>
-			<!-- {{ activitiesByDay }}
-			{{ activitiesWithDays }} -->
+
 			<div class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 font-semibold">
-				<div class="flex items-center">Наименование</div>
-				<div class="flex justify-center items-center">Время</div>
-				<div class="flex justify-center items-center">Жюри</div>
+				<div>Наименование</div>
+				<div class="text-center">Время</div>
+				<div class="text-center">Жюри</div>
 				<div class="size-8.5"></div>
 			</div>
 
 			<!-- <pre class="text-[8px]">{{ activities }}</pre> -->
 			<!-- Список активностей -->
-
 			<div class="flex flex-col gap-2 max-h-full overflow-y-auto scrollbar-custom">
 				<div
-					v-for="[dayIndex, dayActivities] in activitiesByDay"
-					:key="dayIndex"
-					class="flex flex-col gap-2"
+					class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-center"
+					v-for="(item, index) in activitiesCount"
+					:key="index"
 				>
-					<!-- Заголовок дня -->
-					<div
-						class="col-span-4 text-center font-semibold bg-slate-100 p-1 rounded select-none"
+					<!-- логика инкремента дней от startDateRef -->
+					<!-- <span class="col-span-4 text-center">{{ startDateRef + 1 }}</span> -->
+					<span class="col-span-4 text-center">{{ startDateRef }}</span>
+					<input
+						v-model="activities[index].title"
+						type="text"
+						class="border p-1 w-full"
+					/>
+					<!-- v-model="activities[index].start" -->
+					<!-- :readonly="
+							index !== 0 &&
+							addMinutes(activities[index - 1].start, 105) <= '22:30' &&
+							addMinutes(activities[index - 1].start, 105) >= '09:00'
+						" -->
+					<input
+						type="time"
+						v-model="activities[index].start"
+						min="09:00"
+						max="22:30"
+						@change="(e) => normalizeTime(e, index)"
+						class="border p-1 w-full"
+					/>
+					<span class="text-center underline underline-offset-4"
+						><span v-if="index !== 0"
+							>{{ index }} {{ addMinutes(activities[index - 1].start, 105) }}
+							{{ addMinutes(activities[index - 1].start, 105) > '23:00' }}</span
+						><span v-else></span
+					></span>
+					<!-- @click="activitiesCount--" -->
+					<button
+						@click="removeActivity(index)"
+						class="bg-red-200 flex justify-center items-center hover:bg-red-400 cursor-pointer aspect-square h-full"
 					>
-						День {{ dayIndex + 1 }} —
-						{{ dayActivities[0].computedData.date.toLocaleDateString() }}
-					</div>
-
-					<!-- Активности дня -->
-					<div
-						v-for="(activity, index) in dayActivities"
-						:key="index"
-						class="group grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-center"
-					>
-						<input v-model="activity.title" type="text" class="border p-1 w-full" />
-
-						<input
-							type="time"
-							v-model="activity.start"
-							class="border p-1 w-full"
-							min="09:00"
-							max="22:30"
-							@change="(e) => normalizeTime(e, index)"
-						/>
-
-						<span class="text-center">—</span>
-
-						<button
-							@click="removeActivity(index)"
-							class="bg-red-200 select-none hover:bg-red-400 h-full aspect-square"
-						>
-							-
-						</button>
-
-						<div
-							class="group-hover:flex hidden col-span-4 justify-center relative select-none"
-						>
-							<span
-								class="bg-white z-10 px-1 select-none hover:bg-slate-200 cursor-pointer"
-								>+ Добавить активность</span
-							>
-							<span
-								class="bg-slate-400 z-0 left-0 self-center h-px w-full absolute"
-							></span>
-						</div>
-					</div>
-
-					<!-- Добавление дня -->
-					<div
-						class="select-none col-span-4 text-center font-semibold bg-slate-100 p-1 hover:bg-slate-400 cursor-pointer"
-					>
-						+ Добавить день
-					</div>
+						-
+					</button>
 				</div>
 			</div>
 
 			<!-- Добавление новой активности -->
-			<!-- <button @click="addActivity" class="p-2 bg-slate-200 hover:bg-slate-400 w-max rounded">
+			<button @click="addActivity" class="p-2 bg-slate-200 hover:bg-slate-400 w-max rounded">
 				+ Добавить запись
-			</button> -->
+			</button>
 		</div>
 		<div>
 			<button
 				v-on:click="handleCreateEvent"
-				class="select-none p-2 rounded-md text-base font-bold bg-slate-200 hover:bg-slate-400 cursor-pointer"
+				class="p-2 rounded-md text-base font-bold bg-slate-200"
 				type="button"
 			>
 				Создать

@@ -58,11 +58,9 @@
 
 			return {
 				...activity,
-				computedData: {
-					dayIndex: currentDay,
-					date,
-					computedStart: currentTime,
-				},
+				dayIndex: currentDay,
+				date,
+				computedStart: currentTime,
 			};
 		});
 	});
@@ -71,14 +69,11 @@
 		const map = new Map<number, typeof activitiesWithDays.value>();
 
 		for (const activity of activitiesWithDays.value) {
-			if (!map.has(activity.computedData.dayIndex)) {
-				map.set(activity.computedData.dayIndex, []);
+			if (!map.has(activity.dayIndex)) {
+				map.set(activity.dayIndex, []);
 			}
-			map.get(activity.computedData.dayIndex)!.push(activity);
+			map.get(activity.dayIndex)!.push(activity);
 		}
-
-		console.log(activitiesWithDays.value);
-		console.log([...map.entries()]);
 
 		return [...map.entries()];
 	});
@@ -163,7 +158,7 @@
 	watch(activitiesWithDays, (list) => {
 		if (!list.length || !startDateRef.value) return;
 
-		const last = list[list.length - 1].computedData.date;
+		const last = list[list.length - 1].date;
 		endDateRef.value = formatDateForInput(last);
 	});
 
@@ -239,9 +234,9 @@
 			<!-- {{ activitiesByDay }}
 			{{ activitiesWithDays }} -->
 			<div class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 font-semibold">
-				<div class="flex items-center">Наименование</div>
-				<div class="flex justify-center items-center">Время</div>
-				<div class="flex justify-center items-center">Жюри</div>
+				<div>Наименование</div>
+				<div class="text-center">Время</div>
+				<div class="text-center">Жюри</div>
 				<div class="size-8.5"></div>
 			</div>
 
@@ -255,18 +250,16 @@
 					class="flex flex-col gap-2"
 				>
 					<!-- Заголовок дня -->
-					<div
-						class="col-span-4 text-center font-semibold bg-slate-100 p-1 rounded select-none"
-					>
+					<div class="col-span-4 text-center font-semibold bg-slate-100 p-1 rounded">
 						День {{ dayIndex + 1 }} —
-						{{ dayActivities[0].computedData.date.toLocaleDateString() }}
+						{{ dayActivities[0].date.toLocaleDateString() }}
 					</div>
 
 					<!-- Активности дня -->
 					<div
 						v-for="(activity, index) in dayActivities"
 						:key="index"
-						class="group grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-center"
+						class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-center"
 					>
 						<input v-model="activity.title" type="text" class="border p-1 w-full" />
 
@@ -276,6 +269,11 @@
 							class="border p-1 w-full"
 							min="09:00"
 							max="22:30"
+							:readonly="
+								index !== 0 &&
+								(addMinutes(activities[index - 1].start, 105) < '23:00' ||
+									activities[index - 1].start === '')
+							"
 							@change="(e) => normalizeTime(e, index)"
 						/>
 
@@ -283,42 +281,23 @@
 
 						<button
 							@click="removeActivity(index)"
-							class="bg-red-200 select-none hover:bg-red-400 h-full aspect-square"
+							class="bg-red-200 hover:bg-red-400 h-full aspect-square"
 						>
 							-
 						</button>
-
-						<div
-							class="group-hover:flex hidden col-span-4 justify-center relative select-none"
-						>
-							<span
-								class="bg-white z-10 px-1 select-none hover:bg-slate-200 cursor-pointer"
-								>+ Добавить активность</span
-							>
-							<span
-								class="bg-slate-400 z-0 left-0 self-center h-px w-full absolute"
-							></span>
-						</div>
-					</div>
-
-					<!-- Добавление дня -->
-					<div
-						class="select-none col-span-4 text-center font-semibold bg-slate-100 p-1 hover:bg-slate-400 cursor-pointer"
-					>
-						+ Добавить день
 					</div>
 				</div>
 			</div>
 
 			<!-- Добавление новой активности -->
-			<!-- <button @click="addActivity" class="p-2 bg-slate-200 hover:bg-slate-400 w-max rounded">
+			<button @click="addActivity" class="p-2 bg-slate-200 hover:bg-slate-400 w-max rounded">
 				+ Добавить запись
-			</button> -->
+			</button>
 		</div>
 		<div>
 			<button
 				v-on:click="handleCreateEvent"
-				class="select-none p-2 rounded-md text-base font-bold bg-slate-200 hover:bg-slate-400 cursor-pointer"
+				class="p-2 rounded-md text-base font-bold bg-slate-200"
 				type="button"
 			>
 				Создать
