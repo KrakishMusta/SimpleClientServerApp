@@ -47,10 +47,22 @@ export class Activity extends Model<
   declare title: string;
 
   @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  declare start: string;
+
+  @Column({
+    type: DataType.INTEGER,
+    allowNull: false,
+  })
+  declare dayIndex: number;
+
+  @Column({
     type: DataType.DATE,
     allowNull: false,
   })
-  declare start: Date;
+  declare date: Date;
 
   // JURY ASSIGNMENTS
   @HasMany(() => ActivityJury)

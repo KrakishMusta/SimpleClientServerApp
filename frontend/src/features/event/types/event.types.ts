@@ -1,22 +1,22 @@
 export interface IEvent {
-    id?: string;
-    title: string;
-    areaId: string;
-    startDate: Date;
-    endDate: Date;
-    durationDays: number;
-    durationMins: number;
-    cityId: string;
-    activities?: IActivityRecord[] | null;
-    winner?: string | null;
+	id?: string;
+	title: string;
+	areaId: string;
+	area?: string;
+	startDate: string;
+	endDate: string;
+	durationDays: number;
+	durationMins: number;
+	cityId: string;
+	city?: string;
+	activities?: IActivityRecord[] | null;
+	winner?: string | null;
 }
 
 export interface IActivityRecord {
-    title: string;
-    start: string;
-    jury: string[] | null;
-}
-
-export interface GetEventsResponse {
-    events: IEvent[];
+	title: string;
+	start: string;
+	dayIndex: number;
+	date: string;
+	jury: string[] | null;
 }

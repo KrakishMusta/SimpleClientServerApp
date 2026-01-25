@@ -4,6 +4,8 @@ import { EventModel } from './entities/event.entity';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { ActivityService } from '../activity/activity.service';
+import { City } from 'src/modules/city/entities/city.entity';
+import { Area } from 'src/modules/area/entities/area.entity';
 
 @Injectable()
 export class EventService {
@@ -15,12 +17,20 @@ export class EventService {
   ) {}
 
   async create(dto: CreateEventDto): Promise<EventModel> {
+    console.log(dto);
+
+    const { activities, ...eventDto } = dto;
+
     const event = await this.eventModel.create({
-      ...dto,
-      startDate: new Date(dto.startDate), // важно
-      endDate: new Date(dto.endDate), // важно
+      ...eventDto,
+      startDate: new Date(dto.startDate),
+      endDate: new Date(dto.endDate),
       winner: null,
     });
+
+    if (activities?.length) {
+      await this.activityService.createMany(event.id, activities);
+    }
 
     return event;
   }
@@ -52,9 +62,18 @@ export class EventService {
     return this.findOne(id);
   }
 
-  // GET /event
   async findAll(): Promise<EventModel[]> {
     return this.eventModel.findAll({
+      include: [
+        {
+          model: City,
+          attributes: ['name'],
+        },
+        {
+          model: Area,
+          attributes: ['name'],
+        },
+      ],
       order: [['startDate', 'ASC']],
     });
   }

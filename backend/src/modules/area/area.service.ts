@@ -19,8 +19,10 @@ export class AreaService {
     ];
 
     for (const name of areas) {
+      // findOrCreate работает как раньше, UUID сгенерируется автоматически
       await this.areaModel.findOrCreate({
         where: { name },
+        defaults: { name }, // defaults нужен для корректного создания новой записи
       });
     }
   }

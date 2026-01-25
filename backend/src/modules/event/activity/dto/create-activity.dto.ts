@@ -1,8 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsArray } from 'class-validator';
+import {
+  IsArray,
+  IsDateString,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class CreateActivityDto {
-  @ApiProperty()
+  @ApiProperty({ example: 'Лекция по ТЗ' })
   @IsString()
   title: string;
 
@@ -10,8 +16,19 @@ export class CreateActivityDto {
   @IsString()
   start: string; // HH:mm
 
-  @ApiProperty({ type: [String] })
+  @ApiProperty({ example: 0, description: 'Индекс дня (с 0)' })
+  @IsNumber()
+  dayIndex: number;
+
+  @ApiProperty({
+    example: '2026-01-22',
+    description: 'Дата дня активности',
+  })
+  @IsDateString()
+  date: string;
+
+  @ApiProperty({ type: [String], required: false, nullable: true })
   @IsArray()
   @IsString({ each: true })
-  jury: string[];
+  jury: string[] | null;
 }

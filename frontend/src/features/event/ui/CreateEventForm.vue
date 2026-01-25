@@ -26,64 +26,81 @@
 
 	const activities = ref<IActivityRecord[] | null>([]);
 
-	const activitiesCount = ref<number>(3);
+	// const activitiesCount = ref<number>(3);
+	const maxDayIndex = ref<number>(0);
 
 	// Инициализация массива пустыми объектами
-	for (let i = 0; i < activitiesCount.value; i++) {
-		activities.value.push({ title: '', start: '', jury: null });
+	for (let i = 0; i < 3; i++) {
+		activities.value.push({
+			title: i.toString(),
+			start: '',
+			dayIndex: maxDayIndex.value,
+			date: formatDateForInput(new Date()),
+			jury: null,
+		});
 	}
 
-	const activitiesWithDays = computed(() => {
-		if (!startDateRef.value) return [];
+	// const activitiesWithDays = computed(() => {
+	// 	if (!startDateRef.value) return [];
 
-		let currentDay = 0;
-		let currentTime = DAY_START;
+	// 	let currentDay = 0;
+	// 	let currentTime = DAY_START;
 
-		return activities.value.map((activity, index) => {
-			if (index === 0) {
-				currentTime = activity.start || DAY_START;
-			} else {
-				const nextTime = addMinutes(currentTime, ACTIVITY_DURATION);
+	// 	return activities.value.map((activity, index) => {
+	// 		if (index === 0) {
+	// 			currentTime = activity.start || DAY_START;
+	// 		} else {
+	// 			const nextTime = addMinutes(currentTime, ACTIVITY_DURATION);
 
-				if (nextTime > DAY_END) {
-					currentDay++;
-					currentTime = DAY_START;
-				} else {
-					currentTime = nextTime;
-				}
-			}
+	// 			if (nextTime > DAY_END) {
+	// 				currentDay++;
+	// 				currentTime = DAY_START;
+	// 			} else {
+	// 				currentTime = nextTime;
+	// 			}
+	// 		}
 
-			const date = new Date(startDateRef.value);
-			date.setDate(date.getDate() + currentDay);
+	// 		const date = new Date(startDateRef.value);
+	// 		date.setDate(date.getDate() + currentDay);
 
-			return {
-				...activity,
-				computedData: {
-					dayIndex: currentDay,
-					date,
-					computedStart: currentTime,
-				},
-			};
-		});
-	});
+	// 		return {
+	// 			...activity,
+	// 			computedData: {
+	// 				dayIndex: currentDay,
+	// 				date,
+	// 				computedStart: currentTime,
+	// 			},
+	// 		};
+	// 	});
+	// });
+	// computed<
+	// 	[
+	// 		number,
+	// 		{
+	// 			title: string;
+	// 			start: string;
+	// 			dayIndex: number;
+	// 			date: Date;
+	// 			jury: string[];
+	// 		}[],
+	// 	][]
+	// >;
 
 	const activitiesByDay = computed(() => {
-		const map = new Map<number, typeof activitiesWithDays.value>();
+		const map = new Map<number, typeof activities.value>();
 
-		for (const activity of activitiesWithDays.value) {
-			if (!map.has(activity.computedData.dayIndex)) {
-				map.set(activity.computedData.dayIndex, []);
+		for (const activity of activities.value) {
+			// console.log(!map.has(activity.dayIndex));
+			if (!map.has(activity.dayIndex)) {
+				map.set(activity.dayIndex, []);
 			}
-			map.get(activity.computedData.dayIndex)!.push(activity);
+			map.get(activity.dayIndex).push(activity);
 		}
-
-		console.log(activitiesWithDays.value);
-		console.log([...map.entries()]);
 
 		return [...map.entries()];
 	});
 
-	function normalizeTime(e: Event, index: number) {
+	function normalizeTime(e: Event, index: number, dayIndex: number) {
 		let value = (e.target as HTMLInputElement).value;
 
 		value = value < '09:00' ? '09:00' : value;
@@ -91,53 +108,121 @@
 
 		activities.value[index].start = value;
 
-		updateActivitiesStart();
+		updateActivitiesStart(dayIndex);
 	}
 
-	function updateActivitiesStart() {
-		for (let i = 1; i !== activitiesCount.value; i++) {
-			const currentActivityTimeLimit = addMinutes(activities.value[i - 1].start, 105);
-			if (currentActivityTimeLimit <= '22:30' && currentActivityTimeLimit >= `09:00`) {
-				activities.value[i].start = currentActivityTimeLimit;
+	function updateActivitiesStart(dayIndex: number, startIndex: number = 1) {
+		const dayActivities = activitiesByDay.value[dayIndex][1];
+		for (let i = startIndex; i < dayActivities.length; i++) {
+			const prev = dayActivities[i - 1];
+
+			const currentActivityTimeLimit = addMinutes(prev.start, ACTIVITY_DURATION);
+
+			if (currentActivityTimeLimit <= DAY_END && currentActivityTimeLimit >= DAY_START) {
+				dayActivities[i].start = currentActivityTimeLimit;
 			} else {
-				if (activities.value[i].start === '') {
-					break;
-				}
+				dayActivities[i].start = '';
 			}
 		}
 	}
 
-	function addActivity() {
-		activities.value.push({ title: '', start: '', jury: null });
-		activitiesCount.value++;
+	function addActivity(beforeActivityIndex: number, dayIndex: number, date: Date) {
+		// console.log(activitiesByDay.value[dayIndex][1][beforeActivityIndex]);
+		if (activitiesByDay.value[dayIndex][1][beforeActivityIndex].start !== ``) {
+			const currentActivityTimeLimit = addMinutes(
+				activitiesByDay.value[dayIndex][1][beforeActivityIndex].start,
+				105,
+			);
+			console.log(currentActivityTimeLimit);
+			if (currentActivityTimeLimit <= DAY_END && currentActivityTimeLimit >= DAY_START) {
+				const insertIndex = beforeActivityIndex + 1;
+				activities.value.splice(insertIndex, 0, {
+					title: '777',
+					start: currentActivityTimeLimit,
+					dayIndex,
+					date: formatDateForInput(date),
+					jury: null,
+				});
+				updateActivitiesStart(dayIndex, insertIndex + 1);
+			}
+		} else {
+			activities.value.push({
+				title: '',
+				start: '',
+				dayIndex: dayIndex,
+				date: formatDateForInput(date),
+				jury: null,
+			});
+		}
 	}
 
 	function removeActivity(index: number) {
 		activities.value.splice(index, 1);
+	}
+
+	function addDay() {
+		maxDayIndex.value++;
+
+		const date = new Date(startDateRef.value);
+		// console.log(date);
+		date.setDate(date.getDate() + maxDayIndex.value);
+
+		activities.value.push({
+			title: '',
+			start: '',
+			dayIndex: maxDayIndex.value,
+			date: formatDateForInput(date),
+			jury: null,
+		});
+	}
+
+	function removeDay(dayIndex: number) {
+		if (!activities.value) return;
+
+		// 1. Удаляем активности выбранного дня
+		activities.value = activities.value.filter((activity) => activity.dayIndex !== dayIndex);
+
+		// 2. Сдвигаем dayIndex у следующих дней
+		for (const activity of activities.value) {
+			if (activity.dayIndex > dayIndex) {
+				activity.dayIndex--;
+				const date = new Date(startDateRef.value);
+				// console.log(date);
+				date.setDate(date.getDate() + activity.dayIndex);
+				activity.date = formatDateForInput(date);
+			}
+		}
+
+		// 3. Обновляем максимальный индекс дня
+		maxDayIndex.value--;
+
 		console.log(activities.value);
-		activitiesCount.value--;
 	}
 
 	function handleCreateEvent() {
 		if (!startDateRef.value) return;
 
-		const startDate = parseDateFromInput(startDateRef.value);
-		const endDate = endDateRef.value ? parseDateFromInput(endDateRef.value) : startDate;
+		// const startDate = parseDateFromInput(startDateRef.value);
+		// const endDate = endDateRef.value ? parseDateFromInput(endDateRef.value) : startDate;
 
 		console.log(activitiesByDay.value.length);
 
+		const mappedActivities = activities.value.filter((activity) => activity.start !== '');
+
+		console.log(mappedActivities);
+
 		let payload: IEvent = {
 			title: titleRef.value,
-			startDate: startDate,
-			endDate: endDate,
+			startDate: startDateRef.value,
+			endDate: endDateRef.value,
 			durationDays: activitiesByDay.value.length,
 			durationMins: 0,
 			cityId: cityRef.value,
 			areaId: areaRef.value,
-			activities: null,
+			activities: mappedActivities,
 		};
 
-		// mutate(payload);
+		mutate(payload);
 	}
 
 	watch(
@@ -160,14 +245,30 @@
 		{ immediate: true },
 	);
 
-	watch(activitiesWithDays, (list) => {
-		if (!list.length || !startDateRef.value) return;
+	watch(
+		() => [startDateRef.value, maxDayIndex.value] as [string, number],
+		([startDate, maxDay]) => {
+			if (!startDate) return;
 
-		const last = list[list.length - 1].computedData.date;
-		endDateRef.value = formatDateForInput(last);
-	});
+			const date = parseDateFromInput(startDate);
+			date.setDate(date.getDate() + maxDay);
 
-	watch(activitiesCount, updateActivitiesStart);
+			endDateRef.value = formatDateForInput(date);
+
+			// console.log(`watch`, endDateRef.value, date);
+		},
+		{ immediate: true },
+	);
+
+	// ??
+	// watch(activitiesWithDays, (list) => {
+	// 	if (!list.length || !startDateRef.value) return;
+
+	// 	const last = list[list.length - 1].computedData.date;
+	// 	endDateRef.value = formatDateForInput(last);
+	// });
+	// ??
+	// watch(activitiesCount, updateActivitiesStart);
 </script>
 
 <template>
@@ -235,7 +336,7 @@
 		</div>
 		<span class="w-full bg-slate-400 h-px"></span>
 		<div class="flex flex-col gap-3 min-h-0 max-h-full">
-			<h2 class="font-semibold text-xl">Активности {{ activitiesCount }}</h2>
+			<h2 class="font-semibold text-xl">Активности</h2>
 			<!-- {{ activitiesByDay }}
 			{{ activitiesWithDays }} -->
 			<div class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 font-semibold">
@@ -256,10 +357,16 @@
 				>
 					<!-- Заголовок дня -->
 					<div
-						class="col-span-4 text-center font-semibold bg-slate-100 p-1 rounded select-none"
+						class="col-span-4 flex gap-2 justify-center font-semibold bg-slate-100 p-1 rounded select-none"
 					>
-						День {{ dayIndex + 1 }} —
-						{{ dayActivities[0].computedData.date.toLocaleDateString() }}
+						<span>День {{ dayIndex + 1 }} — {{ dayActivities[0].date }}</span>
+						<button
+							@click="removeDay(dayIndex)"
+							class="bg-red-200 hover:bg-red-400 cursor-pointer h-full aspect-square"
+							type="button"
+						>
+							-
+						</button>
 					</div>
 
 					<!-- Активности дня -->
@@ -276,10 +383,16 @@
 							class="border p-1 w-full"
 							min="09:00"
 							max="22:30"
-							@change="(e) => normalizeTime(e, index)"
+							@change="(e) => normalizeTime(e, index, dayIndex)"
+							:readonly="
+								index !== 0 &&
+								(addMinutes(dayActivities[index - 1].start, 105) < '23:00' ||
+									addMinutes(dayActivities[index - 1].start, 105) > '9:00' ||
+									dayActivities[index].start === ``)
+							"
 						/>
 
-						<span class="text-center">—</span>
+						<span class="text-center">{{ index }}</span>
 
 						<button
 							@click="removeActivity(index)"
@@ -292,6 +405,13 @@
 							class="group-hover:flex hidden col-span-4 justify-center relative select-none"
 						>
 							<span
+								@click="
+									addActivity(
+										index,
+										activity.dayIndex,
+										parseDateFromInput(activity.date),
+									)
+								"
 								class="bg-white z-10 px-1 select-none hover:bg-slate-200 cursor-pointer"
 								>+ Добавить активность</span
 							>
@@ -300,13 +420,13 @@
 							></span>
 						</div>
 					</div>
-
-					<!-- Добавление дня -->
-					<div
-						class="select-none col-span-4 text-center font-semibold bg-slate-100 p-1 hover:bg-slate-400 cursor-pointer"
-					>
-						+ Добавить день
-					</div>
+				</div>
+				<!-- Добавление дня -->
+				<div
+					@click="addDay"
+					class="select-none col-span-4 text-center font-semibold bg-slate-100 p-1 hover:bg-slate-400 cursor-pointer"
+				>
+					+ Добавить день
 				</div>
 			</div>
 

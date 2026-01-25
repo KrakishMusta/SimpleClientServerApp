@@ -25,10 +25,17 @@ export class ActivityService {
   }
   // Создание одной активности
   async create(eventId: string, dto: CreateActivityDto): Promise<Activity> {
+    const baseDate = new Date(dto.date);
+
+    const [hours, minutes] = dto.start.split(':').map(Number);
+    baseDate.setHours(hours, minutes, 0, 0);
+
     const activity = await this.activityModel.create({
       eventId,
       title: dto.title,
-      start: new Date(dto.start),
+      start: dto.start,
+      dayIndex: dto.dayIndex,
+      date: baseDate,
     });
 
     if (dto.jury?.length) {
@@ -45,9 +52,13 @@ export class ActivityService {
 
   // Создание списка активностей (из IEvent.activities)
   async createMany(eventId: string, activities: CreateActivityDto[]) {
-    for (const activity of activities) {
-      await this.create(eventId, activity);
-    }
+    const records = activities.map((a) => ({
+      ...a,
+      eventId,
+      date: new Date(a.date), // <-- обязательно конвертируем в Date
+    }));
+
+    return this.activityModel.bulkCreate(records);
   }
 
   // Получить активности события
@@ -65,7 +76,7 @@ export class ActivityService {
 
     return activities.map((activity) => ({
       title: activity.title,
-      start: activity.start.toISOString(),
+      start: activity.start,
       jury: activity.jury?.map((j) => j.eventUserId) ?? [],
     }));
   }
@@ -101,10 +112,17 @@ export class ActivityService {
     await this.removeByEvent(eventId);
 
     for (const activity of activities) {
+      const baseDate = new Date(activity.date);
+
+      const [hours, minutes] = activity.start.split(':').map(Number);
+      baseDate.setHours(hours, minutes, 0, 0);
+
       const created = await this.activityModel.create({
         eventId,
         title: activity.title,
-        start: this.parseTime(activity.start),
+        start: activity.start,
+        dayIndex: activity.dayIndex,
+        date: baseDate,
       });
 
       if (activity.jury?.length) {

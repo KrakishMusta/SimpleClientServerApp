@@ -14,5 +14,7 @@ export interface IEvent {
 export interface IActivityRecord {
   title: string;
   start: string;
+  dayIndex: number;
+  date: Date;
   jury: string[] | null;
 }

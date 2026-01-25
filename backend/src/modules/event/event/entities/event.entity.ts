@@ -4,6 +4,7 @@ import type {
   CreationOptional,
 } from 'sequelize';
 import {
+  BelongsTo,
   Column,
   DataType,
   ForeignKey,
@@ -38,6 +39,9 @@ export class EventModel extends Model<
   @Column({ type: DataType.UUID, allowNull: false })
   declare areaId: string;
 
+  @BelongsTo(() => Area)
+  declare area?: Area;
+
   @Column({ type: DataType.DATE, allowNull: false })
   declare startDate: Date;
 
@@ -54,6 +58,9 @@ export class EventModel extends Model<
   @ForeignKey(() => City)
   @Column({ type: DataType.UUID, allowNull: false })
   declare cityId: string;
+
+  @BelongsTo(() => City)
+  declare city?: City;
 
   @Column({
     type: DataType.JSONB,
