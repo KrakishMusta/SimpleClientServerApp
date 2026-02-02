@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/sequelize';
 import { Activity } from './entities/activity.entity';
 import { ActivityJury } from './entities/activity-jury.entity';
 import { CreateActivityDto } from './dto/create-activity.dto';
+import { ActivityResponseDto } from './dto/activity-response.dto';
 
 @Injectable()
 export class ActivityService {
@@ -62,21 +63,24 @@ export class ActivityService {
   }
 
   // Получить активности события
-  async getByEvent(eventId: string) {
+  async getByEvent(eventId: string): Promise<ActivityResponseDto[]> {
     const activities = await this.activityModel.findAll({
       where: { eventId },
       include: [
         {
           model: ActivityJury,
-          attributes: ['userId'],
+          attributes: ['eventUserId'],
         },
       ],
       order: [['start', 'ASC']],
     });
 
     return activities.map((activity) => ({
+      id: activity.id,
       title: activity.title,
+      dayIndex: activity.dayIndex,
       start: activity.start,
+      date: activity.date,
       jury: activity.jury?.map((j) => j.eventUserId) ?? [],
     }));
   }

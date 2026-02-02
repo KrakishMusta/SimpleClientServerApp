@@ -14,6 +14,7 @@ import {
 import { IActivityRecord } from '../interfaces/event.interface';
 import { Area } from 'src/modules/area/entities/area.entity';
 import { City } from 'src/modules/city/entities/city.entity';
+import { User } from 'src/modules/user/entities/user.entity';
 
 @Table({
   tableName: 'event',
@@ -62,12 +63,12 @@ export class EventModel extends Model<
   @BelongsTo(() => City)
   declare city?: City;
 
-  @Column({
-    type: DataType.JSONB,
-    allowNull: true,
-    defaultValue: [],
-  })
-  declare activities: IActivityRecord[] | null;
+  // @Column({
+  //   type: DataType.JSONB,
+  //   allowNull: true,
+  //   defaultValue: [],
+  // })
+  // declare activities: IActivityRecord[] | null;
 
   @Column({
     type: DataType.STRING,
@@ -75,4 +76,12 @@ export class EventModel extends Model<
     defaultValue: null,
   })
   declare winner: string | null;
+
+  // --- CREATOR FK ---
+  @ForeignKey(() => User)
+  @Column({ type: DataType.UUID, allowNull: false })
+  declare creatorId: string;
+
+  @BelongsTo(() => User)
+  declare creator?: User;
 }

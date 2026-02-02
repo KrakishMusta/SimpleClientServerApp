@@ -6,13 +6,22 @@ import {
   Param,
   Patch,
   Post,
+  Req,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOperation,
+  ApiParam,
+  ApiTags,
+} from '@nestjs/swagger';
 
 import { EventService } from './event.service';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
 import { EventModel } from './entities/event.entity';
+import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard';
+import { EventDetailsDto } from './dto/event-details.dto';
 
 @ApiTags('events')
 @Controller('events')
@@ -22,8 +31,11 @@ export class EventController {
   // CREATE
   @Post()
   @ApiOperation({ summary: 'Create event' })
-  create(@Body() dto: CreateEventDto): Promise<EventModel> {
-    return this.eventService.create(dto);
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  create(@Body() dto: CreateEventDto, @Req() req): Promise<EventModel> {
+    // console.log(req);
+    return this.eventService.create(dto, req.user.id);
   }
 
   // READ ALL
@@ -37,7 +49,7 @@ export class EventController {
   @Get(':id')
   @ApiOperation({ summary: 'Get event by id' })
   @ApiParam({ name: 'id', type: String })
-  findOne(@Param('id') id: string): Promise<EventModel> {
+  findOne(@Param('id') id: string): Promise<EventDetailsDto> {
     return this.eventService.findOne(id);
   }
 
@@ -48,7 +60,7 @@ export class EventController {
   update(
     @Param('id') id: string,
     @Body() dto: UpdateEventDto,
-  ): Promise<EventModel> {
+  ): Promise<EventDetailsDto> {
     return this.eventService.update(id, dto);
   }
 

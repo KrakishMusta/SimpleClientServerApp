@@ -13,18 +13,26 @@
 </script>
 
 <template>
-	<div class="p-10 flex w-full box-border overflow-y-auto h-full">
+	<div class="p-10 flex w-full box-border h-svh min-h-0">
 		<div class="flex flex-col gap-8 min-w-0 w-full h-full min-h-0" v-if="!hideParent">
-			<router-link to="/events/create-event">
-				<button type="button" class="p-2 text-xl rounded-sm bg-slate-400">
-					Создать мероприятие
-				</button>
+			<router-link
+				class="select-none self-start col-span-4 text-center font-semibold bg-slate-100 p-2 w-fit text-xl rounded-sm hover:bg-slate-400 cursor-pointer"
+				to="/events/create-event"
+			>
+				Создать мероприятие
 			</router-link>
 
 			<div v-if="isLoading">Загрузка...</div>
-			<div v-if="!events.length">Доступных мероприятий нет.</div>
-			<div v-else class="flex gap-2">
-				<div class="bg-slate-300 rounded-lg w-1/3 box-border p-4" v-for="event in events">
+			<div v-if="!events.length && !isLoading">Доступных мероприятий нет.</div>
+			<div
+				class="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-auto min-w-0 w-full h-full min-h-0"
+			>
+				<div
+					@click="() => $router.push({ name: 'event', params: { eventId: event.id } })"
+					class="bg-slate-400 rounded-lg p-4 hover:bg-slate-200 hover:shadow-[0_10px_0_rgba(0,0,1,0.2)] cursor-pointer"
+					v-for="event in events"
+					:key="event.id"
+				>
 					<h2
 						class="text-xl max-w-full overflow-hidden text-ellipsis whitespace-nowrap align-bottom inline-block"
 					>
@@ -43,7 +51,7 @@
 			</div>
 			<!-- <div></div> -->
 		</div>
-		<router-view class="w-full min-w-0 min-h-0 h-full" v-slot="{ Component }">
+		<router-view class="flex flex-col w-full min-w-0 min-h-0 h-full" v-slot="{ Component }">
 			<component :is="Component" />
 		</router-view>
 	</div>

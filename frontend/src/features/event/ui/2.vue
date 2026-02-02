@@ -3,7 +3,7 @@
 	import { ICity } from '@/features/dictionary/types/city.interface';
 	import { ref } from 'vue';
 	import { IActivityRecord, IEvent } from '../types/event.types';
-	import { useCreateEvent } from '../hooks/useCreateEvent';
+	import { useCreateEvent } from '../hooks/useCreateEventMutation';
 	import { watch } from 'vue';
 	import { addMinutes } from '@/shared/utils/addMinutes';
 	import { formatDateForInput, parseDateFromInput } from '@/shared/utils/formatDate';

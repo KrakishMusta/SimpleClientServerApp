@@ -3,7 +3,7 @@
 	import { ICity } from '@/features/dictionary/types/city.interface';
 	import { computed, ref } from 'vue';
 	import { IActivityRecord, IEvent } from '../types/event.types';
-	import { useCreateEvent } from '../hooks/useCreateEvent';
+	import { useCreateEvent } from '../hooks/useCreateEventMutation';
 	import { watch } from 'vue';
 	import { addMinutes } from '@/shared/utils/addMinutes';
 	import { formatDateForInput, parseDateFromInput } from '@/shared/utils/formatDate';
@@ -272,7 +272,7 @@
 </script>
 
 <template>
-	<div class="flex flex-col min-w-0 h-full max-h-full gap-4">
+	<div class="flex flex-col md:min-w-175 min-w-0 h-full min-h-0 gap-4">
 		<h2 class="font-semibold text-2xl">Создание мероприятия</h2>
 		<div class="flex flex-col gap-3">
 			<div class="flex gap-2 justify-between w-full">
@@ -323,12 +323,7 @@
 			<div class="flex gap-2 justify-between w-full">
 				<label for="city" class="p-1 pl-0">Город</label>
 				<select name="city" id="city" v-model="cityRef">
-					<option
-						class="text-end"
-						v-for="city in cities.slice(0, 10)"
-						:key="city.id"
-						:value="city.id"
-					>
+					<option class="text-end" v-for="city in cities" :key="city.id" :value="city.id">
 						{{ city.name }}
 					</option>
 				</select>
@@ -339,10 +334,10 @@
 			<h2 class="font-semibold text-xl">Активности</h2>
 			<!-- {{ activitiesByDay }}
 			{{ activitiesWithDays }} -->
-			<div class="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 font-semibold">
+			<div class="grid grid-cols-[1fr_1fr_34px] gap-2 font-semibold">
 				<div class="flex items-center">Наименование</div>
-				<div class="flex justify-center items-center">Время</div>
-				<div class="flex justify-center items-center">Жюри</div>
+				<div class="flex justify-center items-center">Начало</div>
+				<!-- <div class="flex justify-center items-center">Жюри</div> -->
 				<div class="size-8.5"></div>
 			</div>
 
@@ -373,33 +368,35 @@
 					<div
 						v-for="(activity, index) in dayActivities"
 						:key="index"
-						class="group grid grid-cols-[1fr_1fr_1fr_auto] gap-2 items-center"
+						class="group flex flex-col gap-1"
 					>
-						<input v-model="activity.title" type="text" class="border p-1 w-full" />
+						<div class="grid grid-cols-[1fr_1fr_34px] gap-2 items-center">
+							<input v-model="activity.title" type="text" class="border p-1 w-full" />
 
-						<input
-							type="time"
-							v-model="activity.start"
-							class="border p-1 w-full"
-							min="09:00"
-							max="22:30"
-							@change="(e) => normalizeTime(e, index, dayIndex)"
-							:readonly="
-								index !== 0 &&
-								(addMinutes(dayActivities[index - 1].start, 105) < '23:00' ||
-									addMinutes(dayActivities[index - 1].start, 105) > '9:00' ||
-									dayActivities[index].start === ``)
-							"
-						/>
+							<input
+								type="time"
+								v-model="activity.start"
+								class="border p-1 w-full"
+								min="09:00"
+								max="22:30"
+								@change="(e) => normalizeTime(e, index, dayIndex)"
+								:readonly="
+									index !== 0 &&
+									(addMinutes(dayActivities[index - 1].start, 105) < '23:00' ||
+										addMinutes(dayActivities[index - 1].start, 105) > '9:00' ||
+										dayActivities[index].start === ``)
+								"
+							/>
 
-						<span class="text-center">{{ index }}</span>
+							<!-- <span class="text-center"></span> -->
 
-						<button
-							@click="removeActivity(index)"
-							class="bg-red-200 select-none hover:bg-red-400 h-full aspect-square"
-						>
-							-
-						</button>
+							<button
+								@click="removeActivity(index)"
+								class="bg-red-200 select-none hover:bg-red-400 w-8.5 aspect-square"
+							>
+								-
+							</button>
+						</div>
 
 						<div
 							class="group-hover:flex hidden col-span-4 justify-center relative select-none"

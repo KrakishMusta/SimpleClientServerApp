@@ -6,6 +6,10 @@ import { UpdateEventDto } from './dto/update-event.dto';
 import { ActivityService } from '../activity/activity.service';
 import { City } from 'src/modules/city/entities/city.entity';
 import { Area } from 'src/modules/area/entities/area.entity';
+import { ActivityResponseDto } from '../activity/dto/activity-response.dto';
+import { EventDetailsDto } from './dto/event-details.dto';
+import { CityService } from 'src/modules/city/services/city.service';
+import { AreaService } from 'src/modules/area/area.service';
 
 @Injectable()
 export class EventService {
@@ -14,10 +18,12 @@ export class EventService {
     private eventModel: typeof EventModel,
 
     private activityService: ActivityService,
+    // private cityService: CityService,
+    // private areaService: AreaService,
   ) {}
 
-  async create(dto: CreateEventDto): Promise<EventModel> {
-    console.log(dto);
+  async create(dto: CreateEventDto, userId: string): Promise<EventModel> {
+    // console.log(dto);
 
     const { activities, ...eventDto } = dto;
 
@@ -26,6 +32,7 @@ export class EventService {
       startDate: new Date(dto.startDate),
       endDate: new Date(dto.endDate),
       winner: null,
+      creatorId: userId,
     });
 
     if (activities?.length) {
@@ -35,14 +42,23 @@ export class EventService {
     return event;
   }
 
-  async update(id: string, dto: UpdateEventDto): Promise<EventModel> {
+  async remove(id: string): Promise<void> {
     const event = await this.eventModel.findByPk(id);
 
     if (!event) {
       throw new NotFoundException('Event not found');
     }
 
-    // обновляем поля события
+    await event.destroy();
+  }
+
+  async update(id: string, dto: UpdateEventDto): Promise<EventDetailsDto> {
+    // ← важно
+    const event = await this.eventModel.findByPk(id);
+    if (!event) {
+      throw new NotFoundException('Event not found');
+    }
+
     await event.update({
       title: dto.title,
       cityId: dto.city,
@@ -50,7 +66,6 @@ export class EventService {
       startDate: dto.startDate ? new Date(dto.startDate) : undefined,
     });
 
-    // activities — отдельно
     if (dto.activities !== undefined) {
       if (dto.activities === null) {
         await this.activityService.removeByEvent(event.id);
@@ -59,7 +74,7 @@ export class EventService {
       }
     }
 
-    return this.findOne(id);
+    return this.findOne(id); // ← возвращает EventDetailsDto
   }
 
   async findAll(): Promise<EventModel[]> {
@@ -79,23 +94,63 @@ export class EventService {
   }
 
   // GET /event/:id
-  async findOne(id: string): Promise<EventModel> {
-    const event = await this.eventModel.findByPk(id);
+  async findOne(id: string): Promise<EventDetailsDto> {
+    const event = await this.eventModel.findByPk(id, {
+      include: [
+        {
+          model: City,
+          attributes: ['id', 'name'],
+        },
+        {
+          model: Area,
+          attributes: ['id', 'name'],
+        },
+      ],
+    });
 
     if (!event) {
       throw new NotFoundException('Event not found');
     }
 
-    return event;
+    const activities = await this.activityService.getByEvent(id);
+
+    return {
+      id: event.id,
+      title: event.title,
+
+      cityId: event.cityId,
+      cityName: event.city?.name ?? 'Нет данных',
+
+      areaId: event.areaId,
+      areaName: event.area?.name ?? 'Нет данных',
+
+      startDate: event.startDate,
+      endDate: event.endDate,
+      durationDays: event.durationDays,
+      durationMins: event.durationMins,
+      winner: event.winner,
+
+      activities: null,
+      activitiesByDay: this.groupActivitiesByDay(activities),
+    };
   }
 
-  async remove(id: string): Promise<void> {
-    const event = await this.eventModel.findByPk(id);
+  private groupActivitiesByDay(
+    activities: ActivityResponseDto[],
+  ): Record<string, ActivityResponseDto[]> {
+    return activities.reduce<Record<string, ActivityResponseDto[]>>(
+      (acc, activity) => {
+        const dayKey = activity.date.toISOString().split('T')[0];
 
-    if (!event) {
-      throw new NotFoundException('Event not found');
-    }
+        if (!acc[dayKey]) {
+          acc[dayKey] = [];
+        }
 
-    await event.destroy();
+        acc[dayKey].push(activity); // ← ничего не режем
+
+        return acc;
+      },
+      {},
+    );
   }
 }

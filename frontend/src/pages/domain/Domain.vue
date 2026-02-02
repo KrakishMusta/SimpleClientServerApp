@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="zin">
-        <p>Domain</p>
-    </div>
+	<div class="zin"></div>
 </template>
 
 <style scoped lang="css"></style>
