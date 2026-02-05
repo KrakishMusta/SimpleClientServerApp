@@ -13,7 +13,7 @@
 </script>
 
 <template>
-	<div class="p-10 flex w-full box-border h-svh min-h-0">
+	<div>
 		<div class="flex flex-col gap-8 min-w-0 w-full h-full min-h-0" v-if="!hideParent">
 			<router-link
 				class="select-none self-start col-span-4 text-center font-semibold bg-slate-100 p-2 w-fit text-xl rounded-sm hover:bg-slate-400 cursor-pointer"
@@ -22,10 +22,11 @@
 				Создать мероприятие
 			</router-link>
 
-			<div v-if="isLoading">Загрузка...</div>
+			<div v-if="isLoading">Загрузка мероприятий...</div>
 			<div v-if="!events.length && !isLoading">Доступных мероприятий нет.</div>
 			<div
-				class="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-auto min-w-0 w-full h-full min-h-0"
+				v-else
+				class="grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto scrollbar-custom min-w-0 w-full h-full min-h-0"
 			>
 				<div
 					@click="() => $router.push({ name: 'event', params: { eventId: event.id } })"

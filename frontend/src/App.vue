@@ -1,11 +1,17 @@
 <script setup lang="ts">
-	import { onMounted } from 'vue';
-	import { RouterLink, RouterView } from 'vue-router';
+	import { computed, onMounted } from 'vue';
+	import { RouterLink, RouterView, useRoute } from 'vue-router';
 	import { useInitAuthMutation } from '@/features/auth/hooks/useInitAuthMutation';
+	import { useUserInfo } from './entities/user/model/useUserInfo';
+	const route = useRoute();
+	const userInfo = useUserInfo();
 
 	const { initAuth } = useInitAuthMutation();
 
+	const currentPage = computed(() => route.name);
+
 	onMounted(async () => {
+		console.log(`refresh onMounted`);
 		await initAuth();
 	});
 </script>
@@ -13,6 +19,44 @@
 <template>
 	<div class="wrapper min-w-0 min-h-0 w-full h-full max-w-full">
 		<!-- <p>{{ $route.fullPath }}</p> -->
+
+		<div
+			class="flex max-[500px]:h-20 h-10 w-full items-center gap-4 px-10 py-2 box-border bg-slate-800 text-slate-100"
+		>
+			{{ userInfo.isLoggedIn }}
+			<RouterLink
+				to="/"
+				class="px-3 py-1 rounded"
+				:class="{
+					'bg-slate-600 underline decoration-slate-100 cursor-default':
+						currentPage === 'domain',
+				}"
+			>
+				Главная
+			</RouterLink>
+
+			<RouterLink
+				to="/events"
+				class="px-3 py-1 rounded"
+				:class="{
+					'bg-slate-600 underline decoration-slate-100 cursor-default':
+						currentPage === 'events',
+				}"
+			>
+				События
+			</RouterLink>
+
+			<div class="ml-auto">
+				<div
+					v-if="userInfo.isLoggedIn.value"
+					class="rounded-full bg-slate-100 size-8"
+				></div>
+				<div v-else class="max-[500px]:text-sm text-base">
+					Часть функций недоступна,
+					<router-link to="/auth/login"> авторизуйтесь! </router-link>
+				</div>
+			</div>
+		</div>
 		<div
 			v-if="$route.fullPath === `/`"
 			class="p-10 flex gap-10 flex-col min-w-0 min-h-0 w-full h-full"
@@ -37,14 +81,18 @@
 			</div>
 		</div>
 
-		<router-view></router-view>
+		<router-view
+			v-else
+			class="p-10 flex min-w-0 w-full box-border h-full min-h-0"
+		></router-view>
 	</div>
 </template>
 
 <style scoped lang="css">
 	.wrapper {
 		display: flex;
+		flex-direction: column;
 		place-items: flex-start;
-		flex-wrap: wrap;
+		/* flex-wrap: wrap; */
 	}
 </style>

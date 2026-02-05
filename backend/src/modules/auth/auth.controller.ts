@@ -59,10 +59,17 @@ export class AuthController {
   ): Promise<TokensDto> {
     const tokens = await this.authService.login(loginDto);
 
+    // res.cookie('refreshToken', tokens.refreshToken, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === 'production',
+    //   sameSite: 'strict',
+    //   maxAge: 7 * 24 * 60 * 60 * 1000,
+    // });
+
     res.cookie('refreshToken', tokens.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      secure: false, // локально https нет
+      sameSite: 'lax', // позволяет кросс-доменные запросы
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -78,18 +85,28 @@ export class AuthController {
     @Req() req,
     @Res({ passthrough: true }) res: Eresponse,
   ): Promise<{ accessToken: string }> {
+    console.log(req.cookies);
     const refreshToken = req.cookies.refreshToken; // берём из cookie
     if (!refreshToken) {
       throw new UnauthorizedException('No refresh token');
     }
 
+    console.log('\u001b[1;31mRefresh\u001b[0m', refreshToken);
+
     const tokens = await this.authService.refreshTokens(refreshToken);
 
     // Обновляем cookie с новым refreshToken
+    // res.cookie('refreshToken', tokens.refreshToken, {
+    //   httpOnly: true,
+    //   secure: process.env.NODE_ENV === 'production',
+    //   sameSite: 'strict',
+    //   maxAge: 7 * 24 * 60 * 60 * 1000,
+    // });
+
     res.cookie('refreshToken', tokens.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      secure: false, // локально https нет
+      sameSite: 'lax', // позволяет кросс-доменные запросы
       maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 

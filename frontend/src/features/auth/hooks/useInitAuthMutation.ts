@@ -9,6 +9,7 @@ export function useInitAuthMutation() {
 		mutationKey: ['initAuth'],
 		mutationFn: async () => {
 			// Сервер проверяет httpOnly cookie и возвращает новый accessToken
+			console.log(`refresh initAuth`);
 			const tokens = await authService.refreshTokens();
 			return tokens;
 		},

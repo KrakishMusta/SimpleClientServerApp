@@ -12,7 +12,8 @@ import type {
 } from 'sequelize';
 import { EventModel } from '../../event/entities/event.entity';
 import { InviteRole } from '../interfaces/invite.interface';
-import { User } from 'src/modules/user/entities/user.entity';
+import { UserRole } from 'src/enums/enums';
+// import { User } from 'src/modules/user/entities/user.entity';
 
 @Table({
   tableName: 'invites',
@@ -49,7 +50,11 @@ export class Invite extends Model<
 
   // ROLE TO ASSIGN
   @Column({
-    type: DataType.ENUM('jury', 'moderator'),
+    type: DataType.ENUM(
+      UserRole.JURY,
+      UserRole.MODERATOR,
+      UserRole.PARTICIPANT,
+    ),
     allowNull: false,
   })
   declare role: InviteRole;
@@ -75,18 +80,18 @@ export class Invite extends Model<
   })
   declare expiresAt: CreationOptional<Date | null>;
 
-  // USED FLAG
+  // MAX USES (null = unlimited)
   @Column({
-    type: DataType.DATE,
+    type: DataType.INTEGER,
     allowNull: true,
   })
-  declare usedAt: CreationOptional<Date | null>;
+  declare maxUses: CreationOptional<number | null>;
 
-  // 🔹 INVITED BY USER
-  @ForeignKey(() => User)
+  // CURRENT USES
   @Column({
-    type: DataType.UUID,
+    type: DataType.INTEGER,
     allowNull: false,
+    defaultValue: 0,
   })
-  declare invitedBy: string;
+  declare usesCount: CreationOptional<number>;
 }

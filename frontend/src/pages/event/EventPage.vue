@@ -12,7 +12,7 @@
 
 <template>
 	<div class="gap-4">
-		<span v-if="isLoading">Загрузка...</span>
+		<span v-if="isLoading">Загрузка мероприятия...</span>
 		<span v-else-if="!isLoading && error"></span>
 		<div v-else class="flex flex-col gap-4">
 			<router-link
@@ -21,10 +21,10 @@
 				>К мероприятиям</router-link
 			>
 			<!-- <pre>{{ event }}</pre> -->
-			<div class="flex gap-8 items-center">
+			<div class="flex gap-8 items-center max-md:justify-between">
 				<h1 class="text-5xl font-semibold">{{ event.title }}</h1>
 				<div class="flex flex-col">
-					<span class="flex">
+					<span class="flex items-center gap-2">
 						<h2 class="text-3xl">г. {{ event.cityName }}</h2>
 						<span class="text-3xl"> – </span>
 						<h2 class="text-3xl">{{ event.areaName }}</h2>
@@ -36,14 +36,20 @@
 					<p>
 						Начало:
 						{{ formatDateHuman(event.startDate) }} в
-						<span class="text-xl font-semibold">{{
-							event.activitiesByDay[
-								new Date(event.startDate).toISOString().split('T')[0]
-							][0].start
-						}}</span>
+						<span
+							v-if="Object.keys(event.activitiesByDay).length"
+							class="text-xl font-semibold"
+							>{{
+								event.activitiesByDay[
+									new Date(event.startDate).toISOString().split('T')[0]
+								][0].start
+							}}</span
+						>
+						<span v-else>нет данных</span>
 					</p>
 					<p>Конец: {{ formatDateHuman(event.endDate) }}</p>
 				</div>
+				<!-- <div class="flex flex-col"></div> -->
 			</div>
 			<span class="w-full bg-slate-400 h-px"></span>
 			<div class="md:w-175 flex flex-col items-center min-h-0 h-full self-center">
@@ -54,6 +60,7 @@
 					<div class="size-8.5"></div>
 				</div>
 				<div
+					v-if="Object.keys(event.activitiesByDay).length"
 					class="flex flex-col gap-2 min-h-0 h-full overflow-y-auto scrollbar-custom w-full"
 				>
 					<div
@@ -83,7 +90,7 @@
 								<p class="text-center">{{ activity.start }}</p>
 
 								<span class="text-center">{{
-									activity.jury.length || 'Не назначены'
+									activity.jury?.length ? activity.jury.length : 'Не назначены'
 								}}</span>
 							</div>
 
@@ -97,6 +104,7 @@
 						</div>
 					</div>
 				</div>
+				<p v-else>Активности... отсутствуют?</p>
 			</div>
 		</div>
 	</div>

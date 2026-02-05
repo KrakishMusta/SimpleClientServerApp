@@ -22,6 +22,7 @@ import { UpdateEventDto } from './dto/update-event.dto';
 import { EventModel } from './entities/event.entity';
 import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard';
 import { EventDetailsDto } from './dto/event-details.dto';
+import { EventRoleGuard } from 'src/common/guards/event-role.guard';
 
 @ApiTags('events')
 @Controller('events')
@@ -32,9 +33,9 @@ export class EventController {
   @Post()
   @ApiOperation({ summary: 'Create event' })
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard, EventRoleGuard) // JwtAuthGuard всегда первым
   create(@Body() dto: CreateEventDto, @Req() req): Promise<EventModel> {
-    // console.log(req);
+    // теперь req.user точно существует
     return this.eventService.create(dto, req.user.id);
   }
 

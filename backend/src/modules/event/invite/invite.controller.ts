@@ -17,8 +17,8 @@ export class InviteController {
   @Post()
   @UseGuards(JwtAuthGuard, EventRoleGuard)
   @EventRole(UserRole.ORGANIZER)
-  async create(@CurrentUser() user: JwtPayload, @Body() dto: CreateInviteDto) {
-    return this.inviteService.createInvite(dto, user.sub);
+  async create(@Body() dto: CreateInviteDto) {
+    return this.inviteService.createInvite(dto);
   }
 
   @Post('accept')

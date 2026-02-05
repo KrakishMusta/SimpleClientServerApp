@@ -8,8 +8,10 @@ import { City } from 'src/modules/city/entities/city.entity';
 import { Area } from 'src/modules/area/entities/area.entity';
 import { ActivityResponseDto } from '../activity/dto/activity-response.dto';
 import { EventDetailsDto } from './dto/event-details.dto';
-import { CityService } from 'src/modules/city/services/city.service';
-import { AreaService } from 'src/modules/area/area.service';
+// import { CityService } from 'src/modules/city/services/city.service';
+// import { AreaService } from 'src/modules/area/area.service';
+import { EventUserService } from '../event-user/event-user.service';
+import { UserRole } from 'src/enums/enums';
 
 @Injectable()
 export class EventService {
@@ -18,12 +20,14 @@ export class EventService {
     private eventModel: typeof EventModel,
 
     private activityService: ActivityService,
+
+    private eventUserService: EventUserService,
     // private cityService: CityService,
     // private areaService: AreaService,
   ) {}
 
   async create(dto: CreateEventDto, userId: string): Promise<EventModel> {
-    // console.log(dto);
+    console.log(dto);
 
     const { activities, ...eventDto } = dto;
 
@@ -33,6 +37,12 @@ export class EventService {
       endDate: new Date(dto.endDate),
       winner: null,
       creatorId: userId,
+    });
+
+    await this.eventUserService.assignUserToEvent({
+      eventId: event.id,
+      userId,
+      role: UserRole.ORGANIZER, // или MODERATOR
     });
 
     if (activities?.length) {

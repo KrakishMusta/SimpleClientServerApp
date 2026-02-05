@@ -1,4 +1,11 @@
-import { IsUUID, IsOptional, IsEnum, IsDateString } from 'class-validator';
+import {
+  IsUUID,
+  IsOptional,
+  IsEnum,
+  IsDateString,
+  IsInt,
+  Min,
+} from 'class-validator';
 import { InviteRole } from '../interfaces/invite.interface';
 
 export class CreateInviteDto {
@@ -15,4 +22,9 @@ export class CreateInviteDto {
   @IsOptional()
   @IsDateString()
   expiresAt?: string;
+
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  maxUses?: number; // undefined / null → бесконечный инвайт
 }

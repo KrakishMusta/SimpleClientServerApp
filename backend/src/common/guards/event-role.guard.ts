@@ -3,6 +3,7 @@ import {
   CanActivate,
   ExecutionContext,
   ForbiddenException,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { EventUserService } from 'src/modules/event/event-user/event-user.service';
@@ -17,16 +18,20 @@ export class EventRoleGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    const user = request.user;
+
+    if (!user) {
+      throw new UnauthorizedException();
+    }
+
     const requiredRoles = this.reflector.get<UserRole[]>(
       EVENT_ROLES_KEY,
       context.getHandler(),
     );
     if (!requiredRoles || requiredRoles.length === 0) return true;
 
-    const request = context.switchToHttp().getRequest();
-    const user = request.user;
     const eventId = request.params.id || request.body.eventId;
-
     if (!eventId) throw new ForbiddenException('Event ID is required');
 
     const hasRole = await this.eventUserService.hasRole(
@@ -34,6 +39,7 @@ export class EventRoleGuard implements CanActivate {
       user.id,
       requiredRoles,
     );
+
     if (!hasRole) throw new ForbiddenException('Insufficient role');
 
     return true;

@@ -2,6 +2,7 @@ import Domain from '@/pages/domain/Domain.vue';
 import CreateEventPage from '@/pages/event/CreateEventPage.vue';
 import EventPage from '@/pages/event/EventPage.vue';
 import EventsPage from '@/pages/event/EventsPage.vue';
+import UserProphile from '@/pages/user/UserProphile.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -11,23 +12,27 @@ const router = createRouter({
 			path: '/',
 			name: 'domain',
 			component: Domain,
+			meta: {
+				title: 'Кратко',
+			},
 		},
 		{
 			path: '/events',
 			name: 'events',
 			component: EventsPage,
+			meta: { title: 'Мероприятия' },
 			children: [
 				{
 					path: ':eventId',
 					name: 'event',
 					component: EventPage,
-					meta: { hideParent: true },
+					meta: { hideParent: true, title: 'Мероприятие' },
 				},
 				{
 					path: 'create-event',
 					name: 'create-event',
 					component: CreateEventPage,
-					meta: { hideParent: true },
+					meta: { hideParent: true, title: 'Создание мероприятия' },
 				},
 			],
 		},
@@ -53,7 +58,24 @@ const router = createRouter({
 				},
 			],
 		},
+		{
+			path: '/prophile',
+			name: 'user-prophile',
+			component: UserProphile,
+		},
 	],
+});
+
+router.afterEach((to) => {
+	const baseTitle = 'MyApp';
+
+	if (typeof to.meta.title === 'function') {
+		document.title = to.meta.title(to);
+	} else if (to.meta.title) {
+		document.title = `${to.meta.title}`;
+	} else {
+		document.title = baseTitle;
+	}
 });
 
 export default router;

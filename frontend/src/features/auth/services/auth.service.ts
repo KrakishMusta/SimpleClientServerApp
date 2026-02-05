@@ -17,7 +17,13 @@ class AuthService {
 	}
 
 	public async refreshTokens(): Promise<ITokens> {
-		const response = await api.post<ITokens>('auths/refresh');
+		console.log(`refresh refreshTokens`);
+		const response = await api.post<ITokens>(
+			'auths/refresh',
+			{}, // тело запроса пустое
+			{ withCredentials: true }, // <-- конфиг axios
+		);
+
 		return response;
 	}
 

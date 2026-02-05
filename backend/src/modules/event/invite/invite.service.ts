@@ -1,4 +1,5 @@
 import {
+  ConflictException,
   ForbiddenException,
   Injectable,
   NotFoundException,
@@ -20,7 +21,7 @@ export class InviteService {
 
     private readonly generateInviteCode: GenerateInviteCodeUtil,
   ) {}
-  async createInvite(dto: CreateInviteDto, invitedBy: string) {
+  async createInvite(dto: CreateInviteDto) {
     let code = '';
     let isUnique = false;
 
@@ -38,7 +39,6 @@ export class InviteService {
     return this.inviteModel.create({
       ...dto,
       code,
-      invitedBy,
       expiresAt: expiresAtDate,
     });
   }
@@ -46,20 +46,37 @@ export class InviteService {
   async acceptInvite(code: string, userId: string) {
     const invite = await this.inviteModel.findOne({ where: { code } });
     if (!invite) throw new NotFoundException('Invite not found');
-    if (invite.usedAt) throw new ForbiddenException('Invite already used');
-    if (invite.expiresAt && invite.expiresAt < new Date())
-      throw new ForbiddenException('Invite expired');
 
-    // добавляем пользователя в событие
+    if (invite.expiresAt && invite.expiresAt < new Date()) {
+      throw new ForbiddenException('Invite expired');
+    }
+
+    try {
+      await this.eventUserService.assignUserToEvent({
+        eventId: invite.eventId,
+        userId,
+        role: invite.role === 'jury' ? UserRole.JURY : UserRole.MODERATOR,
+      });
+      invite.usesCount += 1;
+      await invite.save();
+    } catch (e) {
+      if (e instanceof ConflictException) {
+        throw new ForbiddenException('User already in event');
+      }
+      throw e;
+    }
+
+    if (invite.maxUses !== null && invite.usesCount >= invite.maxUses) {
+      throw new ForbiddenException('Invite usage limit reached');
+    }
+
     await this.eventUserService.assignUserToEvent({
       eventId: invite.eventId,
       userId,
       role: invite.role === 'jury' ? UserRole.JURY : UserRole.MODERATOR,
-      invitedBy: invite.invitedBy,
     });
 
-    // помечаем приглашение как использованное
-    invite.usedAt = new Date();
+    invite.usesCount += 1;
     await invite.save();
 
     return { success: true };

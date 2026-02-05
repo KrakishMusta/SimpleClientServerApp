@@ -3,6 +3,7 @@ import { ICreateEventRequest } from '../dto/create-event-request.dto';
 import { IEvent } from '../types/event.types';
 import { IGetEventsList } from '../dto/get-list-events.dto';
 import { EventDetailsDto } from '../dto/get-details-response.dto';
+import { error } from 'console';
 
 class EventService {
 	async getEvent(id: string): Promise<EventDetailsDto> {
@@ -18,11 +19,15 @@ class EventService {
 		return response;
 	}
 	async createEvent(event: ICreateEventRequest): Promise<IEvent> {
-		const response = await api.post<IEvent>('events/', event, {
-			withCredentials: true,
-		});
-		console.log(response);
-		return response;
+		try {
+			const response = await api.post<IEvent>('events/', event, {
+				withCredentials: true,
+			});
+			console.log(response);
+			return response;
+		} catch (error) {
+			console.log(error);
+		}
 	}
 }
 

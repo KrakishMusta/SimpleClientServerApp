@@ -17,6 +17,7 @@ export function useUserInfo() {
 	}
 
 	function setAccessToken(token: ITokens) {
+		console.log(token);
 		state.user.accessToken = token.accessToken || null;
 		state.isLoggedIn = !!token;
 	}
