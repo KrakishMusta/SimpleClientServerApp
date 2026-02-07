@@ -2,6 +2,7 @@ import Domain from '@/pages/domain/Domain.vue';
 import CreateEventPage from '@/pages/event/CreateEventPage.vue';
 import EventPage from '@/pages/event/EventPage.vue';
 import EventsPage from '@/pages/event/EventsPage.vue';
+import UserEvents from '@/pages/event/UserEvents.vue';
 import UserProphile from '@/pages/user/UserProphile.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -33,6 +34,12 @@ const router = createRouter({
 					name: 'create-event',
 					component: CreateEventPage,
 					meta: { hideParent: true, title: 'Создание мероприятия' },
+				},
+				{
+					path: 'user-events',
+					name: 'user-events',
+					component: UserEvents,
+					meta: { hideParent: true, title: 'Созданные мероприятия' },
 				},
 			],
 		},

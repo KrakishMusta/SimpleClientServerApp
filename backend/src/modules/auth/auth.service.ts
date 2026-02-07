@@ -58,7 +58,7 @@ export class AuthService {
       include: [User],
     });
 
-    console.log('\u001b[1;31mRefresh\u001b[0m', refreshToken);
+    console.log('\u001b[1;31mRefresh service\u001b[0m', refreshToken);
 
     if (!token) {
       throw new UnauthorizedException('Invalid refresh token');

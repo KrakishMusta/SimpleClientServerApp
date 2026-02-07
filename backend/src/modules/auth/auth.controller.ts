@@ -91,7 +91,7 @@ export class AuthController {
       throw new UnauthorizedException('No refresh token');
     }
 
-    console.log('\u001b[1;31mRefresh\u001b[0m', refreshToken);
+    console.log('\u001b[1;31mRefresh controller\u001b[0m', refreshToken);
 
     const tokens = await this.authService.refreshTokens(refreshToken);
 
