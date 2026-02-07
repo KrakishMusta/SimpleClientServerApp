@@ -14,7 +14,7 @@
 <template>
 	<div class="flex flex-col items-center">
 		<router-link
-			class="select-none self-start col-span-4 text-center font-semibold bg-slate-100 p-2 w-fit text-xl rounded-sm hover:bg-slate-400 cursor-pointer"
+			class="select-none self-start col-span-4 text-center font-semibold bg-slate-400 p-2 w-fit text-xl rounded-sm hover:bg-slate-400/10 cursor-pointer"
 			to="/events"
 			>К мероприятиям</router-link
 		>

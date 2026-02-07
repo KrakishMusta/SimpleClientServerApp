@@ -76,6 +76,7 @@ export class AuthService {
 
   async logout(userId: number): Promise<void> {
     // Отзываем все refresh токены пользователя
+    console.log(userId);
     await this.refreshTokenModel.update(
       { isRevoked: true, revokedAt: new Date() },
       { where: { userId, isRevoked: false } },

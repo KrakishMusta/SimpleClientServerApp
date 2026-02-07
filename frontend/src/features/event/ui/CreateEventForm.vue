@@ -281,8 +281,9 @@
 					v-model="startDateRef"
 					id="startDate"
 					name="startDate"
-					class="border border-solid p-1"
+					class="border border-solid p-1 text-slate-100"
 					type="date"
+					style="color-scheme: dark"
 				/>
 			</div>
 			<div class="flex gap-2 justify-between w-full">
@@ -334,7 +335,7 @@
 			<h2 class="font-semibold text-xl">Активности</h2>
 			<!-- {{ activitiesByDay }}
 			{{ activitiesWithDays }} -->
-			<div class="grid grid-cols-[1fr_1fr_34px] gap-2 font-semibold">
+			<div class="grid grid-cols-[1fr_1fr_34px] gap-2 font-semibold pr-1.5">
 				<div class="flex items-center">Наименование</div>
 				<div class="flex justify-center items-center">Начало</div>
 				<!-- <div class="flex justify-center items-center">Жюри</div> -->
@@ -352,12 +353,14 @@
 				>
 					<!-- Заголовок дня -->
 					<div
-						class="col-span-4 flex gap-2 justify-center font-semibold bg-slate-100 p-1 rounded select-none"
+						class="col-span-4 flex gap-2 box-border border border-slate-100 justify-center font-semibold p-1 rounded select-none"
 					>
-						<span>День {{ dayIndex + 1 }} — {{ dayActivities[0].date }}</span>
+						<span class="text-slate-100"
+							>День {{ dayIndex + 1 }} — {{ dayActivities[0].date }}</span
+						>
 						<button
 							@click="removeDay(dayIndex)"
-							class="bg-red-200 hover:bg-red-400 cursor-pointer h-full aspect-square"
+							class="bg-red-400 hover:bg-red-600 cursor-pointer h-full aspect-square"
 							type="button"
 						>
 							-
@@ -374,9 +377,10 @@
 							<input v-model="activity.title" type="text" class="border p-1 w-full" />
 
 							<input
+								style="color-scheme: dark"
 								type="time"
 								v-model="activity.start"
-								class="border p-1 w-full"
+								class="border p-1 w-full text-slate-100"
 								min="09:00"
 								max="22:30"
 								@change="(e) => normalizeTime(e, index, dayIndex)"
@@ -392,7 +396,7 @@
 
 							<button
 								@click="removeActivity(index)"
-								class="bg-red-200 select-none hover:bg-red-400 w-8.5 aspect-square"
+								class="select-none bg-red-400 hover:bg-red-600 w-8.5 aspect-square"
 							>
 								-
 							</button>
@@ -435,7 +439,7 @@
 		<div>
 			<button
 				v-on:click="handleCreateEvent"
-				class="select-none p-2 rounded-md text-base font-bold bg-slate-200 hover:bg-slate-400 cursor-pointer"
+				class="select-none p-2 rounded-md text-base font-bold bg-slate-400 hover:bg-transparent box-border hover:border hover:border-slate-100 cursor-pointer"
 				type="button"
 			>
 				Создать

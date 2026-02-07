@@ -16,7 +16,7 @@
 </script>
 
 <template>
-	<div class="flex flex-col gap-2 p-4 shadow shadow-gray-800 rounded-xl">
+	<div class="flex-col gap-2 shadow shadow-gray-800 rounded-xl">
 		<h1 class="font-semibold">Вход</h1>
 		<div class="flex flex-col gap-1">
 			<div class="flex flex-col gap-1">
