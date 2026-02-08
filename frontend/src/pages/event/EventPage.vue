@@ -1,28 +1,61 @@
 <script setup lang="ts">
+	import { useUserInfo } from '@/entities/user/model/useUserInfo';
 	import { useGetEvent } from '@/features/event/hooks/useGetEvent';
+	import { IEvent } from '@/features/event/types/event.types';
+	import EventTitle from '@/features/event/ui/EventTitle.vue';
 	import { formatDateHuman, parseDateFromInput } from '@/shared/utils/formatDate';
+	import { ref, watch } from 'vue';
 	import { useRoute } from 'vue-router';
 
+	const userInfo = useUserInfo();
+
 	const route = useRoute();
+
+	const isEditMode = ref(false);
 
 	const eventId = route.params.eventId as string;
 
 	const { data: event, isLoading, error } = useGetEvent(eventId);
+
+	const editableEvent = ref<IEvent | null>(null);
+
+	watch(event, (e) => {
+		if (e) {
+			editableEvent.value = structuredClone(e);
+		}
+	});
 </script>
 
 <template>
 	<div class="gap-4">
+		<!-- {{ userInfo.isAuthReady }}
+		{{ eventId }} -->
 		<span v-if="isLoading">Загрузка мероприятия...</span>
 		<span v-else-if="!isLoading && error"></span>
-		<div v-else class="flex flex-col gap-4">
-			<router-link
-				class="select-none self-start col-span-4 text-center font-semibold bg-slate-400 p-2 w-fit text-xl rounded-sm hover:bg-slate-400/10 cursor-pointer"
-				to="/events"
-				>К мероприятиям</router-link
-			>
+		<div v-else-if="event" class="flex flex-col gap-4">
+			<div>
+				<router-link
+					class="select-none self-start col-span-4 text-center font-semibold bg-slate-400 p-2 w-fit text-xl rounded-sm hover:bg-slate-400/10 cursor-pointer"
+					to="/events"
+					>К мероприятиям</router-link
+				>
+				<button v-if="event.isOrganizer" @click="isEditMode = !isEditMode">
+					{{ isEditMode ? 'Режим просмотра' : 'Редактировать' }}
+				</button>
+
+				{{ event.isOrganizer }}
+
+				<!-- {{ event.creatorId }} -->
+
+				{{ userInfo.userId || `null` }}
+
+				<!-- <pre>{{ userInfo }}</pre> -->
+				<!-- <pre>{{ event. }}</pre> -->
+			</div>
+
 			<!-- <pre>{{ event }}</pre> -->
 			<div class="flex gap-8 items-center max-md:justify-between">
-				<h1 class="text-5xl font-semibold">{{ event.title }}</h1>
+				<event-title v-model="editableEvent.title" :readonly="!isEditMode" />
 				<div class="flex flex-col">
 					<span class="flex items-center gap-2">
 						<h2 class="text-3xl">г. {{ event.cityName }}</h2>

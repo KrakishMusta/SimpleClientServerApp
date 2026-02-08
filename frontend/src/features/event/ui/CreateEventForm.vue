@@ -40,52 +40,6 @@
 		});
 	}
 
-	// const activitiesWithDays = computed(() => {
-	// 	if (!startDateRef.value) return [];
-
-	// 	let currentDay = 0;
-	// 	let currentTime = DAY_START;
-
-	// 	return activities.value.map((activity, index) => {
-	// 		if (index === 0) {
-	// 			currentTime = activity.start || DAY_START;
-	// 		} else {
-	// 			const nextTime = addMinutes(currentTime, ACTIVITY_DURATION);
-
-	// 			if (nextTime > DAY_END) {
-	// 				currentDay++;
-	// 				currentTime = DAY_START;
-	// 			} else {
-	// 				currentTime = nextTime;
-	// 			}
-	// 		}
-
-	// 		const date = new Date(startDateRef.value);
-	// 		date.setDate(date.getDate() + currentDay);
-
-	// 		return {
-	// 			...activity,
-	// 			computedData: {
-	// 				dayIndex: currentDay,
-	// 				date,
-	// 				computedStart: currentTime,
-	// 			},
-	// 		};
-	// 	});
-	// });
-	// computed<
-	// 	[
-	// 		number,
-	// 		{
-	// 			title: string;
-	// 			start: string;
-	// 			dayIndex: number;
-	// 			date: Date;
-	// 			jury: string[];
-	// 		}[],
-	// 	][]
-	// >;
-
 	const activitiesByDay = computed(() => {
 		const map = new Map<number, typeof activities.value>();
 

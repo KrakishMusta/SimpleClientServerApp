@@ -4,6 +4,7 @@ import { IEvent } from '../types/event.types';
 import { IGetEventsList } from '../dto/get-list-events.dto';
 import { EventDetailsDto } from '../dto/get-details-response.dto';
 import { error } from 'console';
+import { IUpdateEventRequest } from '../dto/update-event-request.dto';
 
 class EventService {
 	async getEvent(id: string): Promise<EventDetailsDto> {
@@ -28,6 +29,12 @@ class EventService {
 		} catch (error) {
 			console.log(error);
 		}
+	}
+	async updateEvent(id: string, event: IUpdateEventRequest): Promise<EventDetailsDto> {
+		const response = await api.patch<EventDetailsDto>(`events/${id}`, event, {
+			withCredentials: true,
+		});
+		return response;
 	}
 }
 

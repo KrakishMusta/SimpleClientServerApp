@@ -23,6 +23,7 @@ import { EventModel } from './entities/event.entity';
 import { JwtAuthGuard } from 'src/modules/auth/guards/jwt-auth.guard';
 import { EventDetailsDto } from './dto/event-details.dto';
 import { EventRoleGuard } from 'src/common/guards/event-role.guard';
+import { OptionalJwtAuthGuard } from 'src/modules/auth/guards/optional-jwt-auth.guard';
 
 @ApiTags('events')
 @Controller('events')
@@ -47,11 +48,10 @@ export class EventController {
   }
 
   // READ ONE
+  @UseGuards(OptionalJwtAuthGuard)
   @Get(':id')
-  @ApiOperation({ summary: 'Get event by id' })
-  @ApiParam({ name: 'id', type: String })
-  findOne(@Param('id') id: string): Promise<EventDetailsDto> {
-    return this.eventService.findOne(id);
+  findOne(@Param('id') id: string, @Req() req): Promise<EventDetailsDto> {
+    return this.eventService.findOne(id, req.user?.id);
   }
 
   // UPDATE

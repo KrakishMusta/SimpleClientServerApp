@@ -11,7 +11,7 @@ import {
   Model,
   Table,
 } from 'sequelize-typescript';
-import { IActivityRecord } from '../interfaces/event.interface';
+// import { IActivityRecord } from '../interfaces/event.interface';
 import { Area } from 'src/modules/area/entities/area.entity';
 import { City } from 'src/modules/city/entities/city.entity';
 import { User } from 'src/modules/user/entities/user.entity';

@@ -1,4 +1,4 @@
-import { reactive, computed } from 'vue';
+import { reactive, computed, ref } from 'vue';
 import { IUserInfo } from '../types/user.types';
 import { ITokens } from '@/features/auth/types/tokens.type';
 
@@ -7,24 +7,28 @@ const state = reactive({
 	isLoggedIn: false,
 });
 
+const isAuthReady = ref(false);
+
 const accessToken = computed(() => state.user.accessToken);
 const userId = computed(() => state.user.id);
 
 export function useUserInfo() {
 	function setUser(user: IUserInfo) {
-		state.user = user;
+		Object.assign(state.user, user);
 		state.isLoggedIn = !!user?.accessToken;
+		isAuthReady.value = true; // авторизация завершена
 	}
 
-	function setAccessToken(tokens: ITokens) {
-		console.log(tokens);
-		state.user.accessToken = tokens.accessToken || null;
-		state.isLoggedIn = !!tokens;
+	function setAccessToken(tokens: ITokens | null) {
+		state.user.accessToken = tokens?.accessToken || null;
+		state.isLoggedIn = !!tokens?.accessToken;
+		isAuthReady.value = true; // авторизация завершена (даже если токена нет)
 	}
 
 	function logout() {
-		state.user = {} as IUserInfo;
+		Object.keys(state.user).forEach((key) => delete state.user[key]);
 		state.isLoggedIn = false;
+		isAuthReady.value = true; // авторизация завершена после логаута
 	}
 
 	return {
@@ -32,6 +36,7 @@ export function useUserInfo() {
 		isLoggedIn: computed(() => state.isLoggedIn),
 		accessToken,
 		userId,
+		isAuthReady,
 		setUser,
 		setAccessToken,
 		logout,

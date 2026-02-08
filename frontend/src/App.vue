@@ -12,7 +12,7 @@
 
 	const currentPage = computed(() => route.name);
 
-	const displayName = computed(() => userInfo.user.name || userInfo.user.email || 'Профиль');
+	const displayName = computed(() => userInfo.user.name || userInfo.user.email || 'Профиль ');
 
 	const handleLogout = async () => {
 		await logout();
@@ -26,7 +26,7 @@
 
 <template>
 	<div
-		class="wrapper min-w-0 min-h-0 h-full w-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-950 text-slate-100"
+		class="wrapper min-w-0 min-h-full w-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-950 text-slate-100"
 	>
 		<!-- <p>{{ $route.fullPath }}</p> -->
 

@@ -15,6 +15,8 @@ export function useGetUserProfile(enabled = true) {
 				accessToken: userInfo.accessToken.value,
 			});
 
+			console.log(`userInfo.setUser`, profile);
+
 			return profile;
 		},
 		enabled,

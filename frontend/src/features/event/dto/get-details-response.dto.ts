@@ -5,4 +5,6 @@ export interface EventDetailsDto extends IEvent {
 	cityName: string;
 	areaName: string;
 	activitiesByDay: Record<string, ActivityResponseDto[]>;
+	creatorId: string;
+	isOrganizer: boolean;
 }

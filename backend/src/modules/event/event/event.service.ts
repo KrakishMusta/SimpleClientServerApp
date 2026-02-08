@@ -104,7 +104,7 @@ export class EventService {
   }
 
   // GET /event/:id
-  async findOne(id: string): Promise<EventDetailsDto> {
+  async findOne(id: string, userId?: string): Promise<EventDetailsDto> {
     const event = await this.eventModel.findByPk(id, {
       include: [
         {
@@ -124,6 +124,10 @@ export class EventService {
 
     const activities = await this.activityService.getByEvent(id);
 
+    console.log(`organizer params`, !!userId, event.creatorId === userId);
+
+    const isOrganizer = !!userId && event.creatorId === userId;
+
     return {
       id: event.id,
       title: event.title,
@@ -142,6 +146,10 @@ export class EventService {
 
       activities: null,
       activitiesByDay: this.groupActivitiesByDay(activities),
+
+      creatorId: event.creatorId,
+
+      isOrganizer,
     };
   }
 
