@@ -16,7 +16,7 @@
 		<span v-else-if="!isLoading && error"></span>
 		<div v-else class="flex flex-col gap-4">
 			<router-link
-				class="select-none self-start col-span-4 text-center font-semibold bg-slate-100 p-2 w-fit text-xl rounded-sm hover:bg-slate-400 cursor-pointer"
+				class="select-none self-start col-span-4 text-center font-semibold bg-slate-400 p-2 w-fit text-xl rounded-sm hover:bg-slate-400/10 cursor-pointer"
 				to="/events"
 				>К мероприятиям</router-link
 			>
@@ -45,7 +45,11 @@
 								][0].start
 							}}</span
 						>
-						<span v-else>нет данных</span>
+						<span
+							class="underline decoration-2 underline-offset-4 decoration-slate-100"
+							v-else
+							>нет данных</span
+						>
 					</p>
 					<p>Конец: {{ formatDateHuman(event.endDate) }}</p>
 				</div>
@@ -72,7 +76,7 @@
 					>
 						<!-- Заголовок дня -->
 						<div
-							class="col-span-4 flex gap-2 justify-center font-semibold bg-slate-100 p-1 rounded select-none"
+							class="col-span-4 flex gap-2 box-border border border-slate-100 justify-center font-semibold p-1 rounded select-none"
 						>
 							<span>День {{ index + 1 }} – {{ formatDateHuman(day) }}</span>
 						</div>

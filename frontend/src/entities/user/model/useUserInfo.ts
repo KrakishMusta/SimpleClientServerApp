@@ -16,10 +16,10 @@ export function useUserInfo() {
 		state.isLoggedIn = !!user?.accessToken;
 	}
 
-	function setAccessToken(token: ITokens) {
-		console.log(token);
-		state.user.accessToken = token.accessToken || null;
-		state.isLoggedIn = !!token;
+	function setAccessToken(tokens: ITokens) {
+		console.log(tokens);
+		state.user.accessToken = tokens.accessToken || null;
+		state.isLoggedIn = !!tokens;
 	}
 
 	function logout() {

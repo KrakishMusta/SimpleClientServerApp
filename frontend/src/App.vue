@@ -12,7 +12,7 @@
 
 	const currentPage = computed(() => route.name);
 
-	const displayName = computed(() => userInfo.user.name || 'Профиль');
+	const displayName = computed(() => userInfo.user.name || userInfo.user.email || 'Профиль');
 
 	const handleLogout = async () => {
 		await logout();

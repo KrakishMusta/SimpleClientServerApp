@@ -1,9 +1,12 @@
 import { useMutation } from '@tanstack/vue-query';
 import { authService } from '../services/auth.service';
 import { useUserInfo } from '@/entities/user/model/useUserInfo';
+import { useGetUserProfile } from '@/entities/hooks/useGetUserProfile';
 
 export function useInitAuthMutation() {
 	const userInfo = useUserInfo();
+
+	const { refetch } = useGetUserProfile(false);
 
 	const { mutate: initAuth, isPending } = useMutation({
 		mutationKey: ['initAuth'],
@@ -13,9 +16,11 @@ export function useInitAuthMutation() {
 			const tokens = await authService.refreshTokens();
 			return tokens;
 		},
-		onSuccess(tokens) {
-			// Сохраняем accessToken в память приложения
+		onSuccess: async (tokens) => {
 			userInfo.setAccessToken(tokens);
+
+			await refetch();
+
 			console.log('success auth init', tokens);
 		},
 		onError() {
