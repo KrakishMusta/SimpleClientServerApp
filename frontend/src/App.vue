@@ -1,9 +1,10 @@
 <script setup lang="ts">
-	import { computed, onMounted } from 'vue';
+	import { computed, onMounted, ref, useTemplateRef } from 'vue';
 	import { RouterLink, RouterView, useRoute } from 'vue-router';
 	import { useInitAuthMutation } from '@/features/auth/hooks/useInitAuthMutation';
 	import { useUserInfo } from './entities/user/model/useUserInfo';
 	import { useLogoutMutation } from './features/auth/hooks/useLogoutMutation';
+	import { onClickOutside } from '@vueuse/core';
 	const route = useRoute();
 	const userInfo = useUserInfo();
 
@@ -18,6 +19,15 @@
 		await logout();
 	};
 
+	const dropdownRef = ref<HTMLElement | null>(null);
+
+	onClickOutside(dropdownRef, () => {
+		const details = dropdownRef.value?.querySelector('details') as HTMLDetailsElement | null;
+		if (details && details.open) {
+			details.open = false;
+		}
+	});
+
 	onMounted(async () => {
 		console.log(`refresh onMounted`);
 		await initAuth();
@@ -26,7 +36,7 @@
 
 <template>
 	<div
-		class="wrapper min-w-0 min-h-full w-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-950 text-slate-100"
+		class="wrapper min-w-0 min-h-0 w-full h-full bg-linear-to-br from-slate-900 via-slate-800 to-slate-950 text-slate-100"
 	>
 		<!-- <p>{{ $route.fullPath }}</p> -->
 
@@ -70,7 +80,7 @@
 					События
 				</RouterLink>
 
-				<div class="ml-auto">
+				<div class="ml-auto" ref="dropdownRef">
 					<details v-if="userInfo.isLoggedIn.value" class="relative group">
 						<summary
 							class="flex cursor-pointer list-none items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-white transition hover:bg-white/20"

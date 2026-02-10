@@ -4,6 +4,7 @@ import { Activity } from './entities/activity.entity';
 import { ActivityJury } from './entities/activity-jury.entity';
 import { CreateActivityDto } from './dto/create-activity.dto';
 import { ActivityResponseDto } from './dto/activity-response.dto';
+import { UpdateActivityDto } from './dto/update-activity.dto';
 
 @Injectable()
 export class ActivityService {
@@ -60,6 +61,28 @@ export class ActivityService {
     }));
 
     return this.activityModel.bulkCreate(records);
+  }
+
+  async removeMany(ids: string[]) {
+    return this.activityModel.destroy({
+      where: { id: ids },
+    });
+  }
+
+  async updateMany(activities: UpdateActivityDto[]) {
+    for (const activity of activities) {
+      const { id, date, ...rest } = activity;
+
+      await this.activityModel.update(
+        {
+          ...rest,
+          date: date ? new Date(date) : undefined,
+        },
+        {
+          where: { id },
+        },
+      );
+    }
   }
 
   // Получить активности события

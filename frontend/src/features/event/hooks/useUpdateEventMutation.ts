@@ -16,8 +16,8 @@ export function useUpdateEventMutation() {
 			const response = await eventService.updateEvent(id, payload);
 			data.value = response;
 			return response;
-		} catch (err: any) {
-			error.value = err;
+		} catch (err) {
+			error.value = err as Error;
 			throw err;
 		} finally {
 			isLoading.value = false;

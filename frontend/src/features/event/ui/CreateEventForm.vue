@@ -6,7 +6,11 @@
 	import { useCreateEvent } from '../hooks/useCreateEventMutation';
 	import { watch } from 'vue';
 	import { addMinutes } from '@/shared/utils/addMinutes';
-	import { formatDateForInput, parseDateFromInput } from '@/shared/utils/formatDate';
+	import {
+		formatDateForInput,
+		formatDateHuman,
+		parseDateFromInput,
+	} from '@/shared/utils/formatDate';
 
 	const DAY_START = '09:00';
 	const DAY_END = '22:30';
@@ -40,27 +44,25 @@
 		});
 	}
 
-	const activitiesByDay = computed(() => {
-		const map = new Map<number, typeof activities.value>();
+	const activitiesByDay = computed<Array<[number, IActivityRecord[]]>>(() => {
+		const map = new Map<number, IActivityRecord[]>();
 
 		for (const activity of activities.value) {
-			// console.log(!map.has(activity.dayIndex));
-			if (!map.has(activity.dayIndex)) {
-				map.set(activity.dayIndex, []);
-			}
-			map.get(activity.dayIndex).push(activity);
+			const list = map.get(activity.dayIndex) ?? [];
+			list.push(activity);
+			map.set(activity.dayIndex, list);
 		}
 
-		return [...map.entries()];
+		return [...map.entries()].sort(([a], [b]) => a - b);
 	});
 
-	function normalizeTime(e: Event, index: number, dayIndex: number) {
+	function normalizeTime(e: Event, activity: IActivityRecord, dayIndex: number) {
 		let value = (e.target as HTMLInputElement).value;
 
-		value = value < '09:00' ? '09:00' : value;
-		value = value > '22:30' ? '22:30' : value;
+		value = value < DAY_START ? DAY_START : value;
+		value = value > DAY_END ? DAY_END : value;
 
-		activities.value[index].start = value;
+		activity.start = value;
 
 		updateActivitiesStart(dayIndex);
 	}
@@ -200,16 +202,23 @@
 	);
 
 	watch(
-		() => [startDateRef.value, maxDayIndex.value] as [string, number],
+		() => [startDateRef.value, maxDayIndex.value] as const,
 		([startDate, maxDay]) => {
 			if (!startDate) return;
 
-			const date = parseDateFromInput(startDate);
-			date.setDate(date.getDate() + maxDay);
+			const baseDate = parseDateFromInput(startDate);
 
-			endDateRef.value = formatDateForInput(date);
+			// 1️⃣ activity.date
+			for (const activity of activities.value) {
+				const d = new Date(baseDate);
+				d.setDate(d.getDate() + activity.dayIndex);
+				activity.date = formatDateForInput(d);
+			}
 
-			// console.log(`watch`, endDateRef.value, date);
+			// 2️⃣ endDate
+			const end = new Date(baseDate);
+			end.setDate(end.getDate() + maxDay);
+			endDateRef.value = formatDateForInput(end);
 		},
 		{ immediate: true },
 	);
@@ -229,6 +238,43 @@
 	<div class="flex flex-col md:min-w-175 min-w-0 h-full min-h-0 gap-4">
 		<h2 class="font-semibold text-2xl">Создание мероприятия</h2>
 		<div class="flex flex-col gap-3">
+			<div class="flex gap-2 items-center justify-between w-full">
+				<label for="name" class="p-1 pl-0">Название</label>
+				<input
+					v-model="titleRef"
+					:placeholder="`Курс по ТЗ для чайников`"
+					id="name"
+					name="name"
+					class="border border-solid p-1"
+					type="text"
+				/>
+			</div>
+			<div class="flex gap-2 justify-between w-full">
+				<label for="area" class="p-1 pl-0">Направление</label>
+				<select name="area" id="area" v-model="areaRef">
+					<option
+						class="text-end text-slate-800"
+						v-for="area in areas"
+						:key="area.name"
+						:value="area.id"
+					>
+						{{ area.name }}
+					</option>
+				</select>
+			</div>
+			<div class="flex gap-2 justify-between w-full">
+				<label for="city" class="p-1 pl-0">Город</label>
+				<select name="city" id="city" v-model="cityRef">
+					<option
+						class="text-end text-slate-800"
+						v-for="city in cities"
+						:key="city.id"
+						:value="city.id"
+					>
+						{{ city.name }}
+					</option>
+				</select>
+			</div>
 			<div class="flex gap-2 justify-between w-full">
 				<label for="startDate" class="p-1 pl-0">Начало</label>
 				<input
@@ -250,38 +296,6 @@
 					class="border border-solid p-1"
 					type="date"
 				/>
-			</div>
-			<div class="flex gap-2 justify-between w-full">
-				<label for="name" class="p-1 pl-0">Название</label>
-				<input
-					v-model="titleRef"
-					:placeholder="`Курс по оформлению и формированию ТЗ для чайников`"
-					id="name"
-					name="name"
-					class="border border-solid p-1"
-					type="text"
-				/>
-			</div>
-			<div class="flex gap-2 justify-between w-full">
-				<label for="area" class="p-1 pl-0">Направление</label>
-				<select name="area" id="area" v-model="areaRef">
-					<option
-						class="text-end"
-						v-for="area in areas"
-						:key="area.name"
-						:value="area.id"
-					>
-						{{ area.name }}
-					</option>
-				</select>
-			</div>
-			<div class="flex gap-2 justify-between w-full">
-				<label for="city" class="p-1 pl-0">Город</label>
-				<select name="city" id="city" v-model="cityRef">
-					<option class="text-end" v-for="city in cities" :key="city.id" :value="city.id">
-						{{ city.name }}
-					</option>
-				</select>
 			</div>
 		</div>
 		<span class="w-full bg-slate-400 h-px"></span>
@@ -307,17 +321,18 @@
 				>
 					<!-- Заголовок дня -->
 					<div
-						class="col-span-4 flex gap-2 box-border border border-slate-100 justify-center font-semibold p-1 rounded select-none"
+						class="flex gap-2 box-border border border-slate-100 justify-center items-center font-semibold p-1 rounded select-none"
 					>
 						<span class="text-slate-100"
-							>День {{ dayIndex + 1 }} — {{ dayActivities[0].date }}</span
+							>День {{ dayIndex + 1 }} —
+							{{ formatDateHuman(dayActivities[0].date) }}</span
 						>
 						<button
 							@click="removeDay(dayIndex)"
-							class="bg-red-400 hover:bg-red-600 cursor-pointer h-full aspect-square"
+							class="flex items-center justify-center select-none bg-red-400 hover:bg-red-600 h-full aspect-square"
 							type="button"
 						>
-							-
+							<span class="inline-block h-6 leading-6">-</span>
 						</button>
 					</div>
 
@@ -337,7 +352,7 @@
 								class="border p-1 w-full text-slate-100"
 								min="09:00"
 								max="22:30"
-								@change="(e) => normalizeTime(e, index, dayIndex)"
+								@change="(e) => normalizeTime(e, activity, dayIndex)"
 								:readonly="
 									index !== 0 &&
 									(addMinutes(dayActivities[index - 1].start, 105) < '23:00' ||
@@ -367,7 +382,7 @@
 										parseDateFromInput(activity.date),
 									)
 								"
-								class="bg-white z-10 px-1 select-none hover:bg-slate-200 cursor-pointer"
+								class="border border-slate-100 bg-slate-800 z-10 px-1 select-none cursor-pointer"
 								>+ Добавить активность</span
 							>
 							<span
@@ -379,7 +394,7 @@
 				<!-- Добавление дня -->
 				<div
 					@click="addDay"
-					class="select-none col-span-4 text-center font-semibold bg-slate-100 p-1 hover:bg-slate-400 cursor-pointer"
+					class="select-none col-span-4 text-center font-semibold border border-slate-100 p-1 cursor-pointer"
 				>
 					+ Добавить день
 				</div>

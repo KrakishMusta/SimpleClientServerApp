@@ -63,7 +63,6 @@ export class EventService {
   }
 
   async update(id: string, dto: UpdateEventDto): Promise<EventDetailsDto> {
-    // ← важно
     const event = await this.eventModel.findByPk(id);
     if (!event) {
       throw new NotFoundException('Event not found');
@@ -76,15 +75,23 @@ export class EventService {
       startDate: dto.startDate ? new Date(dto.startDate) : undefined,
     });
 
-    if (dto.activities !== undefined) {
-      if (dto.activities === null) {
-        await this.activityService.removeByEvent(event.id);
-      } else {
-        await this.activityService.replaceByEvent(event.id, dto.activities);
+    if (dto.activitiesDiff) {
+      const { added, updated, removed } = dto.activitiesDiff;
+
+      if (removed?.length) {
+        await this.activityService.removeMany(removed);
+      }
+
+      if (updated?.length) {
+        await this.activityService.updateMany(updated);
+      }
+
+      if (added?.length) {
+        await this.activityService.createMany(event.id, added);
       }
     }
 
-    return this.findOne(id); // ← возвращает EventDetailsDto
+    return this.findOne(id);
   }
 
   async findAll(): Promise<EventModel[]> {
@@ -144,7 +151,7 @@ export class EventService {
       durationMins: event.durationMins,
       winner: event.winner,
 
-      activities: null,
+      activities: activities,
       activitiesByDay: this.groupActivitiesByDay(activities),
 
       creatorId: event.creatorId,

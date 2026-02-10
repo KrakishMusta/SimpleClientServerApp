@@ -1,5 +1,23 @@
-import { IsOptional, IsString, IsDateString, IsArray } from 'class-validator';
+import { IsOptional, IsString, IsArray, ValidateNested } from 'class-validator';
+import { Type } from 'class-transformer';
 import { CreateActivityDto } from '../../activity/dto/create-activity.dto';
+import { UpdateActivityDto } from '../../activity/dto/update-activity.dto';
+
+class ActivitiesDiffDto {
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => CreateActivityDto)
+  added: CreateActivityDto[];
+
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => UpdateActivityDto)
+  updated: UpdateActivityDto[];
+
+  @IsArray()
+  @IsString({ each: true })
+  removed: string[];
+}
 
 export class UpdateEventDto {
   @IsOptional()
@@ -7,22 +25,17 @@ export class UpdateEventDto {
   title?: string;
 
   @IsOptional()
-  @IsDateString()
-  startDate?: string;
-
-  @IsOptional()
-  @IsDateString()
-  endDate?: string;
-
-  @IsOptional()
   @IsString()
   city?: string;
 
   @IsOptional()
-  @IsArray()
-  activities?: CreateActivityDto[] | null;
+  winner?: string | null;
 
   @IsOptional()
-  @IsString()
-  winner?: string | null;
+  startDate?: string;
+
+  @IsOptional()
+  @ValidateNested()
+  @Type(() => ActivitiesDiffDto)
+  activitiesDiff?: ActivitiesDiffDto;
 }

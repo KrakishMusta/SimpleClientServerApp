@@ -30,7 +30,7 @@
 			</div>
 			<div v-if="!events.length && !isLoading">Доступных мероприятий нет.</div>
 			<div v-else class="overflow-y-auto scrollbar-custom min-w-0 w-full h-full min-h-0">
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-2">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
 					<div
 						v-for="event in events"
 						:key="event.id"

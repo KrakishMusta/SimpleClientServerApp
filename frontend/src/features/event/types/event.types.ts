@@ -14,6 +14,7 @@ export interface IEvent {
 }
 
 export interface IActivityRecord {
+	id?: string;
 	title: string;
 	start: string;
 	dayIndex: number;
