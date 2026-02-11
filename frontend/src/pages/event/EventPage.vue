@@ -64,7 +64,9 @@
 		updateEvent(event.value.id, {
 			title: editableEvent.value.title,
 			city: editableEvent.value.cityId,
+			area: editableEvent.value.areaId,
 			startDate: editableEvent.value.startDate,
+			endDate: editableEvent.value.endDate,
 			activitiesDiff: {
 				added,
 				removed: removed.map((a) => a.id),
@@ -78,31 +80,35 @@
 		(e) => {
 			console.log(`event`, e);
 			if (e) {
-				console.log(e.activitiesByDay);
+				console.log(`initeditableEventActivities`, e.activitiesByDay);
+				console.log(
+					`initeditableEventActivities`,
+					JSON.parse(JSON.stringify(e.activitiesByDay)),
+				);
 				editableEvent.value = JSON.parse(JSON.stringify(e));
 				originalActivities.value = JSON.parse(JSON.stringify(e.activities)) ?? [];
 				firstKey.value = Object.keys(event.value.activitiesByDay)[0];
-				console.log(`initeditableEvent`, editableEvent.value);
-				console.log(`initoriginalActivities`, originalActivities.value);
-				console.log(`firstKey`, Object.keys(event.value.activitiesByDay)[0]);
+				// console.log(`initeditableEvent`, editableEvent.value);
+				// console.log(`initoriginalActivities`, originalActivities.value);
+				// console.log(`firstKey`, Object.keys(event.value.activitiesByDay)[0]);
 			}
 		},
 		{ immediate: true },
 	);
 
-	watch(
-		() => editableEvent.value?.title,
-		(newTitle, oldTitle) => {
-			console.log('title changed:', oldTitle, '->', newTitle);
-		},
-	);
+	// watch(
+	// 	() => editableEvent.value?.title,
+	// 	(newTitle, oldTitle) => {
+	// 		console.log('title changed:', oldTitle, '->', newTitle);
+	// 	},
+	// );
 
-	watch(
-		() => editableEvent.value,
-		(newVal, oldVal) => {
-			console.log('changed:', oldVal, '->', newVal);
-		},
-	);
+	// watch(
+	// 	() => editableEvent.value,
+	// 	(newVal, oldVal) => {
+	// 		console.log('changed:', oldVal, '->', newVal);
+	// 	},
+	// );
 </script>
 
 <template>
@@ -185,6 +191,10 @@
 						v-if="Object.keys(event.activitiesByDay).length"
 						class="flex flex-col gap-2 min-h-0 h-full overflow-y-auto scrollbar-custom w-full"
 					>
+						<!-- <pre>
+						{{ event.activitiesByDay }}
+					</pre
+						> -->
 						<div
 							v-for="([day, dayActivities], index) in Object.entries(
 								event.activitiesByDay,
@@ -195,7 +205,10 @@
 							<div
 								class="col-span-4 flex gap-2 box-border border border-slate-100 justify-center font-semibold p-1 rounded select-none"
 							>
-								<span>День {{ index + 1 }} – {{ formatDateHuman(day) }}</span>
+								<span
+									>День {{ dayActivities[0].dayIndex + 1 }} –
+									{{ formatDateHuman(day) }}</span
+								>
 							</div>
 
 							<div

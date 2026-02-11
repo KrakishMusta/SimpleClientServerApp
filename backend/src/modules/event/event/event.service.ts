@@ -68,11 +68,15 @@ export class EventService {
       throw new NotFoundException('Event not found');
     }
 
+    console.log(`updateDTO`, dto);
+
     await event.update({
       title: dto.title,
       cityId: dto.city,
+      areaId: dto.area,
       winner: dto.winner,
       startDate: dto.startDate ? new Date(dto.startDate) : undefined,
+      endDate: dto.endDate ? new Date(dto.endDate) : undefined,
     });
 
     if (dto.activitiesDiff) {
@@ -131,9 +135,11 @@ export class EventService {
 
     const activities = await this.activityService.getByEvent(id);
 
-    console.log(`organizer params`, !!userId, event.creatorId === userId);
+    // console.log(`organizer params`, !!userId, event.creatorId === userId);
 
     const isOrganizer = !!userId && event.creatorId === userId;
+
+    // console.log(`groupActivitiesByDay`, this.groupActivitiesByDay(activities));
 
     return {
       id: event.id,

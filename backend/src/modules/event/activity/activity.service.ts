@@ -95,7 +95,10 @@ export class ActivityService {
           attributes: ['eventUserId'],
         },
       ],
-      order: [['start', 'ASC']],
+      order: [
+        ['dayIndex', 'ASC'],
+        ['start', 'ASC'],
+      ],
     });
 
     return activities.map((activity) => ({

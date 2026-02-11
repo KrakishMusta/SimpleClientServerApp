@@ -169,6 +169,7 @@
 
 	function syncParent() {
 		console.log(`SYNC`, localEvent.value);
+		localEvent.value.endDate = endDateRef.value;
 		emit('update:modelValue', {
 			...localEvent.value,
 			activities: activities.value,
@@ -338,8 +339,8 @@
 					>
 						<span class="text-slate-100"
 							>День {{ dayIndex + 1 }} —
-							{{ formatDateHuman(dayActivities[0].date) }}</span
-						>
+							{{ formatDateHuman(dayActivities[0].date) }}
+						</span>
 						<button
 							@click="removeDay(dayIndex)"
 							class="flex items-center justify-center select-none bg-red-400 hover:bg-red-600 h-full aspect-square"

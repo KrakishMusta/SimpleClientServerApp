@@ -29,10 +29,17 @@ export class UpdateEventDto {
   city?: string;
 
   @IsOptional()
+  @IsString()
+  area?: string;
+
+  @IsOptional()
   winner?: string | null;
 
   @IsOptional()
   startDate?: string;
+
+  @IsOptional()
+  endDate?: string;
 
   @IsOptional()
   @ValidateNested()
