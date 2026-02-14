@@ -114,13 +114,19 @@ export class AuthController {
   }
 
   @Post('logout')
-  @UseGuards(JwtAuthGuard)
   @HttpCode(HttpStatus.NO_CONTENT)
-  @ApiBearerAuth()
-  @ApiOperation({ summary: 'Logout user' })
-  @ApiResponse({ status: 204, description: 'Logout successful' })
-  async logout(@Req() req): Promise<void> {
-    return this.authService.logout(req.user.id);
+  async logout(
+    @Req() req,
+    @Res({ passthrough: true }) res: Eresponse,
+  ): Promise<void> {
+    const refreshToken = req.cookies.refreshToken;
+
+    if (!refreshToken) return;
+
+    await this.authService.logoutByRefreshToken(refreshToken);
+
+    // очищаем cookie
+    res.clearCookie('refreshToken');
   }
 
   @Get('profile')

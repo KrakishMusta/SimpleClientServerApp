@@ -83,6 +83,22 @@ export class AuthService {
     );
   }
 
+  async logoutByRefreshToken(refreshToken: string): Promise<void> {
+    const token = await this.refreshTokenModel.findOne({
+      where: {
+        token: refreshToken,
+        isRevoked: false,
+      },
+    });
+
+    if (!token) return;
+
+    await token.update({
+      isRevoked: true,
+      revokedAt: new Date(),
+    });
+  }
+
   async validateUser(email: string, password: string): Promise<User | null> {
     const user = await this.userModel.findOne({ where: { email } });
 

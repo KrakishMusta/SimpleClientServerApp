@@ -1,9 +1,11 @@
+import { useUserInfo } from '@/entities/user/model/useUserInfo';
 import Domain from '@/pages/domain/Domain.vue';
 import CreateEventPage from '@/pages/event/CreateEventPage.vue';
 import EventPage from '@/pages/event/EventPage.vue';
 import EventsPage from '@/pages/event/EventsPage.vue';
 import UserEvents from '@/pages/event/UserEvents.vue';
 import UserProphile from '@/pages/user/UserProphile.vue';
+import { watch } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
@@ -33,13 +35,13 @@ const router = createRouter({
 					path: 'create-event',
 					name: 'create-event',
 					component: CreateEventPage,
-					meta: { hideParent: true, title: 'Создание мероприятия' },
+					meta: { hideParent: true, title: 'Создание мероприятия', requiresAuth: true },
 				},
 				{
 					path: 'user-events',
 					name: 'user-events',
 					component: UserEvents,
-					meta: { hideParent: true, title: 'Созданные мероприятия' },
+					meta: { hideParent: true, title: 'Созданные мероприятия', requiresAuth: true },
 				},
 			],
 		},
@@ -69,6 +71,7 @@ const router = createRouter({
 			path: '/prophile',
 			name: 'user-prophile',
 			component: UserProphile,
+			meta: { requiresAuth: true, title: 'Профиль' },
 		},
 	],
 });
@@ -82,6 +85,38 @@ router.afterEach((to) => {
 		document.title = `${to.meta.title}`;
 	} else {
 		document.title = baseTitle;
+	}
+});
+
+router.beforeEach(async (to) => {
+	const { isLoggedIn, isAuthReady } = useUserInfo();
+
+	// Ждём инициализацию авторизации
+	if (!isAuthReady.value) {
+		await new Promise((resolve) => {
+			const stop = watch(isAuthReady, (ready) => {
+				if (ready) {
+					stop();
+					resolve(true);
+				}
+			});
+		});
+	}
+
+	const requiresAuth = to.matched.some((route) => route.meta.requiresAuth);
+	const isAuthPage = to.matched.some((route) => route.meta.isAuthPage);
+
+	// 🔐 Страница требует авторизации
+	if (requiresAuth && !isLoggedIn.value) {
+		return {
+			name: 'login',
+			query: { redirect: to.fullPath },
+		};
+	}
+
+	// 🚫 Пользователь уже авторизован и пытается зайти на login/register
+	if (isAuthPage && isLoggedIn.value) {
+		return { name: 'domain' };
 	}
 });
 
